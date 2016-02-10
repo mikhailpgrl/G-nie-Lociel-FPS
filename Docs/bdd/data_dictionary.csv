@@ -2,8 +2,8 @@
 ;;;;
 ;commercial_number;string;TVF1234;
 ;atc_number;string;T012C;
-;departure_airport;string;TLFPO;OACI code of the airport
-;arrival_airport;string;EGLL;OACI code of the airport
+;departure_airport;string;TLFPO;ICAO code of the airport
+;arrival_airport;string;EGLL;ICAO code of the airport
 ;departure_date;string;2016-02-09;ISO-8601 format (http://bit.ly/1jfze4s)
 ;arrival_date;string;2016-02-09;ISO-8601 format
 ;departure_hour;string;16:02:25;ISO-8601 format
@@ -12,6 +12,12 @@
 ;NOTAM;;;Is this data relevant?
 ;OFP;;;Is this data relevant?
 ;weather_map;;;Is this data relevant?
+;;;;
+;icao_code;int;TLFPO;unique identifier of the airport;
+;airport_name;string;Orly;name of the airport;
+;city;string;Paris;city of the airport;
+;country;string;France;country of the airport;
+;;;;
 ;user_id;int;1;unique identifier
 ;name;string;Hakurei;
 ;first_name;string;Reimu;
