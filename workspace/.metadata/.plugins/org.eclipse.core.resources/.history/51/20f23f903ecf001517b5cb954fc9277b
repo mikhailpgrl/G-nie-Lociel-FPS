@@ -1,0 +1,38 @@
+package com.g4.core;
+
+import java.sql.SQLException;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+
+@Path("/user")
+public class UserService {
+
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/user")
+	public Response getUser(@QueryParam("userId") String id, @QueryParam("token") String token){
+		if (id != null && id.length() > 0 && id != null && id.length() > 0){
+			User u = null;
+			try {
+				u = treatment.treatmentGetUser(id,token);
+			} catch (SQLException e) {
+				return  Response.status(500).entity("INTERNAL_ERROR").build();
+			}
+			if (u == null)
+				return Response.status(401).entity("USER_GET_ERROR").build();
+			else
+				return Response.status(200).entity(u.getUser(id, token)).build();
+		}else{
+			return Response.status(400).entity(getError(Consts.USER_GET_ERROR_MANDATORY.toString())).build();
+		}
+		
+		return null;
+		
+	}
+	
+}

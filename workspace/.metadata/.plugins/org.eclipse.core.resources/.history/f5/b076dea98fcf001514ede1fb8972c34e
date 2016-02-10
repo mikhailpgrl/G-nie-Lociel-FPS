@@ -1,0 +1,61 @@
+package com.g4.core;
+
+import java.io.IOException;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+
+import org.codehaus.jackson.JsonGenerationException;
+import org.codehaus.jackson.map.JsonMappingException;
+import org.codehaus.jackson.map.ObjectMapper;
+
+import com.g4.beans.Flight;
+import com.g4.beans.User;
+import com.g4.dao.FlightDao;
+import com.g4.dao.FlightPlug;
+
+@Path("/{a:aircrew|cco}/user")
+public class FlightWebService {
+
+	private static FlightDao fd;
+	
+	public FlightWebService() {
+		// TODO Auto-generated constructor stub
+		fd = new FlightPlug();
+	}
+	
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/login")
+	public Response getFlight(){
+		Flight f;
+		f = fd.getFlight();
+		return Response.status(200).entity(getJson(f)).build();
+	}
+	
+	
+
+	public String getJson(Object f) {
+		// TODO Auto-generated method stub
+		ObjectMapper mapper = new ObjectMapper();
+		String jsonInString = null;
+		//Object to JSON in String
+		try {
+			jsonInString = mapper.writeValueAsString(f);
+		} catch (JsonGenerationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JsonMappingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return jsonInString;
+	}
+}
