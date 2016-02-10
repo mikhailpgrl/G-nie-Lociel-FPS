@@ -1,0 +1,72 @@
+package com.g4.core;
+
+
+import java.io.IOException;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+
+import org.codehaus.jackson.JsonGenerationException;
+import org.codehaus.jackson.map.JsonMappingException;
+import org.codehaus.jackson.map.ObjectMapper;
+
+import com.g4.beans.User;
+import com.g4.dao.UserDao;
+import com.g4.dao.UserPlug;
+
+@Path("/{a:aircrew|cco}/user")
+public class UserWebService {
+
+	private static UserDao ud;
+	
+	public UserWebService() {
+		// TODO Auto-generated constructor stub
+		ud = new UserPlug();
+	}
+	
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/login")
+	public Response getUser(@QueryParam("userId") String id, @QueryParam("token") String token,User user){
+		System.out.println(getJson(user));
+		if (id != null && id.length() > 0 && id != null && id.length() > 0){
+			User u = null;
+			//try {
+				u = ud.getUser(id,token);
+			/*} catch (SQLException e) {
+				return  Response.status(500).entity("INTERNAL_ERROR").build();
+			}*/
+			if (u == null)
+				return Response.status(401).entity("USER_GET_ERROR").build();
+			else
+				return Response.status(200).entity(getJson(u)).build();
+		}else{
+			return Response.status(400).entity("USER_GET_ERROR_MANDATORY").build();
+		}
+	}
+	
+
+	public String getJson(User u) {
+		// TODO Auto-generated method stub
+		ObjectMapper mapper = new ObjectMapper();
+		String jsonInString = null;
+		//Object to JSON in String
+		try {
+			jsonInString = mapper.writeValueAsString(u);
+		} catch (JsonGenerationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JsonMappingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return jsonInString;
+	}
+}
