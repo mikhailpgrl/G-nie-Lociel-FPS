@@ -2,73 +2,90 @@ package com.g4.beans;
 
 public class Flight {
 
-	private String num_commercial;
-	private String ATC;
-	private String depart_date;
-	private String arr_date;
-	private String depart_airport;
-	private String arr_airport;
+	private String ommercial_number;
+	private String atc_number;
+	private String departure_date;
+	private String arrival_date;
+	private String departure_airport;
+	private String arrival_airport;
 	private String notam;
 	private String ofp;
 	
 	
 	public Flight(String string) {
 		// TODO Auto-generated constructor stub
-		this.ATC = string;
+		this.atc_number = string;
 	}
 	
 	public Flight(){
 		
 	}
-	
-	public String getNum_commercial() {
-		return num_commercial;
+
+	public String getOmmercial_number() {
+		return ommercial_number;
 	}
-	public void setNum_commercial(String num_commercial) {
-		this.num_commercial = num_commercial;
+
+	public void setOmmercial_number(String ommercial_number) {
+		this.ommercial_number = ommercial_number;
 	}
-	public String getATC() {
-		return ATC;
+
+	public String getAtc_number() {
+		return atc_number;
 	}
-	public void setATC(String aTC) {
-		ATC = aTC;
+
+	public void setAtc_number(String atc_number) {
+		this.atc_number = atc_number;
 	}
-	public String getDepart_date() {
-		return depart_date;
+
+	public String getDeparture_date() {
+		return departure_date;
 	}
-	public void setDepart_date(String depart_date) {
-		this.depart_date = depart_date;
+
+	public void setDeparture_date(String departure_date) {
+		this.departure_date = departure_date;
 	}
-	public String getArr_date() {
-		return arr_date;
+
+	public String getArrival_date() {
+		return arrival_date;
 	}
-	public void setArr_date(String arr_date) {
-		this.arr_date = arr_date;
+
+	public void setArrival_date(String arrival_date) {
+		this.arrival_date = arrival_date;
 	}
-	public String getDepart_airport() {
-		return depart_airport;
+
+	public String getDeparture_airport() {
+		return departure_airport;
 	}
-	public void setDepart_airport(String depart_airport) {
-		this.depart_airport = depart_airport;
+
+	public void setDeparture_airport(String departure_airport) {
+		this.departure_airport = departure_airport;
 	}
-	public String getArr_airport() {
-		return arr_airport;
+
+	public String getArrival_airport() {
+		return arrival_airport;
 	}
-	public void setArr_airport(String arr_airport) {
-		this.arr_airport = arr_airport;
+
+	public void setArrival_airport(String arrival_airport) {
+		this.arrival_airport = arrival_airport;
 	}
+
 	public String getNotam() {
 		return notam;
 	}
+
 	public void setNotam(String notam) {
 		this.notam = notam;
 	}
+
 	public String getOfp() {
 		return ofp;
 	}
+
 	public void setOfp(String ofp) {
 		this.ofp = ofp;
 	}
+	
+	
 	
 	
 }
