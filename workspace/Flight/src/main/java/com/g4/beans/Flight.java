@@ -2,7 +2,7 @@ package com.g4.beans;
 
 public class Flight {
 
-	private String ommercial_number;
+	private String commercial_number;
 	private String atc_number;
 	private String departure_date;
 	private String arrival_date;
@@ -21,12 +21,12 @@ public class Flight {
 		
 	}
 
-	public String getOmmercial_number() {
-		return ommercial_number;
+	public String getCommercial_number() {
+		return commercial_number;
 	}
 
-	public void setOmmercial_number(String ommercial_number) {
-		this.ommercial_number = ommercial_number;
+	public void setCommercial_number(String ommercial_number) {
+		this.commercial_number = ommercial_number;
 	}
 
 	public String getAtc_number() {

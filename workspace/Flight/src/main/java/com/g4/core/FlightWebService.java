@@ -58,7 +58,7 @@ public class FlightWebService {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/{b:show-flight|modify-flight}")
-	public Response getFlight(String id){
+	public Response getFlight(@QueryParam("id") String id){
 		Flight f;
 		f = fd.getFlight(id);
 		if (f == null)
