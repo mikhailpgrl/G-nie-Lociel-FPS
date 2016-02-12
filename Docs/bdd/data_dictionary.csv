@@ -8,7 +8,8 @@
 ;arrival_date;string;2016-02-09;ISO-8601 format
 ;departure_hour;string;16:02:25;ISO-8601 format
 ;arrival_hour;string;20:40:08;ISO-8601 format
-;notice;;;Is this data relevant?
+;id_notice;;;
+;notice_content;;;
 ;NOTAM;;;Is this data relevant?
 ;OFP;;;Is this data relevant?
 ;weather_map;;;Is this data relevant?
