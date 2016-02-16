@@ -1,0 +1,26 @@
+package com.g4.dao;
+
+import java.util.ArrayList;
+
+import com.g4.beans.Flight;
+
+public class FlightPlug  implements FlightDao{
+
+	public Flight getFlight(String id) {
+		// TODO Auto-generated method stub
+		return new Flight("tetetéeqf");
+		//return null;
+	}
+
+	public String putFlight(Flight flight, String id) {
+		// TODO Auto-generated method stub
+		return "success";
+	}
+
+
+	public ArrayList<Flight> getAllFlight() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -37,7 +37,7 @@ public class UserWebService {
 				return  Response.status(500).entity("INTERNAL_ERROR").build();
 			}*/
 			if (u == null)
-				return Response.status(401).entity("USER_GET_ERROR").build();
+				return Response.status(401).entity("USER_NOT_FOUND").build();
 			else
 				return Response.status(200).entity(JSonMaker.getJson(u)).build();
 		}else{

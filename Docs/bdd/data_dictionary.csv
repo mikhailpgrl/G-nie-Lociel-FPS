@@ -1,0 +1,27 @@
+;Name;Type;Example of value;Note
+;;;;
+;commercial_number;string;TVF1234;
+;atc_number;string;T012C;
+;departure_airport;string;TLFPO;ICAO code of the airport
+;arrival_airport;string;EGLL;ICAO code of the airport
+;departure_date;string;2016-02-09;ISO-8601 format (http://bit.ly/1jfze4s)
+;arrival_date;string;2016-02-09;ISO-8601 format
+;departure_hour;string;16:02:25;ISO-8601 format
+;arrival_hour;string;20:40:08;ISO-8601 format
+;id_notice;;;
+;notice_content;;;
+;NOTAM;;;Is this data relevant?
+;OFP;;;Is this data relevant?
+;weather_map;;;Is this data relevant?
+;;;;
+;icao_code;int;TLFPO;unique identifier of the airport;
+;airport_name;string;Orly;name of the airport;
+;city;string;Paris;city of the airport;
+;country;string;France;country of the airport;
+;;;;
+;user_id;int;1;unique identifier
+;name;string;Hakurei;
+;first_name;string;Reimu;
+;phone_number;string;+'33601234567;The phone number must start with '+' followed by the country calling code
+;mail_address;string;reimu.haku@yahoo.fr;
+;is_cco;boolean;true;Check if the person is a CCO member or a flight crew member

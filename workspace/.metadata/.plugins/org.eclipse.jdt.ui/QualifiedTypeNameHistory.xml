@@ -1,20 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="javax.ws.rs.Path"/>
-<fullyQualifiedTypeName name="javax.ws.rs.core.MediaType"/>
-<fullyQualifiedTypeName name="javax.ws.rs.Produces"/>
-<fullyQualifiedTypeName name="javax.ws.rs.QueryParam"/>
 <fullyQualifiedTypeName name="java.sql.SQLException"/>
 <fullyQualifiedTypeName name="com.g4.beans.User"/>
 <fullyQualifiedTypeName name="com.g4.dao.UserDao"/>
 <fullyQualifiedTypeName name="org.codehaus.jackson.annotate.JsonAutoDetect"/>
 <fullyQualifiedTypeName name="org.codehaus.jackson.map.ObjectMapper"/>
 <fullyQualifiedTypeName name="com.g4.dao.UserPlug"/>
-<fullyQualifiedTypeName name="javax.ws.rs.POST"/>
-<fullyQualifiedTypeName name="javax.ws.rs.core.Response"/>
-<fullyQualifiedTypeName name="javax.ws.rs.GET"/>
 <fullyQualifiedTypeName name="com.g4.dao.FlightDao"/>
 <fullyQualifiedTypeName name="com.g4.dao.FlightPlug"/>
 <fullyQualifiedTypeName name="com.g4.beans.Flight"/>
 <fullyQualifiedTypeName name="com.g4.utils.JSonMaker"/>
+<fullyQualifiedTypeName name="javax.ws.rs.PUT"/>
+<fullyQualifiedTypeName name="javax.ws.rs.QueryParam"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="javax.ws.rs.DELETE"/>
+<fullyQualifiedTypeName name="javax.ws.rs.POST"/>
+<fullyQualifiedTypeName name="com.g4.dao.LeafletDao"/>
+<fullyQualifiedTypeName name="com.g4.dao.LeafletPlug"/>
+<fullyQualifiedTypeName name="javax.ws.rs.Produces"/>
+<fullyQualifiedTypeName name="javax.ws.rs.GET"/>
+<fullyQualifiedTypeName name="javax.ws.rs.core.MediaType"/>
+<fullyQualifiedTypeName name="javax.ws.rs.core.Response"/>
 </qualifiedTypeNameHistroy>
