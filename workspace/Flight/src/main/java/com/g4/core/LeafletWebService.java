@@ -39,12 +39,12 @@ public class LeafletWebService {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/create-leaflet")
 	public Response createLeaflet(Leaflet leaflet){
-		String message = ld.putFlight(leaflet);
+		String message = ld.putLeaflet(leaflet);
 		if (message.contains("success")){
-			return Response.status(200).entity(JSonMaker.getJson(message)).build();
+			return Response.status(200).entity(message).build();
 		}
 		else{
-			 return Response.status(400).entity(JSonMaker.getJson(message)).build();
+			 return Response.status(400).entity(message).build();
 		}
 			
 	}
@@ -54,12 +54,12 @@ public class LeafletWebService {
 	@Path("/show-leaflet")
 	public Response deleteLeaflet(@QueryParam("id") String id){
 		if (id != null && id.length() > 0){
-			String message = ld.deleteFlight(id);
+			String message = ld.deleteLeaflet(id);
 			if (message.contains("succes")){
-				return Response.status(200).entity(JSonMaker.getJson(message)).build();
+				return Response.status(200).entity(message).build();
 			}
 			else{
-				return Response.status(400).entity(JSonMaker.getJson(message)).build();
+				return Response.status(400).entity(message).build();
 			}
 			
 		}else{

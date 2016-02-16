@@ -13,13 +13,13 @@ public class LeafletPlug implements LeafletDao{
 		//return null;
 	}
 
-	public String putFlight(Leaflet leaflet) {
+	public String putLeaflet(Leaflet leaflet) {
 		// TODO Auto-generated method stub
 		return "success";
 		// return "failbro";
 	}
 
-	public String deleteFlight(String id) {
+	public String deleteLeaflet(String id) {
 		// TODO Auto-generated method stub
 		return "success";
 		// return "failbro";
