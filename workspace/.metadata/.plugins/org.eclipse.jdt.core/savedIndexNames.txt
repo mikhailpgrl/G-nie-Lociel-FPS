@@ -21,7 +21,6 @@ INDEX VERSION 1.127+D:\Dropbox\Bitbucket\Projet Genie Logiciel\workspace\.metada
 1720850259.index
 730770365.index
 3783893621.index
-220208678.index
 926305840.index
 2790459695.index
 3925496289.index
