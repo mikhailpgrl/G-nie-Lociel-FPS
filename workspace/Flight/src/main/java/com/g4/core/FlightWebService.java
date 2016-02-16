@@ -1,8 +1,14 @@
 package com.g4.core;
 
+import java.util.ArrayList;
+
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
@@ -25,11 +31,71 @@ public class FlightWebService {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/list-flight")
-	public Response getFlight(){
-		Flight f;
-		f = fd.getFlight();
+	public Response getAllFlight(){
+		ArrayList<Flight> f;
+		f = fd.getAllFlight();
 		return Response.status(200).entity(JSonMaker.getJson(f)).build();
 	}
 	
-
+	@PUT
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/create-flight")
+	public Response createFlight(Flight flight,@QueryParam("userId") String id){
+		if (id != null && id.length() > 0){
+			String message = fd.putFlight(flight,id);
+			if (message.contains("succes")){
+				return Response.status(200).entity(message).build();
+			}
+			else{
+				return Response.status(400).entity(message).build();
+			}
+			
+		}else{
+			return Response.status(400).entity("USER_MANDATORY").build();
+		}	
+	}
+	
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/{b:show-flight|modify-flight}")
+	public Response getFlight(@QueryParam("id") String id){
+		Flight f;
+		f = fd.getFlight(id);
+		if (f == null)
+			return Response.status(400).entity("NO_FLIGHT").build();
+		else
+			return Response.status(200).entity(JSonMaker.getJson(f)).build();
+	}
+	
+	@DELETE
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/show-flight")
+	public Response deleteFlight(@QueryParam("userId") String id){
+				
+		if (id != null && id.length() > 0){
+			String message = fd.deleteFlight(id);
+			if (message.contains("succes")){
+				return Response.status(200).entity(message).build();
+			}
+			else{
+				return Response.status(400).entity(message).build();
+			}
+			
+		}else{
+			return Response.status(400).entity("USER_MANDATORY").build();
+		}	
+	}
+	
+	@POST
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/modify-flight")
+	public Response modifyFlight(Flight flight, @QueryParam("userId") String id ){
+		if (id != null && id.length() > 0){
+			fd.modifyFlight(id,flight);
+			return Response.status(200).entity("OK").build();
+			
+		}else{
+			return Response.status(400).entity("USER_MANDATORY").build();
+		}	
+	}
 }

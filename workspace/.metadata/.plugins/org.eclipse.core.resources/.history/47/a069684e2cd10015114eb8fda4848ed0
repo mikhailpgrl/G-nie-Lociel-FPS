@@ -1,0 +1,8 @@
+package com.g4.core;
+
+import javax.ws.rs.Path;
+
+@Path("/cco/flight")
+public class LeafletWebService {
+
+}

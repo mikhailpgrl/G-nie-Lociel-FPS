@@ -1,0 +1,19 @@
+package com.g4.core;
+
+import javax.ws.rs.Path;
+
+import com.g4.dao.FlightDao;
+import com.g4.dao.FlightPlug;
+import com.g4.dao.LeafletDao;
+
+@Path("/cco/flight")
+public class LeafletWebService {
+
+private static LeafletDao ld;
+	
+	public LeafletWebService() {
+		// TODO Auto-generated constructor stub
+		ld = new LeafletDao();
+	}
+	
+}

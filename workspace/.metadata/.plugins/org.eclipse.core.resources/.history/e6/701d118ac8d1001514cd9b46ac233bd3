@@ -1,0 +1,60 @@
+package com.g4.core;
+
+import java.util.ArrayList;
+
+import javax.print.attribute.standard.Media;
+import javax.ws.rs.DELETE;
+import javax.ws.rs.GET;
+import javax.ws.rs.PUT;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+
+import com.g4.beans.Leaflet;
+import com.g4.dao.LeafletDao;
+import com.g4.dao.LeafletPlug;
+import com.g4.utils.JSonMaker;
+
+@Path("/cco/flight")
+public class LeafletWebService {
+
+	private static LeafletDao ld;
+	
+	public LeafletWebService() {
+		// TODO Auto-generated constructor stub
+		ld = new LeafletPlug();
+	}
+	
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/list-leaflet")
+	public Response getAllLeaflet(){
+		ArrayList<Leaflet> l;
+		l = ld.getAllLeaflet();
+		return Response.status(200).entity(JSonMaker.getJson(l)).build();
+	}
+	
+	@PUT
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/create-leaflet")
+	public Response createLeaflet(Leaflet leaflet){
+		String message = ld.putFlight(leaflet);
+		if (message.contains("success")){
+			return Response.status(200).entity(message).build();
+		}
+		else{
+			 return Response.status(400).entity(message).build();
+		}
+			
+	}
+	
+	@DELETE
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/show-leaflet")
+	public Response deleteLeaflet(@QueryParam("id") id){
+		return null;
+	}
+	
+}
