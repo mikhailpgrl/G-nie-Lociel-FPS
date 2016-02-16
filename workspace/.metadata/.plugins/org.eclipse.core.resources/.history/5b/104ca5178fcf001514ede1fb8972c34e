@@ -1,0 +1,32 @@
+package com.g4.core;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+
+import com.g4.dao.FlightDao;
+import com.g4.dao.FlightPlug;
+
+@Path("/{a:aircrew|cco}/user")
+public class FlightWebService {
+
+	private static FlightDao fd;
+	
+	public FlightWebService() {
+		// TODO Auto-generated constructor stub
+		fd = new FlightPlug();
+	}
+	
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/login")
+	public Response getFlight(){
+		return null;
+	}
+	
+	
+	
+}
