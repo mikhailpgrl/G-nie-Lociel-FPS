@@ -25,4 +25,6 @@
 <fullyQualifiedTypeName name="javax.ws.rs.QueryParam"/>
 <fullyQualifiedTypeName name="javax.ws.rs.DELETE"/>
 <fullyQualifiedTypeName name="com.g4.beans.Leaflet"/>
+<fullyQualifiedTypeName name="com.g4.dao.plug.FlightPlug"/>
+<fullyQualifiedTypeName name="com.g4.dao.AirportDao"/>
 </qualifiedTypeNameHistroy>

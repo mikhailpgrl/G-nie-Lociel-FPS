@@ -1,5 +1,7 @@
 package com.g4.dao.plug;
 
-public class AirportPlug {
+import com.g4.dao.AirportDao;
+
+public class AirportPlug implements AirportDao{
 
 }
