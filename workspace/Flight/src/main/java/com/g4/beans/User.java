@@ -1,8 +1,9 @@
 package com.g4.beans;
 
-import org.codehaus.jackson.annotate.JsonAutoDetect;
 
-@JsonAutoDetect()
+import javax.jdo.annotations.PersistenceCapable;
+
+@PersistenceCapable
 public class User {
 	
 	private String id;

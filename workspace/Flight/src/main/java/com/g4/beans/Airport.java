@@ -1,5 +1,9 @@
 package com.g4.beans;
 
+
+import javax.jdo.annotations.PersistenceCapable;
+
+@PersistenceCapable
 public class Airport {
 	private String icao_code;
 	private String airport_name;
