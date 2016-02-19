@@ -8,9 +8,9 @@ public interface LeafletDao {
 
 	ArrayList<Leaflet> getAllLeaflet();
 
-	String putFlight(Leaflet leaflet);
+	String putLeaflet(Leaflet leaflet);
 
-	String deleteFlight(String id);
+	String deleteLeaflet(String id);
 
 	Leaflet getLeaflet(String id);
 
