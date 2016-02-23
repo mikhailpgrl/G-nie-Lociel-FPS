@@ -71,12 +71,13 @@ public class FlightWebService {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/modify-flight")
 	public Response getFlight1(@QueryParam("id") String id){
-		Flight f;
+		/*Flight f;
 		f = fd.getFlight(id);
 		if (f == null)
 			return Response.status(400).entity("NO_FLIGHT").build();
 		else
-			return Response.status(200).entity(JSonMaker.getJson(f)).build();
+			return Response.status(200).entity(JSonMaker.getJson(f)).build();*/
+		return getFlight(id);
 	}
 	
 	@DELETE
