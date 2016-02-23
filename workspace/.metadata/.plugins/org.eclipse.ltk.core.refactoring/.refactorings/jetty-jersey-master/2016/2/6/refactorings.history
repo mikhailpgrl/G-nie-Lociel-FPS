@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Move element &apos;ExampleResource.java&apos; to &apos;Flight/src/main/java/com.g4.core&apos;&#x0D;&#x0A;- Original project: &apos;jetty-jersey-master&apos;&#x0D;&#x0A;- Destination element: &apos;Flight/src/main/java/com.g4.core&apos;&#x0D;&#x0A;- Original element: &apos;com.example.jetty_jersey.ws.ExampleResource.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="=Flight/src\/main\/java&lt;com.g4.core" element1="/src\/main\/java&lt;com.example.jetty_jersey.ws{ExampleResource.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1454986138549" units="1" version="1.0"/>
-</session>
