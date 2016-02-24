@@ -130,6 +130,18 @@
 				<div class="col-md-1">
 				</div>
 				<div class="col-md-10">
+				<script>
+					function showUser(str)
+				{
+				       var reponse = $.ajax({
+				           type: "GET",
+				           dataType:"json",
+				           url: "",
+				           data: "id_personne="+str,
+				           success: parse(reponse)
+				       });
+}
+				</script>
 					<table class="table">
 						<thead>
 							<tr>
