@@ -1,5 +1,9 @@
 package com.g4.beans;
 
+
+import javax.jdo.annotations.PersistenceCapable;
+
+@PersistenceCapable
 public class Flight {
 
 	private String commercial_number;

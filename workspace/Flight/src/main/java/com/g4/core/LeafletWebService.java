@@ -13,7 +13,7 @@ import javax.ws.rs.core.Response;
 
 import com.g4.beans.Leaflet;
 import com.g4.dao.LeafletDao;
-import com.g4.dao.LeafletPlug;
+import com.g4.dao.plug.LeafletPlug;
 import com.g4.utils.JSonMaker;
 
 @Path("/cco/leaflet")
