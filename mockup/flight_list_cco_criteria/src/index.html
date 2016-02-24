@@ -131,16 +131,22 @@
 				</div>
 				<div class="col-md-10">
 				<script>
-					function showUser(str)
-				{
+					alert("hello world");
+					function sayHello(){
+						return 'Bonjour';
+					}
+					alert(sayHello());
+					
+					function showUser()
 				       var reponse = $.ajax({
 				           type: "GET",
 				           dataType:"json",
-				           url: "",
-				           data: "id_personne="+str,
-				           success: parse(reponse)
+				           url: "http://localhost:8080/cco/flight/list-flight",
+				           data: ,
+				           success: alert(reponse)
 				       });
-}
+				alert(showUser());
+				*/
 				</script>
 					<table class="table">
 						<thead>
