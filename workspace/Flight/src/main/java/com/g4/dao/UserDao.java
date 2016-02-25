@@ -1,7 +1,5 @@
 package com.g4.dao;
 
-import com.g4.beans.User;
-
 import java.util.List;
 
 import javax.jdo.JDOHelper;
@@ -10,7 +8,7 @@ import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 import javax.jdo.Transaction;
 
-import dao.datanucleus.User;
+import com.g4.dao.datanucleus.User;
 
 public class UserDao {
 
