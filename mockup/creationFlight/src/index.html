@@ -212,48 +212,58 @@
 	</div>
 </div>
 
-	  <script src="js/jquery.min.js"></script>
-	  <script src="js/bootstrap.min.js"></script>
-	  <script src="js/scripts.js"></script>
-	  <script type="text/javascript">
-	  	$( document ).ready(function() {
-		    console.log( "ready!" );
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/scripts.js"></script>
+	<script type="text/javascript">
+		$( document ).ready(function() {
+	    console.log( "ready!" );
 
-		    var commercialNumber = document.getElementById("inputNumber");
-		    var atc = document.getElementById("inputAtc");
-		    var departureAirportCode = document.getElementById("inputDepartureAirportCode");
-		    var arrivalAirportCode = document.getElementById("inputArrivalAirportCode");
-		    var departureDate = document.getElementById("inputDepartureDate");
-		    var departureTime = document.getElementById("inputDepartureTime");
-	     	var arrivalDate = document.getElementById("inputArrivalDate");
-	     	var arrivalTime = document.getElementById("inputArrivalTime");
+	    // Getting information of the flight
+	    var text_commercialNumber = document.getElementById("inputNumber");
+	    var text_atc = document.getElementById("inputAtc");
+	    var text_departureAirportCode = document.getElementById("inputDepartureAirportCode");
+	    var text_arrivalAirportCode = document.getElementById("inputArrivalAirportCode");
+	    var text_departureDate = document.getElementById("inputDepartureDate");
+	    var text_departureTime = document.getElementById("inputDepartureTime");
+	 	var text_arrivalDate = document.getElementById("inputArrivalDate");
+	 	var text_arrivalTime = document.getElementById("inputArrivalTime");
 
-	     	var buttonAddFlight = document.getElementById("buttonAddFlight");
 
-	     	 
+	 	// Button "Add flight"
+	 	var btn_addFlight = document.getElementById("buttonAddFlight");
 
-		    function getFlightInfo(){
-		    	if(commercialNumber.value == '') cn = false;
-		    	if(atc.value == '') at = false;
-		    	if(departureAirportCode.value == '') dac = false;
-		    	if(arrivalAirportCode.value == '') aac = false;
-		    	if(departureDate.value == '') dd = false;
-		    	if(departureTime.value == '') dt = false;
-		    	if(arrivalDate.value == '') ad = false;
-		    	if(arrivalTime.value == '') at = false;
-		    	if(cn == false && at == false dac == false aac == false dd == false dt == false ad == false at == false ){
-		    		alert("Un des champ n'est corecctement rempli.");
-		    	}
-		    }
+	 	 
 
-		    function getServerData(url, success){
-		        $.ajax({
-		            dataType: "json",
-		            url: url
-		        }).done(success);
-		    }
 
-	  	});
-	  </script>
+
+
+
+
+	 	
+	 	 
+
+
+
+
+
+
+	 	// Verifies wether we have all necessary info of the flight
+	    function checkFlightInfo(){
+	    	if(commercialNumber.value == '') cn = false;
+	    	if(atc.value == '') at = false;
+	    	if(departureAirportCode.value == '') dac = false;
+	    	if(arrivalAirportCode.value == '') aac = false;
+	    	if(departureDate.value == '') dd = false;
+	    	if(departureTime.value == '') dt = false;
+	    	if(arrivalDate.value == '') ad = false;
+	    	if(arrivalTime.value == '') at = false;
+	    	if(cn == false || at == false || dac == false || aac == false || dd == false || dt == false || ad == false || at == false ){
+	    		alert("Un des champ n'est corecctement rempli!");
+	    	}
+	    }
+
+		});
+	</script>
   </body>
 </html>
