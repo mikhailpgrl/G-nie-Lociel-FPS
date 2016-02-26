@@ -66,9 +66,9 @@
 				<div class="col-md-1">
 				</div>
 				<div class="col-md-1">
-					<button type="button" class="btn btn-default">
+					<a href="#" class="btn btn-default" role="button">
 						Create Flight
-					</button>
+					</a>
 				</div>
 				<div class="col-md-1">
 					<button type="button" class="btn btn-default">
@@ -76,17 +76,22 @@
 					</button>
 				</div>
 				<div class="col-md-2">
-					 
-					<button type="button" class="btn btn-default">
+					<a href="#" class="btn btn-default" role="button">
 						Leaflets
-					</button>
+					</a>
 				</div>
 				
 				<div class="col-md-2">
-					<select class="form-control">
-						  <option>Date de depart</option>
-						  <option>Date d'arrivée</option>
-						  <option>Aeroport d'arrivé</option>
+					<select id="option_selection" class="form-control">
+							<option selected="selected"></option>
+							<option id="number">Number</option>
+						  	<option id="atc">ATC</option>
+						  	<option id="departure_time" >Departure Time </option>
+						  	<option id="arrival_time ">Arrival Time </option>
+						  	<option id="departure_date" >Departure Date</option>
+							<option id="arrival_date" >Arrival Date</option>
+							<option id="arrival_airtport">Arrival Airport</option>
+							<option id="departure_airport">Departure Airport</option>
 					</select>
 				</div>
 				<div class="col-md-2">
@@ -99,10 +104,8 @@
 			<div class="row">
 				<div class="col-md-2">
 					<h2></h2>
-					<p>test</p>
-					<script>
-						
-					</script>
+					<div id ="criteria">
+					</div>
 				</div>
 			</div>
 			<div class="row">
