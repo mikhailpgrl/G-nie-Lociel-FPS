@@ -99,7 +99,7 @@
 					<select class="form-control">
 						  <option>Date de depart</option>
 						  <option>Date d'arrivée</option>
-						  <option>Aeroport d'arrivé</option>
+						  <option>Aéroport d'arrivé</option>
 					</select>
 				</div>
 				<div class="col-md-2">
@@ -110,14 +110,38 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-2">
-					<h2></h2>
+				<h2></h2>
+			</div>
+			<div class="row">
+				<div class="col-md-1">
+				</div>
+				<div class="col-md-1">
+					<button type="button" class="btn btn-success active">
+						Date d'arrivée
+					</button>
+				</div>
+				<div class="col-md-1">
+					<button type="button" class="btn btn-success active">
+						Aéroport d'arrivé
+					</button>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-1">
 				</div>
 				<div class="col-md-10">
+				<script>
+					function showUser(str)
+				{
+				       var reponse = $.ajax({
+				           type: "GET",
+				           dataType:"json",
+				           url: "",
+				           data: "id_personne="+str,
+				           success: parse(reponse)
+				       });
+}
+				</script>
 					<table class="table">
 						<thead>
 							<tr>
