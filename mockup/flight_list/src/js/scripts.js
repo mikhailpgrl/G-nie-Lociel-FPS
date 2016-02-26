@@ -1,25 +1,8 @@
 $(document).ready(function(){
 	
-
-	function sayHello(){
-		console.log('clicked');
-	}
-
-	function function_ajout_critere(x){
-		console.log('x.value '+ x.value);
-
-		var element = document.createElement("button");
-		element.setAttribute("id",'name_'+x.value);
-		element.setAttribute("class","btn btn-success");
-		element.innerHTML = x.value;
-		var foo = document.getElementById("criteria");
-		foo.appendChild(element);
-		foo.element.value = x.value;
-	}
-
-
-	console.log("ready");
-
+//some variable declaration 
+	var button_list = [];
+	var index = 0;
 	var number = document.getElementById("number");
 	var atc = document.getElementById("atc");
 	var departure_time = document.getElementById("departure_time");
@@ -29,12 +12,53 @@ $(document).ready(function(){
 	var departure_airport = document.getElementById("departure_airport");
 	var arrival_airport = document.getElementById("arrival_airport");
 	var e = document.getElementById("option_selection");
-	console.log(e.value);
-	console.log('e '+e);
-	option_selection.addEventListener("change",function(){
-		function_ajout_critere(e);
-	});
+	var criteria = document.getElementById("criteria");
 
+//debug function 
+
+	function sayHello(){
+		console.log('clicked');
+	}
+
+//the function that add the selected criteria
+	function function_criteria_add(x){
+		console.log('x.value '+ x.value);
+		var element = document.createElement("button");
+		element.setAttribute("id",'name_'+x.value);
+		element.setAttribute("class","btn btn-success");
+		element.setAttribute("value",x.value);
+		element.innerHTML = x.value;
+		criteria.appendChild(element);
+		button_list[index] = element;
+		element.setAttribute("index",index);
+		console.log("index "+index);
+		button_list[index].addEventListener("click",function(){
+			function_criteria_remove();
+		});
+		index++;
+		for(var i = 0 ;i<index;i++){
+			console.log("button_list["+i+"] " + button_list[i]);
+		}
+	}
+
+//the function that remove the selected criteria
+	function function_criteria_remove(){
+		console.log("la");
+		console.log("this.close "+this.close());
+		console.log("this.index "+this.index );
+		document.getElementById(this).remove();
+		/*
+		console.log("x.name"+x.name);
+		criteria.removeChild(x);
+		button_list.splice(x,1);
+		*/
+		}
+
+
+	console.log("ready");
+	option_selection.addEventListener("change",function(){
+		function_criteria_add(e);
+	});
 	
 	
 
