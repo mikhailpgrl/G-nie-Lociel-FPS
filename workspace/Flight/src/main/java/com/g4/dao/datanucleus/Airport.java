@@ -4,7 +4,7 @@ import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.PrimaryKey;
 import javax.jdo.annotations.Unique;
 
-@PersistenceCapable
+@PersistenceCapable(table="Airport")
 public class Airport {
 
 	@PrimaryKey
