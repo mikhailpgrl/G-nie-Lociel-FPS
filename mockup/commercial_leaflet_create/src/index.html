@@ -220,14 +220,53 @@
 		<div class="col-md-1">
 		</div>
 		<div class="col-md-1">
-			<button type="button" class="btn btn-default">
+			<button id="btn-new" type="button" class="btn btn-default">
+				New
+			</button> 
+		</div>
+				<div id="myDiv" class="form-group" style="display: none;">
+					 
+					<label for="inputDepartureAirportCode" class="col-sm-2 control-label">
+						New leaflet:
+					</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="inputDepartureAirportCode" placeholder="Departure airport code">
+					</div>
+				</div>
+
+		<div class="col-md-1" id="div-btn-add" style="display: none;">
+			<button id="btn-add" type="button" class="btn btn-default">
 				Add
 			</button> 
 		</div>
+
 	</div>
 </div>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/scripts.js"></script>
-  </body>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/scripts.js"></script>
+<script type="text/javascript">
+$( document ).ready(function() {
+
+	var btn_new = document.getElementById("btn-new");
+	var btn_add = document.getElementById("btn-add");
+
+	btn_new.addEventListener("click", function(){
+		$('#myDiv').css('display','block');
+		$('#div-btn-add').css('display','block');
+	});
+
+	btn_add.addEventListener("click", function(){
+		$('#myDiv').css('display','none');
+		$('#div-btn-add').css('display','none');
+	});
+
+
+});	
+
+
+
+
+</script>
+</body>
 </html>
