@@ -9,11 +9,15 @@ public class Flight {
 	private String commercial_number;
 	private String atc_number;
 	private String departure_date;
+	private String dep_time;
+	private String arr_time;
 	private String arrival_date;
 	private String departure_airport;
 	private String arrival_airport;
 	private String notam;
 	private String ofp;
+	
+	
 	
 	
 	public Flight(String string) {
@@ -24,6 +28,9 @@ public class Flight {
 	public Flight(){
 		
 	}
+	
+	
+	
 
 	public String getCommercial_number() {
 		return commercial_number;
@@ -87,6 +94,22 @@ public class Flight {
 
 	public void setOfp(String ofp) {
 		this.ofp = ofp;
+	}
+
+	public String getArr_time() {
+		return arr_time;
+	}
+
+	public void setArr_time(String arr_time) {
+		this.arr_time = arr_time;
+	}
+
+	public String getDep_time() {
+		return dep_time;
+	}
+
+	public void setDep_time(String dep_time) {
+		this.dep_time = dep_time;
 	}
 	
 	
