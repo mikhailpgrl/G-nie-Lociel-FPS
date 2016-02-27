@@ -1,5 +1,6 @@
 package com.g4.dao.datanucleus;
 
+import java.io.Serializable;
 import java.util.StringTokenizer;
 
 import javax.jdo.annotations.ForeignKey;
@@ -85,8 +86,9 @@ public class Flight {
 	}
 	
 	// Internal class for composite primary key
-	public static class FlightPK{
+	public static class FlightPK implements Serializable{
 		
+		private static final long serialVersionUID = 1L;
 		String commercial_number;
 		int departure_airport;
 		String departure_date;
