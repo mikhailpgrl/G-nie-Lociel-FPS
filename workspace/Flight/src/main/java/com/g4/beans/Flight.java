@@ -15,6 +15,16 @@ public class Flight {
 	private String notam;
 	private String ofp;
 	
+	public void print(){
+		System.out.println(commercial_number);
+		System.out.println(atc_number);
+		System.out.println(departure_date);
+		System.out.println(arrival_date);
+		System.out.println(departure_airport);
+		System.out.println(arrival_airport);
+		System.out.println(notam);
+		System.out.println(ofp);
+	}
 	
 	public Flight(String string) {
 		// TODO Auto-generated constructor stub

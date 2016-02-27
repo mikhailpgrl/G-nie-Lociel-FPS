@@ -9,7 +9,7 @@ public class Leaflet {
 	private String id;
 	private String content;
 
-	private Leaflet(){
+	public Leaflet(){
 		
 	}
 	public Leaflet(String s){

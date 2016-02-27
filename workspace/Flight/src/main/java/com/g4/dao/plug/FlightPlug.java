@@ -17,14 +17,16 @@ public class FlightPlug  implements FlightDao{
 	public String putFlight(Flight flight, String id) {
 		// TODO Auto-generated method stub
 		//return "success";
-		return "failbro";
+		flight.print();
+		return "success";
+		//return "failbro";
 	}
 
 
 	public ArrayList<Flight> getAllFlight() {
 		// TODO Auto-generated method stub
-		//return new ArrayList<Flight> ((Arrays.asList(new Flight("tetetéeqf"),new Flight("az"))));
-		return null;
+		return new ArrayList<Flight> ((Arrays.asList(new Flight("tetetéeqf"),new Flight("az"))));
+		//return null;
 	}
 
 	public String deleteFlight(String id) {
@@ -35,6 +37,12 @@ public class FlightPlug  implements FlightDao{
 
 	public void modifyFlight(String id, Flight flight) {
 		// TODO Auto-generated method stub
+		
+	}
+
+	public ArrayList<Flight> sortFlight(String sort,String value) {
+		// TODO Auto-generated method stub
+		return null;
 		
 	}
 

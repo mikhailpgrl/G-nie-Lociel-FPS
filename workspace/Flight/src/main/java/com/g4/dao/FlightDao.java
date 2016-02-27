@@ -16,5 +16,7 @@ public interface FlightDao {
 	String deleteFlight(String id);
 
 	void modifyFlight(String id, Flight flight);
+
+	ArrayList<Flight> sortFlight(String sort, String value);
 	
 }
