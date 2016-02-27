@@ -52,6 +52,16 @@ public class Flight {
 		return atc_number;
 	}
 	
+	public String getDepartureAirport(){
+		
+		return departure_airport.getICAO();
+	}
+
+	public String getDArrivalAirport(){
+		
+		return arrival_airport.getICAO();
+	}
+	
 	public String getDepartureDate(){
 		
 			return departure_date;
