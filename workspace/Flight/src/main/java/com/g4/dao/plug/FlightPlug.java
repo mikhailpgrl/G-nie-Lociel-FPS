@@ -16,7 +16,7 @@ public class FlightPlug  implements FlightDao{
 
 	public String putFlight(Flight flight, String id) {
 		// TODO Auto-generated method stub
-		System.out.println("test");
+		System.out.println(flight.getAtc_number());
 		return "success";
 		//return "failbro";
 	}
