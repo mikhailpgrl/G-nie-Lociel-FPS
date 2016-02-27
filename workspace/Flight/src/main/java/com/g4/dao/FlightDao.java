@@ -8,8 +8,8 @@ import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 import javax.jdo.Transaction;
 
-import dao.datanucleus.Airport;
-import dao.datanucleus.Flight;
+import com.g4.dao.datanucleus.Airport;
+import com.g4.dao.datanucleus.Flight;
 
 public class FlightDao {
 
