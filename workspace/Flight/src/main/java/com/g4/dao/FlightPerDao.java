@@ -8,12 +8,13 @@ import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 import javax.jdo.Transaction;
 
-import com.g4.dao.datanucleus.Airport;
+import com.g4.dao.datanucleus.Flight;
+import com.g4.dao.datanucleus.FlightPer;
+import com.g4.dao.datanucleus.User;
 
-public class AirportDao {
+public class FlightPerDao {
 
-	
-	public static void add(String icao, String name, String city, String country){
+	public static void add(Flight flight, User user){
 		
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("FlightGL");
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -22,8 +23,8 @@ public class AirportDao {
 		try{
 			
 			tx.begin();
-			Airport usr = new Airport(icao,name,city,country);
-			pm.makePersistent(usr);
+			FlightPer fp = new FlightPer(flight, user);
+			pm.makePersistent(fp);
 			tx.commit();
 			
 		}finally{
@@ -37,9 +38,9 @@ public class AirportDao {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public static List<Airport> selectAll(){
+	public static List<FlightPer> selectAll(){
 		
-		List<Airport> airports = null;
+		List<FlightPer> assoc = null;
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("FlightGL");
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
@@ -47,8 +48,8 @@ public class AirportDao {
 		try{
 			
 			tx.begin();
-			Query q = pm.newQuery("SELECT FROM" + Airport.class.getName());
-			airports = (List<Airport>) q.execute();
+			Query q = pm.newQuery("SELECT FROM" + FlightPer.class.getName());
+			assoc = (List<FlightPer>) q.execute();
 			tx.commit();
 			
 		}finally{
@@ -60,7 +61,7 @@ public class AirportDao {
 			pm.close();
 		}
 		
-		return airports;
+		return assoc;
 	}
 	
 }
