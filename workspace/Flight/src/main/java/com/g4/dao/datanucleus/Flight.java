@@ -10,21 +10,21 @@ import javax.jdo.annotations.PrimaryKey;
 public class Flight {
 
 	@PrimaryKey
-	String commercial_number;
-	String atc_number;
+	private String commercial_number;
+	private String atc_number;
 	
 	@PrimaryKey
 	@ForeignKey(table="Airport")
-	Airport departure_airport;
+	private Airport departure_airport;
 	
 	@ForeignKey(table="Airport")
-	Airport arrival_airport;
+	private Airport arrival_airport;
 	
 	@PrimaryKey
-	String departure_date;
-	String arrival_date;
-	String departure_hour;
-	String arrival_hour;
+	private String departure_date;
+	private String arrival_date;
+	private String departure_hour;
+	private String arrival_hour;
 	
 	protected Flight(){}
 	

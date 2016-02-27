@@ -8,14 +8,14 @@ import javax.jdo.annotations.Unique;
 public class User {
 
 	@PrimaryKey
-	int user_id;
-	String name;
-	String first_name;
+	private int user_id;
+	private String name;
+	private String first_name;
 	@Unique
-	String phone_number;
+	private String phone_number;
 	@Unique
-	String mail_address;
-	String user_type;	// "CCO" or "CREW"
+	private String mail_address;
+	private String user_type;	// "CCO" or "CREW"
 	
 	protected User(){
 		

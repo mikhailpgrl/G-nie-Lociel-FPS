@@ -8,12 +8,12 @@ import javax.jdo.annotations.Unique;
 public class Airport {
 
 	@PrimaryKey
-	int id_airport;
+	private int id_airport;
 	@Unique
-	String icao_code;
-	String name;
-	String city;
-	String country;
+	private String icao_code;
+	private String name;
+	private String city;
+	private String country;
 	
 	protected Airport(){
 		

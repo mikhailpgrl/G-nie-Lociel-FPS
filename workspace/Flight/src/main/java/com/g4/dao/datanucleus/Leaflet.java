@@ -7,8 +7,8 @@ import javax.jdo.annotations.PrimaryKey;
 public class Leaflet {
 
 	@PrimaryKey
-	int id_notice;
-	String notice_content;
+	private int id_notice;
+	private String notice_content;
 	
 	protected Leaflet(){
 		
