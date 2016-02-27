@@ -1,95 +1,158 @@
 package com.g4.beans;
 
+<<<<<<< HEAD
+import java.io.Serializable;
+import java.util.StringTokenizer;
+
+import javax.jdo.annotations.ForeignKey;
+import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.PrimaryKey;
+
+@PersistenceCapable(objectIdClass=Flight.FlightPK.class)
+=======
 
 import javax.jdo.annotations.PersistenceCapable;
 
 @PersistenceCapable
+>>>>>>> 7d53fb47e5629b5cfab22c2f2378cead8f923edd
 public class Flight {
 
+	@PrimaryKey
 	private String commercial_number;
 	private String atc_number;
+	
+	@PrimaryKey
+	@ForeignKey(table="Airport")
+	private Airport departure_airport;
+	
+	@ForeignKey(table="Airport")
+	private Airport arrival_airport;
+	
+	@PrimaryKey
 	private String departure_date;
 	private String arrival_date;
-	private String departure_airport;
-	private String arrival_airport;
-	private String notam;
-	private String ofp;
+	private String departure_hour;
+	private String arrival_hour;
 	
+	protected Flight(){}
 	
-	public Flight(String string) {
-		// TODO Auto-generated constructor stub
-		this.atc_number = string;
+	public Flight(String cm, String atc, 
+					Airport depart_airport, Airport arriv_airport, 
+					String depart_date, String arriv_date, 
+					String depart_hour, String arriv_hour){
+			
+		this.commercial_number = cm;
+		this.atc_number = atc;
+		this.departure_airport = depart_airport;
+		this.arrival_airport = arriv_airport;
+		this.departure_date = depart_date;
+		this.arrival_date = arriv_date;
+		this.departure_hour = depart_hour;
+		this.arrival_hour = arriv_hour;
 	}
 	
-	public Flight(){
+	public String getCommercialNumber(){
 		
-	}
-
-	public String getCommercial_number() {
 		return commercial_number;
 	}
-
-	public void setCommercial_number(String ommercial_number) {
-		this.commercial_number = ommercial_number;
-	}
-
-	public String getAtc_number() {
+	
+	public String getATC(){
+		
 		return atc_number;
 	}
-
-	public void setAtc_number(String atc_number) {
-		this.atc_number = atc_number;
+	
+	public String getDepartureAirport(){
+		
+		return departure_airport.getICAO();
 	}
 
-	public String getDeparture_date() {
-		return departure_date;
+	public String getDArrivalAirport(){
+		
+		return arrival_airport.getICAO();
+	}
+	
+	
+	public String getDepartureDate(){
+		
+			return departure_date;
 	}
 
-	public void setDeparture_date(String departure_date) {
-		this.departure_date = departure_date;
-	}
-
-	public String getArrival_date() {
+	public String getArrivalDate(){
+		
 		return arrival_date;
 	}
 
-	public void setArrival_date(String arrival_date) {
-		this.arrival_date = arrival_date;
-	}
-
-	public String getDeparture_airport() {
-		return departure_airport;
-	}
-
-	public void setDeparture_airport(String departure_airport) {
-		this.departure_airport = departure_airport;
-	}
-
-	public String getArrival_airport() {
-		return arrival_airport;
-	}
-
-	public void setArrival_airport(String arrival_airport) {
-		this.arrival_airport = arrival_airport;
-	}
-
-	public String getNotam() {
-		return notam;
-	}
-
-	public void setNotam(String notam) {
-		this.notam = notam;
-	}
-
-	public String getOfp() {
-		return ofp;
-	}
-
-	public void setOfp(String ofp) {
-		this.ofp = ofp;
+	public String getDepartureHour(){
+		
+		return departure_hour;
 	}
 	
+	public String getArrivalHour(){
+		
+		return arrival_hour;
+	}
 	
-	
-	
+	// Internal class for composite primary key
+	public static class FlightPK implements Serializable{
+		
+		private static final long serialVersionUID = 1L;
+		String commercial_number;
+		int departure_airport;
+		String departure_date;
+		
+		
+		public FlightPK(){
+			
+		}
+		
+	    public FlightPK(String value) {
+	    	
+	        StringTokenizer token = new StringTokenizer (value, "::");
+	        token.nextToken();
+	        this.commercial_number = token.nextToken();
+	        
+	        try{
+	        	
+	        	this.departure_airport = Integer.parseInt(token.nextToken());
+	        
+	        }catch(NumberFormatException ne){
+	        	
+	        	ne.printStackTrace();
+	        }
+	        
+	        this.departure_date = token.nextToken();	
+	    }
+
+	    public boolean equals(Object obj)
+	    {
+	        if (obj == this){
+	            return true;
+	        }
+	        
+	        if (!(obj instanceof FlightPK)){
+	            return false;
+	        }
+	        
+	        FlightPK c = (FlightPK)obj;
+
+	        return commercial_number.equals(c.commercial_number) 
+	        		&& departure_airport == c.departure_airport
+	        		&& departure_date.equals(c.departure_date);
+	    }
+
+	    public int hashCode ()
+	    {
+	        return this.commercial_number.hashCode() 
+	        		^ this.departure_airport 
+	        		^ this.departure_date.hashCode();
+	    }
+
+	    public String toString ()
+	    {
+	        // Give output expected by String constructor
+	        return this.getClass().getName() + "::"  + this.commercial_number 
+	        		+ "::" + this.departure_airport + "::" + this.departure_airport;
+	    }
+		
+	}
 }
