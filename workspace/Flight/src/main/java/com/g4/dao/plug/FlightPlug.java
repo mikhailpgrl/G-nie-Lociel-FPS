@@ -8,7 +8,6 @@ import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 import javax.jdo.Transaction;
 
-import com.g4.beans.Airport;
 import com.g4.beans.Flight;
 import com.g4.dao.FlightDao;
 
@@ -118,9 +117,51 @@ public class FlightPlug implements FlightDao{
 
 		return flights;
 	}
+	
+	
+	public String deleteFlight(String id) {
+		// TODO Auto-generated method stub
+		return "TODO";
+	}
 
-	public ArrayList<Flight> getFlightByATC(String atc)
-	{
+	public void modifyFlight(String id, Flight flight) {
+		// TODO Auto-generated method stub
+	}
+
+	
+	public ArrayList<Flight> getByCriteria(String criteria,String value) {
+
+		System.out.println(criteria + "  " + value);
+		
+
+		if(criteria == "ATC"){
+			return getByAtc(value);
+		}
+		if(criteria == "com_number"){
+			return getByComNumber(value);
+		}
+		if(criteria == "dep_airport"){
+			return getByDepAirport(value);
+		}
+		if(criteria == "arr_airport"){
+			return getByArrairport(value);
+		}
+		if(criteria == "dep_date"){
+			return getByDepDate(value);
+		}
+		if(criteria == "arr_date"){
+			return getByArrDate(value);
+		}else{
+			return null;
+		}       
+        
+    }
+	
+	
+	// A implementer à partir d'ici
+	
+	private ArrayList<Flight> getByAtc(String atc){
+		
 		ArrayList<Flight> flights = getAllFlight();
 		ArrayList<Flight> flights_with_atc = new ArrayList<>();
 		
@@ -135,51 +176,30 @@ public class FlightPlug implements FlightDao{
 		return flights_with_atc;
 	}
 	
-	
-	public ArrayList<Flight> getFlightByDepDate(String departure){
+	private ArrayList<Flight> getByComNumber(String commercial_number){
 		
 		ArrayList<Flight> flights = getAllFlight();
-		ArrayList<Flight> flights_with_date = new ArrayList<>();
+		ArrayList<Flight> flights_with_com = new ArrayList<>();
 		
 		for(int i = 0; i < flights.size(); i++){
 			
-			if(flights.get(i).getDeparture_date().equalsIgnoreCase(departure)){
+			if(flights.get(i).getCommercial_number().equalsIgnoreCase(commercial_number)){
 				
-				flights_with_date.add(flights.get(i));
+				flights_with_com.add(flights.get(i));
 			}
 		}
 		
-		return flights_with_date;
-		
+		return flights_with_com;
 	}
 	
-	
-	public ArrayList<Flight> getFlightByArrDate(String arrival){
-		
-		ArrayList<Flight> flights = getAllFlight();
-		ArrayList<Flight> flights_with_date = new ArrayList<>();
-		
-		for(int i = 0; i < flights.size(); i++){
-			
-			if(flights.get(i).getArrival_date().equalsIgnoreCase(arrival)){
-				
-				flights_with_date.add(flights.get(i));
-			}
-		}
-		
-		return flights_with_date;
-		
-	}
-	
-	
-	public ArrayList<Flight> getFlightByDepAirport(String icao){
+	private ArrayList<Flight> getByDepAirport(String dep_airport){
 		
 		ArrayList<Flight> flights = getAllFlight();
 		ArrayList<Flight> flights_with_dep = new ArrayList<>();
 		
 		for(int i = 0; i < flights.size(); i++){
 			
-			if(flights.get(i).getDeparture_date().equalsIgnoreCase(icao)){
+			if(flights.get(i).getDeparture_airport().equalsIgnoreCase(dep_airport)){
 				
 				flights_with_dep.add(flights.get(i));
 			}
@@ -188,14 +208,14 @@ public class FlightPlug implements FlightDao{
 		return flights_with_dep;
 	}
 	
-	public ArrayList<Flight> getFlightByArrAirport(String icao){
+	private ArrayList<Flight> getByArrairport(String arr_airport){
 		
 		ArrayList<Flight> flights = getAllFlight();
 		ArrayList<Flight> flights_with_arr = new ArrayList<>();
 		
 		for(int i = 0; i < flights.size(); i++){
 			
-			if(flights.get(i).getArrival_airport().equalsIgnoreCase(icao)){
+			if(flights.get(i).getArrival_airport().equalsIgnoreCase(arr_airport)){
 				
 				flights_with_arr.add(flights.get(i));
 			}
@@ -204,16 +224,37 @@ public class FlightPlug implements FlightDao{
 		return flights_with_arr;
 	}
 	
-	
-	
-	
-	public String deleteFlight(String id) {
-		// TODO Auto-generated method stub
-		return "TODO";
+	private ArrayList<Flight> getByDepDate(String dep_date){
+		
+		ArrayList<Flight> flights = getAllFlight();
+		ArrayList<Flight> flights_with_date = new ArrayList<>();
+		
+		for(int i = 0; i < flights.size(); i++){
+			
+			if(flights.get(i).getDeparture_date().equalsIgnoreCase(dep_date)){
+				
+				flights_with_date.add(flights.get(i));
+			}
+		}
+		
+		return flights_with_date;
 	}
-
-	public void modifyFlight(String id, Flight flight) {
-		// TODO Auto-generated method stub
+	
+	private ArrayList<Flight> getByArrDate(String arr_date){
+		
+		ArrayList<Flight> flights = getAllFlight();
+		ArrayList<Flight> flights_with_date = new ArrayList<>();
+		
+		for(int i = 0; i < flights.size(); i++){
+			
+			if(flights.get(i).getDeparture_date().equalsIgnoreCase(arr_date)){
+				
+				flights_with_date.add(flights.get(i));
+			}
+		}
+		
+		return flights_with_date;
 	}
-
+	
+	
 }
