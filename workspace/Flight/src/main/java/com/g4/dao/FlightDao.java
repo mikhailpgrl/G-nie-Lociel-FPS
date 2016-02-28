@@ -10,6 +10,8 @@ public interface FlightDao {
 
 	public ArrayList<Flight> getAllFlight();
 
+	public ArrayList<Flight> getFlightByATC(String atc);
+	
 	public String putFlight(Flight flight, String id);
 
 	public String deleteFlight(String id);

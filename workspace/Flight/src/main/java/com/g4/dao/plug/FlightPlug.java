@@ -118,6 +118,23 @@ public class FlightPlug implements FlightDao{
 		return flights;
 	}
 
+	public ArrayList<Flight> getFlightByATC(String atc)
+	{
+		ArrayList<Flight> flights = getAllFlight();
+		ArrayList<Flight> flights_with_atc = new ArrayList<>();
+		
+		for(int i = 0; i < flights.size(); i++){
+			
+			if(flights.get(i).getATC().equalsIgnoreCase(atc)){
+				
+				flights_with_atc.add(flights.get(i));
+			}
+		}
+		
+		return flights_with_atc;
+	}
+	
+	
 	public String deleteFlight(String id) {
 		// TODO Auto-generated method stub
 		return "TODO";
