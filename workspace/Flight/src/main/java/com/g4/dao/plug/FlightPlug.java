@@ -10,8 +10,11 @@ public class FlightPlug implements FlightDao{
 
 	public FlightPlug(){
 
-
-
+		putFlight(new Flight("TVF1234","T012C",
+				  new Airport("TLFPO","Aéroport d'Orly","Paris","France"),
+				  new Airport("EGLL","Aéroport de Londres-Heathrow","Londres",
+		  								"Royaume-Uni"),"2016-04-09",
+				  "2016-04-09","16:02:25","16:20:00"),1);
 	}
 
 
@@ -45,9 +48,7 @@ public class FlightPlug implements FlightDao{
 	}
 
 	public String putFlight(Flight flight, String id) {
-		
-		Object airportID1 = null;
-		Object airportID2 = null;
+
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("FlightGL");
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
@@ -60,12 +61,11 @@ public class FlightPlug implements FlightDao{
 		try{
 
 			tx.begin();
-			Airport a1 = (Airport)pm.getObjectById(airportID1);
-			Airport a2 = (Airport)pm.getObjectById(airportID2);
-
 			// Create a new flight
 			Flight fl = new Flight(flight.getCommercialNumber(),
-								   flight.getATC(),a1,a2,
+								   flight.getATC(),
+								   flight.getDepartureAirport(),
+								   flight.getDArrivalAirport(),
 								   flight.getDepartureDate(),
 								   flight.getArrivalDate(),
 								   flight.getDepartureHour(),

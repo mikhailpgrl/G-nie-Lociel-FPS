@@ -8,12 +8,20 @@ import javax.jdo.annotations.Unique;
 public class Airport {
 
 	private String icao_code;
-	private String airport_name;
+	private String name;
 	private String city;
 	private String country;
 
 	public Airport(){
 
+	}
+
+	public Airport(String icao, String name, String city, String country){
+
+		this.icao_code = icao;
+		this.name = name;
+		this.city = city;
+		this.country = country;
 	}
 
 	public String getIcao_code() {

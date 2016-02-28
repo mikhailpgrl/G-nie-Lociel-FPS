@@ -7,10 +7,11 @@ public class UserPlug implements UserDao{
 
 	public UserPlug(){
 
+		putUser("admin","admin","cco");
+		putUser("Reimu","toto","crew");
 	}
 
-	public String PutUser(String name, String first_name, String phone_number,
-				String mail_number, String user_type){
+	public String putUser(String login, String pwd, String user_type){
 
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("FlightGL");
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -19,7 +20,7 @@ public class UserPlug implements UserDao{
 		try{
 
 			tx.begin();
-			User usr = new User(name,first_name,phone_number,mail_number,user_type);
+			User usr = new User(login,pwd,ty);
 			pm.makePersistent(usr);
 			tx.commit();
 

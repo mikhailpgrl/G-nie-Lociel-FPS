@@ -12,6 +12,6 @@ public interface UserDao {
 
 	public void modifyUser(User user)
 
-	public String PutUser(String name, String first_name, String phone_number,
+	public String putUser(String name, String first_name, String phone_number,
 				String mail_number, String user_type);
 }

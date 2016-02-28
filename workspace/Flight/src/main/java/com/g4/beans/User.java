@@ -19,6 +19,12 @@ public class User {
 		this.id = id;
 	}
 
+	public User(String login, String pwd, String user_type){
+		this.login = login;
+		this.password = pwd;
+		this.type = user_type;
+	}
+
 	public void print (){
 		System.out.println(id);
 		System.out.println(login);

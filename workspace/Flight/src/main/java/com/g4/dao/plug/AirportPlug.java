@@ -13,13 +13,15 @@ import com.g4.beans.Airport;
 
 public class AirportPlug implements AirportDao{
 
-
 	public AirportPlug(){
 
+		putAirport(new Airport("TLFPO","Aéroport d'Orly","Paris","France"),1);
+		putAirport(new Airport("EGLL","Aéroport de Londres-Heathrow","Londres",
+								"Royaume-Uni"),2);
 	}
 
 
-	public String addAirport(String icao, String name, String city, String country){
+	private String addAirport(String icao, String name, String city, String country){
 
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("FlightGL");
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -72,11 +74,11 @@ public class AirportPlug implements AirportDao{
 		return airports.get(0);
 	}
 
-	// Je comprends rien à cette fonction
-	public String putAirport(Airport Airport, String id) {
-		// TODO Auto-generated method stub
-		//return "success";
-		return "failbro";
+	// A quoi set l'id içi ?
+	public String putAirport(Airport airport, String id) {
+
+		addAirport(airport.getIcao_code(),airport.getName(),airport.getCity,
+				   airport.getCountry);
 	}
 
 	@SuppressWarnings("unchecked")

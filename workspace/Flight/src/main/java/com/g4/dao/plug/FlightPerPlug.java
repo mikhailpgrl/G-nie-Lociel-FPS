@@ -15,6 +15,7 @@ import com.g4.beans.User;
 public class FlightPerPlug implements FlightPerDao {
 
 	public FighterPlug(){
+
 	}
 
 	public String add(Flight flight, User user){

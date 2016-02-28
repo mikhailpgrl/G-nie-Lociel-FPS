@@ -7,8 +7,9 @@ import com.g4.dao.LeafletDao;
 
 public class LeafletPlug implements LeafletDao{
 
-	public Leaflet(){
+	public LeafletPlug(){
 
+		putLeaflet(new Leaflet("notice information, test"));
 	}
 
 	@SuppressWarnings("unchecked")
@@ -79,7 +80,6 @@ public class LeafletPlug implements LeafletDao{
 		return leaflets[0];
 	}
 
-
 	private String add(String notice){
 
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("FlightGL");
@@ -104,6 +104,4 @@ public class LeafletPlug implements LeafletDao{
 
 		return "success";
 	}
-
-
 }

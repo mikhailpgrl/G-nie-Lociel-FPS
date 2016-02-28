@@ -4,8 +4,6 @@ public interface AirportDao {
 
 	public String putAirport(Airport Airport, String id);
 
-	public String addAirport(String icao, String name, String city, String country);
-
 	public ArrayList<Airport> getAllAirport();
 
 	public Airport getAirport(String id)

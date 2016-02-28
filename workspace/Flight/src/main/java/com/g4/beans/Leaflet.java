@@ -13,7 +13,7 @@ public class Leaflet {
 
 	}
 	public Leaflet(String s){
-		this.id = s;
+		this.content = s;
 	}
 
 	public String getId() {
