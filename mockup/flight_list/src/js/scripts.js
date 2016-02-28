@@ -5,6 +5,15 @@ $(document).ready(function() {
     var button_list = [];
     var index = 0;
     
+    //on trie le tableau 
+  $(document).ready(function() 
+    { 
+        $("#the_table").tablesorter(); 
+    } 
+); 
+    
+    
+    
     $("#datepicker").add
     
     $(function() {
@@ -63,7 +72,7 @@ $(document).ready(function() {
         index--;
     }
     
-
     
     
+   
 });
