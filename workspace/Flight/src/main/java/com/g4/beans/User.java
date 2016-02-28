@@ -1,29 +1,24 @@
 package com.g4.beans;
 
-
 import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.PrimaryKey;
 
 @PersistenceCapable
 public class User {
-	
+
+	@PrimaryKey
 	private String id;
 	private String login;
 	private String password;
 	private String type;
-<<<<<<< HEAD
 
-	
 	public User(){
 	}
 
-	
 	public User(String id){
 		this.id = id;
 	}
-	
-=======
->>>>>>> 7d53fb47e5629b5cfab22c2f2378cead8f923edd
-	
+
 	public void print (){
 		System.out.println(id);
 		System.out.println(login);
@@ -31,17 +26,6 @@ public class User {
 		System.out.println(type);
 	}
 
-<<<<<<< HEAD
-
-
-=======
-	public User(String id){
-		this.id = id;
-	}
-	public User(){
-	}
->>>>>>> 7d53fb47e5629b5cfab22c2f2378cead8f923edd
-	
 	public String getLogin() {
 		return login;
 	}
@@ -53,7 +37,7 @@ public class User {
 	}
 	public void setPassword(String password) {
 		this.password = password;
-	}	
+	}
 	public String getId() {
 		return id;
 	}
@@ -68,21 +52,19 @@ public class User {
 	public void setType(String type) {
 		this.type = type;
 	}
-<<<<<<< HEAD
 
-	// Intarnal class for primary key and asociation with flight
+	// Internal class for primary key and asociation with flight
 	public static class UserPK implements Serializable{
-		
+
 		private static final long serialVersionUID = 1L;
 		String id;
-		
-		
+
 		public UserPK(){
-			
+
 		}
-		
+
 	    public UserPK(String value) {
-	    	
+
 	        StringTokenizer token = new StringTokenizer (value, "::");
 	        token.nextToken();
 	        this.id = token.nextToken();
@@ -93,11 +75,11 @@ public class User {
 	        if (obj == this){
 	            return true;
 	        }
-	        
+
 	        if (!(obj instanceof UserPK)){
 	            return false;
 	        }
-	        
+
 	        UserPK c = (UserPK)obj;
 
 	        return this.user_id == c.user_id;
@@ -113,9 +95,7 @@ public class User {
 	        // Give output expected by String constructor
 	        return this.getClass().getName() + "::"  + this.id;
 	    }
-		
+
 	}
-=======
->>>>>>> 7d53fb47e5629b5cfab22c2f2378cead8f923edd
-	
+
 }

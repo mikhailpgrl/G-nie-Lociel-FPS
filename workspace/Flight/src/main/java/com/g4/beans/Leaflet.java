@@ -1,16 +1,16 @@
 package com.g4.beans;
 
-
 import javax.jdo.annotations.PersistenceCapable;
 
 @PersistenceCapable
 public class Leaflet {
 
+	@PrimaryKey
 	private String id;
 	private String content;
 
 	private Leaflet(){
-		
+
 	}
 	public Leaflet(String s){
 		this.id = s;
@@ -31,5 +31,5 @@ public class Leaflet {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	
+
 }

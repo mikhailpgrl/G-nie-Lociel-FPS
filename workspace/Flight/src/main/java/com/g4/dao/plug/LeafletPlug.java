@@ -1,36 +1,109 @@
 package com.g4.dao.plug;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.ArrayArrayList;
 
 import com.g4.beans.Leaflet;
 import com.g4.dao.LeafletDao;
 
 public class LeafletPlug implements LeafletDao{
 
+	public Leaflet(){
+
+	}
+
+	@SuppressWarnings("unchecked")
 	public ArrayList<Leaflet> getAllLeaflet() {
-		// TODO Auto-generated method stub
-		return new ArrayList<Leaflet> ((Arrays.asList(new Leaflet("1"),new Leaflet("2"))));
-		//return null;
+
+		ArrayList<Leaflet> leaflets = null;
+		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("FlightGL");
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+
+		try{
+
+			tx.begin();
+			Query q = pm.newQuery("SELECT FROM" + Leaflet.class.getName());
+			leaflets = (ArrayArrayList<Leaflet>) q.execute();
+			tx.commit();
+
+		}finally{
+
+			if(tx.isActive()){
+
+				tx.rollback();
+			}
+			pm.close();
+		}
+
+		return leaflets;
 	}
 
 	public String putLeaflet(Leaflet leaflet) {
-		// TODO Auto-generated method stub
-		return "success";
-		// return "failbro";
+		return add(leaflet.getContent());
 	}
 
 	public String deleteLeaflet(String id) {
 		// TODO Auto-generated method stub
-		return "success";
+		return "TODO";
 		// return "failbro";
 	}
 
 	public Leaflet getLeaflet(String id) {
-		// TODO Auto-generated method stub
-		
-		return new Leaflet("test leaflet");
-		//return null;
+
+		ArrayList<Leaflet> leaflets = null;
+		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("FlightGL");
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+
+		try{
+
+			tx.begin();
+			Query q = pm.newQuery("SELECT FROM" + Leaflet.class.getName()
+									+ "WHERE " + Leaflet.class.getName() +
+									".id=" + id);
+			leaflets = (ArrayArrayList<Leaflet>) q.execute();
+			tx.commit();
+
+		}finally{
+
+			if(tx.isActive()){
+
+				tx.rollback();
+			}
+			pm.close();
+		}
+
+		if(leaflets == null)
+			return null;
+
+		return leaflets[0];
 	}
+
+
+	private String add(String notice){
+
+		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("FlightGL");
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+
+		try{
+
+			tx.begin();
+			Leaflet usr = new Leaflet(notice);
+			pm.makePersistent(usr);
+			tx.commit();
+
+		}finally{
+
+			if(tx.isActive()){
+
+				tx.rollback();
+			}
+			pm.close();
+		}
+
+		return "success";
+	}
+
 
 }

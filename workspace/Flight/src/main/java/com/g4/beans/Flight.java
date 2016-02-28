@@ -1,6 +1,5 @@
 package com.g4.beans;
 
-<<<<<<< HEAD
 import java.io.Serializable;
 import java.util.StringTokenizer;
 
@@ -9,38 +8,32 @@ import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.PrimaryKey;
 
 @PersistenceCapable(objectIdClass=Flight.FlightPK.class)
-=======
-
-import javax.jdo.annotations.PersistenceCapable;
-
-@PersistenceCapable
->>>>>>> 7d53fb47e5629b5cfab22c2f2378cead8f923edd
 public class Flight {
 
 	@PrimaryKey
 	private String commercial_number;
 	private String atc_number;
-	
+
 	@PrimaryKey
 	@ForeignKey(table="Airport")
 	private Airport departure_airport;
-	
+
 	@ForeignKey(table="Airport")
 	private Airport arrival_airport;
-	
+
 	@PrimaryKey
 	private String departure_date;
 	private String arrival_date;
 	private String departure_hour;
 	private String arrival_hour;
-	
+
 	protected Flight(){}
-	
-	public Flight(String cm, String atc, 
-					Airport depart_airport, Airport arriv_airport, 
-					String depart_date, String arriv_date, 
+
+	public Flight(String cm, String atc,
+					Airport depart_airport, Airport arriv_airport,
+					String depart_date, String arriv_date,
 					String depart_hour, String arriv_hour){
-			
+
 		this.commercial_number = cm;
 		this.atc_number = atc;
 		this.departure_airport = depart_airport;
@@ -50,77 +43,77 @@ public class Flight {
 		this.departure_hour = depart_hour;
 		this.arrival_hour = arriv_hour;
 	}
-	
+
 	public String getCommercialNumber(){
-		
+
 		return commercial_number;
 	}
-	
+
 	public String getATC(){
-		
+
 		return atc_number;
 	}
-	
-	public String getDepartureAirport(){
-		
-		return departure_airport.getICAO();
+
+	public Airport getDepartureAirport(){
+
+		return departure_airport;
 	}
 
-	public String getDArrivalAirport(){
-		
-		return arrival_airport.getICAO();
+	public Airport getDArrivalAirport(){
+
+		return arrival_airport;
 	}
-	
-	
+
+
 	public String getDepartureDate(){
-		
+
 			return departure_date;
 	}
 
 	public String getArrivalDate(){
-		
+
 		return arrival_date;
 	}
 
 	public String getDepartureHour(){
-		
+
 		return departure_hour;
 	}
-	
+
 	public String getArrivalHour(){
-		
+
 		return arrival_hour;
 	}
-	
+
 	// Internal class for composite primary key
 	public static class FlightPK implements Serializable{
-		
+
 		private static final long serialVersionUID = 1L;
 		String commercial_number;
 		int departure_airport;
 		String departure_date;
-		
-		
+
+
 		public FlightPK(){
-			
+
 		}
-		
+
 	    public FlightPK(String value) {
-	    	
+
 	        StringTokenizer token = new StringTokenizer (value, "::");
 	        token.nextToken();
 	        this.commercial_number = token.nextToken();
-	        
+
 	        try{
-	        	
+
 	        	this.departure_airport = Integer.parseInt(token.nextToken());
-	        
+
 	        }catch(NumberFormatException ne){
-	        	
+
 	        	ne.printStackTrace();
 	        }
-	        
-	        this.departure_date = token.nextToken();	
+
+	        this.departure_date = token.nextToken();
 	    }
 
 	    public boolean equals(Object obj)
@@ -128,31 +121,31 @@ public class Flight {
 	        if (obj == this){
 	            return true;
 	        }
-	        
+
 	        if (!(obj instanceof FlightPK)){
 	            return false;
 	        }
-	        
+
 	        FlightPK c = (FlightPK)obj;
 
-	        return commercial_number.equals(c.commercial_number) 
+	        return commercial_number.equals(c.commercial_number)
 	        		&& departure_airport == c.departure_airport
 	        		&& departure_date.equals(c.departure_date);
 	    }
 
 	    public int hashCode ()
 	    {
-	        return this.commercial_number.hashCode() 
-	        		^ this.departure_airport 
+	        return this.commercial_number.hashCode()
+	        		^ this.departure_airport
 	        		^ this.departure_date.hashCode();
 	    }
 
 	    public String toString ()
 	    {
 	        // Give output expected by String constructor
-	        return this.getClass().getName() + "::"  + this.commercial_number 
+	        return this.getClass().getName() + "::"  + this.commercial_number
 	        		+ "::" + this.departure_airport + "::" + this.departure_airport;
 	    }
-		
+
 	}
 }
