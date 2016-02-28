@@ -14,6 +14,8 @@ public interface FlightDao {
 	
 	public ArrayList<Flight> getFlightByDepDate(String departure);
 	
+	public ArrayList<Flight> getFlightByArrDate(String arrival);
+	
 	public String putFlight(Flight flight, String id);
 
 	public String deleteFlight(String id);

@@ -153,6 +153,24 @@ public class FlightPlug implements FlightDao{
 	}
 	
 	
+	public ArrayList<Flight> getFlightByArrDate(String arrival){
+		
+		ArrayList<Flight> flights = getAllFlight();
+		ArrayList<Flight> flights_with_date = new ArrayList<>();
+		
+		for(int i = 0; i < flights.size(); i++){
+			
+			if(flights.get(i).getArrivalDate().equalsIgnoreCase(arrival)){
+				
+				flights_with_date.add(flights.get(i));
+			}
+		}
+		
+		return flights_with_date;
+		
+	}
+	
+	
 	public String deleteFlight(String id) {
 		// TODO Auto-generated method stub
 		return "TODO";
