@@ -68,14 +68,15 @@ public class FlightPlug implements FlightDao{
 
 			tx.begin();
 			// Create a new flight
-			Flight fl = new Flight(flight.getCommercialNumber(),
-								   flight.getATC(),
-								   flight.getDepartureAirport(),
-								   flight.getDArrivalAirport(),
-								   flight.getDepartureDate(),
-								   flight.getArrivalDate(),
-								   flight.getDepartureHour(),
-								   flight.getArrivalHour());
+			Flight fl = new Flight(flight.getCommercial_number(),
+								   flight.getAtc_number(),
+								   flight.getDeparture_airport(),
+								   flight.getArrival_airport(),
+								   flight.getDeparture_date(),
+								   flight.getArrival_date(),
+								   flight.getDep_time(),
+								   flight.getArr_time(),flight.getNotam(),
+								   flight.getOfp());
 			pm.makePersistent(fl);
 			tx.commit();
 
@@ -125,7 +126,7 @@ public class FlightPlug implements FlightDao{
 		
 		for(int i = 0; i < flights.size(); i++){
 			
-			if(flights.get(i).getATC().equalsIgnoreCase(atc)){
+			if(flights.get(i).getAtc_number().equalsIgnoreCase(atc)){
 				
 				flights_with_atc.add(flights.get(i));
 			}
@@ -142,7 +143,7 @@ public class FlightPlug implements FlightDao{
 		
 		for(int i = 0; i < flights.size(); i++){
 			
-			if(flights.get(i).getDepartureDate().equalsIgnoreCase(departure)){
+			if(flights.get(i).getDeparture_date().equalsIgnoreCase(departure)){
 				
 				flights_with_date.add(flights.get(i));
 			}
@@ -160,7 +161,7 @@ public class FlightPlug implements FlightDao{
 		
 		for(int i = 0; i < flights.size(); i++){
 			
-			if(flights.get(i).getArrivalDate().equalsIgnoreCase(arrival)){
+			if(flights.get(i).getArrival_date().equalsIgnoreCase(arrival)){
 				
 				flights_with_date.add(flights.get(i));
 			}
@@ -178,7 +179,7 @@ public class FlightPlug implements FlightDao{
 		
 		for(int i = 0; i < flights.size(); i++){
 			
-			if(flights.get(i).getDepartureAirport().getIcao_code().equalsIgnoreCase(icao)){
+			if(flights.get(i).getDeparture_date().equalsIgnoreCase(icao)){
 				
 				flights_with_dep.add(flights.get(i));
 			}
@@ -194,7 +195,7 @@ public class FlightPlug implements FlightDao{
 		
 		for(int i = 0; i < flights.size(); i++){
 			
-			if(flights.get(i).getDepartureAirport().getIcao_code().equalsIgnoreCase(icao)){
+			if(flights.get(i).getArrival_airport().equalsIgnoreCase(icao)){
 				
 				flights_with_arr.add(flights.get(i));
 			}
