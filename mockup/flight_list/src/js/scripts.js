@@ -41,6 +41,7 @@ $(document).ready(function() {
 			function_criteria_remove(element);
 		});
 		index++;
+        console.log("index_of_element "+ index);
 	//debug
         for(var i = 0 ;i<index;i++){
 			console.log("button_list["+i+"] " + button_list[i]);
@@ -48,8 +49,15 @@ $(document).ready(function() {
 	}
     
     function function_criteria_remove(x){
+        for(var i = 0 ;i<index;i++){
+			console.log("button_list["+i+"] " + button_list[i]);
+		}
         var index_of_element = x.getAttribute("index");
         console.log("index_of_element "+index_of_element);
+        if(button_list.length == 1 && index_of_element == 1){
+            index_of_element--;
+        }
+        console.log("index_of_element "+ index_of_element);
         criteria.removeChild(button_list[index_of_element]);
         button_list.splice(index_of_element,1);
         index--;
