@@ -17,7 +17,6 @@ public class LeafletPlug implements LeafletDao{
 
 	public LeafletPlug(){
 
-		putLeaflet(new Leaflet("notice information, test"));
 	}
 
 	@SuppressWarnings("unchecked")

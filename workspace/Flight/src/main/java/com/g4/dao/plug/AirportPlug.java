@@ -15,9 +15,9 @@ public class AirportPlug implements AirportDao{
 
 	public AirportPlug(){
 
-		putAirport(new Airport("TLFPO","Aéroport d'Orly","Paris","France"),"1");
+		/*putAirport(new Airport("TLFPO","Aéroport d'Orly","Paris","France"),"1");
 		putAirport(new Airport("EGLL","Aéroport de Londres-Heathrow","Londres",
-								"Royaume-Uni"),"2");
+								"Royaume-Uni"),"2");*/
 	}
 
 

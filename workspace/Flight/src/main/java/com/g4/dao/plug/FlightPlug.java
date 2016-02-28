@@ -16,11 +16,11 @@ public class FlightPlug implements FlightDao{
 
 	public FlightPlug(){
 
-		putFlight(new Flight("TVF1234","T012C",
+		/*putFlight(new Flight("TVF1234","T012C",
 				  new Airport("TLFPO","Aéroport d'Orly","Paris","France"),
 				  new Airport("EGLL","Aéroport de Londres-Heathrow","Londres",
 		  								"Royaume-Uni"),"2016-04-09",
-				  "2016-04-09","16:02:25","16:20:00"),"1");
+				  "2016-04-09","16:02:25","16:20:00"),"1");*/
 	}
 
 	@SuppressWarnings("unchecked")
@@ -169,6 +169,41 @@ public class FlightPlug implements FlightDao{
 		return flights_with_date;
 		
 	}
+	
+	
+	public ArrayList<Flight> getFlightByDepAirport(String icao){
+		
+		ArrayList<Flight> flights = getAllFlight();
+		ArrayList<Flight> flights_with_dep = new ArrayList<>();
+		
+		for(int i = 0; i < flights.size(); i++){
+			
+			if(flights.get(i).getDepartureAirport().getIcao_code().equalsIgnoreCase(icao)){
+				
+				flights_with_dep.add(flights.get(i));
+			}
+		}
+		
+		return flights_with_dep;
+	}
+	
+	public ArrayList<Flight> getFlightByArrAirport(String icao){
+		
+		ArrayList<Flight> flights = getAllFlight();
+		ArrayList<Flight> flights_with_arr = new ArrayList<>();
+		
+		for(int i = 0; i < flights.size(); i++){
+			
+			if(flights.get(i).getDepartureAirport().getIcao_code().equalsIgnoreCase(icao)){
+				
+				flights_with_arr.add(flights.get(i));
+			}
+		}
+		
+		return flights_with_arr;
+	}
+	
+	
 	
 	
 	public String deleteFlight(String id) {

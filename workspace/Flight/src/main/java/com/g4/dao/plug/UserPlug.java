@@ -15,8 +15,8 @@ public class UserPlug implements UserDao{
 
 	public UserPlug(){
 
-		putUser("admin","admin","cco");
-		putUser("Reimu","toto","crew");
+		/*putUser("admin","admin","cco");
+		putUser("Reimu","toto","crew");*/
 	}
 
 	public String putUser(String login, String pwd, String ty){
