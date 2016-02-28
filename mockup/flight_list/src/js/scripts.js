@@ -1,65 +1,61 @@
-$(document).ready(function(){
-	
-//some variable declaration 
-	var button_list = [];
-	var index = 0;
-	var number = document.getElementById("number");
-	var atc = document.getElementById("atc");
-	var departure_time = document.getElementById("departure_time");
-	var arrival_time = document.getElementById("arrival_time");
-	var departure_date = document.getElementById("departure_date");
-	var arrival_date = document.getElementById("arrival_date");
-	var departure_airport = document.getElementById("departure_airport");
-	var arrival_airport = document.getElementById("arrival_airport");
-	var e = document.getElementById("option_selection");
-	var criteria = document.getElementById("criteria");
-
-//debug function 
-
-	function sayHello(){
-		console.log('clicked');
-	}
-
-//the function that add the selected criteria
-	function function_criteria_add(x){
-		console.log('x.value '+ x.value);
+$(document).ready(function() {
+    console.log('ready');
+    //some variables declaration
+    var dateAsString;
+    var button_list = [];
+    var index = 0;
+    
+    $("#datepicker").add
+    
+    $(function() {
+        $("#datepicker").datepicker();
+     });
+    
+    //on obtient la date sous forme de string
+    
+    $("#datepicker").datepicker({
+        onSelect: function(dateText, inst) { 
+        dateAsString = dateText; //the first parameter of this function
+        var dateAsObject = $(this).datepicker( 'getDate' ); //the getDate method
+//        alert(dateAsString);
+        function_criteria_add(dateAsString);
+    }
+});
+    
+    
+    function function_criteria_add(x){
+		console.log('x.value '+ x);
 		var element = document.createElement("button");
-		element.setAttribute("id",'name_'+x.value);
+		element.setAttribute("id",'name_'+x);
 		element.setAttribute("class","btn btn-success");
-		element.setAttribute("value",x.value);
-		element.innerHTML = x.value;
+		element.setAttribute("value",x);
+		//element.setAttribute("onclick = ","function_criteria_remove("+"name_"+x.value+")");
+		element.innerHTML = x;
+        //il ne semble pas être nécéssaire de déclarer criteria 
 		criteria.appendChild(element);
 		button_list[index] = element;
 		element.setAttribute("index",index);
 		console.log("index "+index);
 		button_list[index].addEventListener("click",function(){
-			function_criteria_remove();
+            console.log(element )
+			function_criteria_remove(element);
 		});
 		index++;
-		for(var i = 0 ;i<index;i++){
+	//debug
+        for(var i = 0 ;i<index;i++){
 			console.log("button_list["+i+"] " + button_list[i]);
 		}
 	}
+    
+    function function_criteria_remove(x){
+        var index_of_element = x.getAttribute("index");
+        console.log("index_of_element "+index_of_element);
+        criteria.removeChild(button_list[index_of_element]);
+        button_list.splice(index_of_element,1);
+        index--;
+    }
+    
 
-//the function that remove the selected criteria
-	function function_criteria_remove(){
-		console.log("la");
-		console.log("this.close "+this.close());
-		console.log("this.index "+this.index );
-		document.getElementById(this).remove();
-		/*
-		console.log("x.name"+x.name);
-		criteria.removeChild(x);
-		button_list.splice(x,1);
-		*/
-		}
-
-
-	console.log("ready");
-	option_selection.addEventListener("change",function(){
-		function_criteria_add(e);
-	});
-	
-	
-
+    
+    
 });
