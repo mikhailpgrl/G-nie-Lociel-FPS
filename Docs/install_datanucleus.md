@@ -1,17 +1,22 @@
 
-= Installation DataNucleu = 
+= Installation Datanucleus =
 
 
 == Liens ==
 
  - Guide d'installation : http://www.datanucleus.org/products/datanucleus/jdo/guides/eclipse.html
- - TÈlÈchargement JDO : https://db.apache.org/jdo/releases/release-3.1.cgi
- - Installation des dÈpendences : http://central.maven.org/maven2/org/datanucleus/
+ - T√©l√©chargement JDO : https://db.apache.org/jdo/releases/release-3.1.cgi
+ - Installation des d√©pendences : http://central.maven.org/maven2/org/datanucleus/
  - Plugin eclipse : http://www.datanucleus.org/download.html
- 
+
 == Etapes ==
 
  * 1 : Installer le plugin eclipse
- * 2 : Suivre le guide d'installation 
- * 3 : Normalement aprËs Áa c'est fini.
- 
+ * 2 : Suivre le guide d'installation
+ * 3 : Normalement apr√®s √ßa c'est fini.
+
+
+== Remarque ==
+
+Si la version Luna minimum d'√©clipse (version sp√©ciale d√©veloppeurs Java)
+est install√©e, normalement il suffit juste d'importer le projet du prof et tout est ok.
