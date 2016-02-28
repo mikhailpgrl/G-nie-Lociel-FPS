@@ -1,6 +1,14 @@
 package com.g4.dao.plug;
 
-import java.util.ArrayArrayList;
+
+
+import java.util.ArrayList;
+
+import javax.jdo.JDOHelper;
+import javax.jdo.PersistenceManager;
+import javax.jdo.PersistenceManagerFactory;
+import javax.jdo.Query;
+import javax.jdo.Transaction;
 
 import com.g4.beans.Leaflet;
 import com.g4.dao.LeafletDao;
@@ -24,7 +32,7 @@ public class LeafletPlug implements LeafletDao{
 
 			tx.begin();
 			Query q = pm.newQuery("SELECT FROM" + Leaflet.class.getName());
-			leaflets = (ArrayArrayList<Leaflet>) q.execute();
+			leaflets = (ArrayList<Leaflet>) q.execute();
 			tx.commit();
 
 		}finally{
@@ -46,9 +54,9 @@ public class LeafletPlug implements LeafletDao{
 	public String deleteLeaflet(String id) {
 		// TODO Auto-generated method stub
 		return "TODO";
-		// return "failbro";
 	}
 
+	@SuppressWarnings("unchecked")
 	public Leaflet getLeaflet(String id) {
 
 		ArrayList<Leaflet> leaflets = null;
@@ -62,7 +70,7 @@ public class LeafletPlug implements LeafletDao{
 			Query q = pm.newQuery("SELECT FROM" + Leaflet.class.getName()
 									+ "WHERE " + Leaflet.class.getName() +
 									".id=" + id);
-			leaflets = (ArrayArrayList<Leaflet>) q.execute();
+			leaflets = (ArrayList<Leaflet>) q.execute();
 			tx.commit();
 
 		}finally{
@@ -77,7 +85,7 @@ public class LeafletPlug implements LeafletDao{
 		if(leaflets == null)
 			return null;
 
-		return leaflets[0];
+		return leaflets.get(0);
 	}
 
 	private String add(String notice){

@@ -2,11 +2,13 @@ package com.g4.beans;
 
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.PrimaryKey;
-import javax.jdo.annotations.Unique;
+
 
 @PersistenceCapable(table="Airport")
 public class Airport {
 
+	@PrimaryKey
+	private int id;
 	private String icao_code;
 	private String name;
 	private String city;
@@ -33,11 +35,11 @@ public class Airport {
 	}
 
 	public String getAirport_name() {
-		return airport_name;
+		return name;
 	}
 
 	public void setAirport_name(String airport_name) {
-		this.airport_name = airport_name;
+		this.name = airport_name;
 	}
 
 	public String getCity() {

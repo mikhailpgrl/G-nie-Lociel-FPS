@@ -1,5 +1,8 @@
 package com.g4.beans;
 
+import java.io.Serializable;
+import java.util.StringTokenizer;
+
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.PrimaryKey;
 
@@ -71,7 +74,7 @@ public class User {
 
 	    public UserPK(String value) {
 
-	        StringTokenizer token = new StringTokenizer (value, "::");
+	        StringTokenizer token = new StringTokenizer(value, "::");
 	        token.nextToken();
 	        this.id = token.nextToken();
 	    }
@@ -88,7 +91,7 @@ public class User {
 
 	        UserPK c = (UserPK)obj;
 
-	        return this.user_id == c.user_id;
+	        return this.id == c.id;
 	    }
 
 	    public int hashCode ()

@@ -15,9 +15,9 @@ public class AirportPlug implements AirportDao{
 
 	public AirportPlug(){
 
-		putAirport(new Airport("TLFPO","Aéroport d'Orly","Paris","France"),1);
+		putAirport(new Airport("TLFPO","Aéroport d'Orly","Paris","France"),"1");
 		putAirport(new Airport("EGLL","Aéroport de Londres-Heathrow","Londres",
-								"Royaume-Uni"),2);
+								"Royaume-Uni"),"2");
 	}
 
 
@@ -46,7 +46,7 @@ public class AirportPlug implements AirportDao{
 		return "success";
 	}
 
-
+	@SuppressWarnings("unchecked")
 	public Airport getAirport(String id) {
 
 		ArrayList<Airport> airports = null;
@@ -77,8 +77,8 @@ public class AirportPlug implements AirportDao{
 	// A quoi set l'id içi ?
 	public String putAirport(Airport airport, String id) {
 
-		addAirport(airport.getIcao_code(),airport.getName(),airport.getCity,
-				   airport.getCountry);
+		return addAirport(airport.getIcao_code(),airport.getAirport_name(),airport.getCity(),
+				   airport.getCountry());
 	}
 
 	@SuppressWarnings("unchecked")

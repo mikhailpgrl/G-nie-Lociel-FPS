@@ -1,8 +1,14 @@
 package com.g4.dao.plug;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
+import javax.jdo.JDOHelper;
+import javax.jdo.PersistenceManager;
+import javax.jdo.PersistenceManagerFactory;
+import javax.jdo.Query;
+import javax.jdo.Transaction;
+
+import com.g4.beans.Airport;
 import com.g4.beans.Flight;
 import com.g4.dao.FlightDao;
 
@@ -14,13 +20,13 @@ public class FlightPlug implements FlightDao{
 				  new Airport("TLFPO","Aéroport d'Orly","Paris","France"),
 				  new Airport("EGLL","Aéroport de Londres-Heathrow","Londres",
 		  								"Royaume-Uni"),"2016-04-09",
-				  "2016-04-09","16:02:25","16:20:00"),1);
+				  "2016-04-09","16:02:25","16:20:00"),"1");
 	}
 
-
+	@SuppressWarnings("unchecked")
 	public Flight getFlight(String id) {
 
-		List<Flight> flights = null;
+		ArrayList<Flight> flights = null;
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("FlightGL");
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
@@ -29,7 +35,7 @@ public class FlightPlug implements FlightDao{
 
 			tx.begin();
 			Query q = pm.newQuery("SELECT FROM" + Flight.class.getName());
-			flights = (List<Flight>) q.execute();
+			flights = (ArrayList<Flight>) q.execute();
 			tx.commit();
 
 		}finally{
@@ -44,7 +50,7 @@ public class FlightPlug implements FlightDao{
 		if(flights == null)
 			return null;
 
-		return flights[0];
+		return flights.get(0);
 	}
 
 	public String putFlight(Flight flight, String id) {
@@ -81,11 +87,14 @@ public class FlightPlug implements FlightDao{
 			}
 			pm.close();
 		}
+		
+		return "TODO";
 	}
 
+	@SuppressWarnings("unchecked")
 	public ArrayList<Flight> getAllFlight() {
 
-		List<Flight> flights = null;
+		ArrayList<Flight> flights = null;
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("FlightGL");
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
@@ -94,7 +103,7 @@ public class FlightPlug implements FlightDao{
 
 			tx.begin();
 			Query q = pm.newQuery("SELECT FROM" + Flight.class.getName());
-			flights = (List<Flight>) q.execute();
+			flights = (ArrayList<Flight>) q.execute();
 			tx.commit();
 
 		}finally{
@@ -112,7 +121,6 @@ public class FlightPlug implements FlightDao{
 	public String deleteFlight(String id) {
 		// TODO Auto-generated method stub
 		return "TODO";
-		//return "failbro";
 	}
 
 	public void modifyFlight(String id, Flight flight) {

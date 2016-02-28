@@ -1,5 +1,7 @@
 package com.g4.dao;
 
+import java.util.ArrayList;
+
 import com.g4.beans.User;
 
 public interface UserDao {
@@ -10,8 +12,7 @@ public interface UserDao {
 
 	String deleteUser(String id);
 
-	public void modifyUser(User user)
+	public void modifyUser(User user);
 
-	public String putUser(String name, String first_name, String phone_number,
-				String mail_number, String user_type);
+	public String putUser(String login, String pwd, String user_type);
 }

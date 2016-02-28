@@ -11,10 +11,11 @@ import javax.jdo.Transaction;
 import com.g4.beans.Flight;
 import com.g4.beans.FlightPer;
 import com.g4.beans.User;
+import com.g4.dao.FlightPerDao;
 
 public class FlightPerPlug implements FlightPerDao {
 
-	public FighterPlug(){
+	public FlightPerPlug(){
 
 	}
 
@@ -44,7 +45,7 @@ public class FlightPerPlug implements FlightPerDao {
 	}
 
 	@SuppressWarnings("unchecked")
-	public static ArrayList<FlightPer> selectAll(){
+	public ArrayList<FlightPer> selectAll(){
 
 		ArrayList<FlightPer> assoc = null;
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("FlightGL");

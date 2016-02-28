@@ -6,12 +6,12 @@ import com.g4.beans.Leaflet;
 
 public interface LeafletDao {
 
-	ArrayList<Leaflet> getAllLeaflet();
+	public ArrayList<Leaflet> getAllLeaflet();
 
-	String putLeaflet(Leaflet leaflet);
+	public String putLeaflet(Leaflet leaflet);
 
-	String deleteLeaflet(String id);
+	public String deleteLeaflet(String id);
 
-	Leaflet getLeaflet(String id);
+	public Leaflet getLeaflet(String id);
 
 }

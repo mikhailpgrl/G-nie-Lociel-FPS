@@ -1,6 +1,7 @@
 package com.g4.beans;
 
 import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.PrimaryKey;
 
 @PersistenceCapable
 public class Leaflet {
@@ -9,7 +10,7 @@ public class Leaflet {
 	private String id;
 	private String content;
 
-	private Leaflet(){
+	public Leaflet(){
 
 	}
 	public Leaflet(String s){

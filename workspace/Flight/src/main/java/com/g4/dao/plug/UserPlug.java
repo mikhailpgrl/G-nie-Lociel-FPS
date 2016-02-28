@@ -1,5 +1,13 @@
 package com.g4.dao.plug;
 
+import java.util.ArrayList;
+
+import javax.jdo.JDOHelper;
+import javax.jdo.PersistenceManager;
+import javax.jdo.PersistenceManagerFactory;
+import javax.jdo.Query;
+import javax.jdo.Transaction;
+
 import com.g4.beans.User;
 import com.g4.dao.UserDao;
 
@@ -11,7 +19,7 @@ public class UserPlug implements UserDao{
 		putUser("Reimu","toto","crew");
 	}
 
-	public String putUser(String login, String pwd, String user_type){
+	public String putUser(String login, String pwd, String ty){
 
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("FlightGL");
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -63,7 +71,7 @@ public class UserPlug implements UserDao{
 		return users;
 	}
 
-
+	@SuppressWarnings("unchecked")
 	public User getUser(String login, String token) {
 
 		ArrayList<User> users = null;
@@ -89,7 +97,7 @@ public class UserPlug implements UserDao{
 		}
 
 		if(users != null)
-			return users[0];
+			return users.get(0);
 
 		return null;
 	}
