@@ -220,14 +220,106 @@
 		<div class="col-md-1">
 		</div>
 		<div class="col-md-1">
-			<button type="button" class="btn btn-default">
-				Add
+			<button id="btn-new" type="button" class="btn btn-default">
+				New
 			</button> 
+			<button id="btn-getLeaflet" type="button" class="btn btn-default">
+				Get Leaflet
+			</button>
 		</div>
+			<div id="myDiv" class="form-group" style="display: none;">
+				 
+				<label for="inputLeaflet" class="col-sm-2 control-label">
+					New leaflet:
+				</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="ann_leaflet" placeholder="Content">
+
+				</div>
+				<button id="btn-add" type="button" class="btn btn-default">
+					Add
+				</button>
+			
+			</div>
+
+
 	</div>
 </div>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/scripts.js"></script>
-  </body>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/scripts.js"></script>
+<script type="text/javascript">
+$( document ).ready(function() {
+
+	// Getting information leaflet
+	var elt_com_num = document.getElementById("num");
+	var elt_content = document.getElementById("ann_leaflet");
+
+	var btn_new = document.getElementById("btn-new");
+	var btn_add = document.getElementById("btn-add");
+ 	var btn_getLeaflet = document.getElementById("btn-getLeaflet");	
+
+	btn_new.addEventListener("click", function(){
+		$('#myDiv').css('display','block');
+	});
+
+	btn_add.addEventListener("click", function(){
+		$('#myDiv').css('display','none');
+	});
+
+ 	// GET --------------------------------------------------------
+	btn_getLeaflet.addEventListener("click", function(){
+		getLeaflet();
+	});
+
+	function getLeaflet(){
+		 $.ajax({ 
+	        type: 'GET', 
+	        url: "ws/cco/leaflet/list-leaflet", 
+	        data: { get_param: 'value' }, 
+	        success: function (data) { 
+	            console.log(data);
+	        }
+	    });
+	}
+
+	// PUT --------------------------------------------------------
+	btn_addLeaflet.addEventListener("click", function(){
+ 		checkFields();
+	});
+
+ 	// Verifies wether we have all necessary info of the flight
+    function checkFields(){
+
+    	if(elt_content.value == ''){
+    		console.log("verifier les champs");
+    	}else{
+    		console.log("champ rempli");
+    		createLeaflet()
+    	}
+
+    }
+
+
+  function createLeaflet(){
+
+	var Leaflet = new Object();
+    	Leaflet.id = elt_com_num.value;
+    	Leaflet.content = elt_content.value;
+  		
+	$.ajax({
+	 	url: "ws/cco/leaflet/create-leaflet",
+	 	type: 'PUT',
+	 	contentType: "application/json",
+	 	dataType: "json",
+        	data: JSON.stringify(Leaflet)
+	}).done(function( msg ) {
+	  	console.log("ok");
+	  });
+}
+
+});	
+
+</script>
+</body>
 </html>

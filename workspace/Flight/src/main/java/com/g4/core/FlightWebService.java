@@ -38,22 +38,22 @@ public class FlightWebService {
 	}
 	
 	@PUT
-	@Produces(MediaType.APPLICATION_JSON)
-	@Path("/create-flight")
-	public Response createFlight(Flight flight,@QueryParam("userId") String id){
-		if (id != null && id.length() > 0){
-			String message = fd.putFlight(flight,id);
-			if (message.contains("succes")){
-				return Response.status(200).entity(message).build();
-			}
-			else{
-				return Response.status(400).entity(message).build();
-			}
-			
-		}else{
-			return Response.status(400).entity("USER_MANDATORY").build();
-		}	
-	}
+	 @Produces(MediaType.APPLICATION_JSON)
+	 @Path("/create-flight")
+	 public Response createFlight(@QueryParam("userId") String id,Flight flight){
+	  if (id != null && id.length() > 0){
+	   String message = fd.putFlight(flight,id);
+	   if (message.contains("succes")){
+	    return Response.status(200).entity(JSonMaker.getJson(message)).build();
+	   }
+	   else{
+	    return Response.status(400).entity(message).build();
+	   }
+	   
+	  }else{
+	   return Response.status(400).entity("USER_MANDATORY").build();
+	  } 
+	 }
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
@@ -71,12 +71,7 @@ public class FlightWebService {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/modify-flight")
 	public Response getFlight1(@QueryParam("id") String id){
-		/*Flight f;
-		f = fd.getFlight(id);
-		if (f == null)
-			return Response.status(400).entity("NO_FLIGHT").build();
-		else
-			return Response.status(200).entity(JSonMaker.getJson(f)).build();*/
+		
 		return getFlight(id);
 	}
 	

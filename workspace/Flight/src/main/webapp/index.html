@@ -145,6 +145,7 @@
 						Arrival time:
 					</label>
 					<div class="col-sm-8">
+<<<<<<< HEAD
 						<input type="text" class="form-control" id="inputArrivalTime" placeholder="Arrival time">
 					</div>
 				</div>
@@ -157,10 +158,36 @@
 						</button>
 					</div>
 				</div>
+=======
+						<input type="text" class="form-control" id="arr_time" placeholder="Arrival time">
+					</div>
+				</div>
+				
+				<div class="form-group"></div>
+>>>>>>> ig
 			</form> 
 		</div>
 		<div class="col-md-2">
 		</div>
+<<<<<<< HEAD
+=======
+
+		<div class="col-sm-offset-2 col-sm-10">		 
+		<button type="submit" class="btn btn-primary" id="buttonAddFlight">
+			Add flight
+		</button></div>
+
+
+
+		<div class="col-sm-offset-2 col-sm-10">		 
+		<button type="submit" class="btn btn-primary" id="buttonGetFlight">
+			GetFlight
+		</button></div>
+
+
+
+		
+>>>>>>> ig
 	</div>
 	<div class="row">
 		<div class="col-md-12">
@@ -220,7 +247,11 @@
 	    console.log( "ready!" );
 
 	    // Getting information of the flight
+<<<<<<< HEAD
 	    var elt_com_num = document.getElementById("ip_num");
+=======
+	    var elt_com_num = document.getElementById("num");
+>>>>>>> ig
 	    var elt_atc = document.getElementById("atc");
 	    var elt_dep_aprt_code = document.getElementById("dep_aprt_code");
 	    var elt_arr_aprt_code = document.getElementById("arr_arpt_code");
@@ -232,6 +263,7 @@
 
 	 	// Button "Add flight"   
 	 	var btn_addFlight = document.getElementById("buttonAddFlight");
+<<<<<<< HEAD
 
 
 	 	var myJsonFlight;
@@ -275,6 +307,96 @@
 				]
 			}
 	    }
+=======
+	 	var btn_getFlight = document.getElementById("buttonGetFlight");		
+	 	 
+	 	
+
+	 	// GET --------------------------------------------------------
+		btn_getFlight.addEventListener("click", function(){
+			getFlight();
+		});
+
+
+
+		function getFlight(){
+			 $.ajax({ 
+		        type: 'GET', 
+		        url: "ws/cco/flight/modify-flight" + "?id=1", 
+		        data: { get_param: 'value' }, 
+		        success: function (data) { 
+		            console.log(data);
+		        }
+		    });
+		}
+		// GET --------------------------------------------------------
+
+
+		// PUT --------------------------------------------------------
+		btn_addFlight.addEventListener("click", function(){
+	 		checkFields();
+		});
+
+
+
+	 	// Verifies wether we have all necessary info of the flight
+	    function checkFields(){
+
+	    	if(elt_com_num.value == '' || elt_atc.value == '' || elt_dep_aprt_code.value == ''|| elt_arr_aprt_code.value == '' || elt_dep_date.value == '' || elt_dep_time.value == '' || elt_arr_date.value == '' || elt_arr_time.value == ''){
+
+	    		console.log("verifier les champs");
+	    	}else{
+	    		console.log("je suis la");
+	    		createFlight()
+	    	}
+
+	    }
+
+
+	    function createFlight(){
+
+
+			var Flight = new Object();
+        	Flight.commercial_number = elt_com_num.value;
+        	Flight.atc_number = elt_atc.value;
+        	Flight.departure_airport = elt_dep_aprt_code.value;
+        	Flight.arrival_airport = elt_arr_aprt_code.value;
+        	Flight.departure_date = elt_dep_date.value;
+        	Flight.arrival_date = elt_arr_date.value;
+        	Flight.dep_time = elt_dep_time.value;
+        	Flight.arr_time = elt_arr_time.value;
+
+
+	    		
+			$.ajax({
+			 	url: "ws/cco/flight/create-flight"+ "?userId=1",
+			 	type: 'PUT',
+			 	contentType: "application/json",
+			 	dataType: "json",
+            	data: JSON.stringify(Flight)
+			}).done(function( msg ) {
+			  	console.log("ok");
+			  });
+		}
+		// GET --------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> ig
 
 
 

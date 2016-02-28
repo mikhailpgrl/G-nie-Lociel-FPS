@@ -10,20 +10,21 @@ public class FlightPlug  implements FlightDao{
 
 	public Flight getFlight(String id) {
 		// TODO Auto-generated method stub
-		return new Flight("tetetéeqf");
+		return new Flight("tetetï¿½eqf");
 		//return null;
 	}
 
 	public String putFlight(Flight flight, String id) {
 		// TODO Auto-generated method stub
-		//return "success";
-		return "failbro";
+		System.out.println(flight.getAtc_number());
+		return "success";
+		//return "failbro";
 	}
 
 
 	public ArrayList<Flight> getAllFlight() {
 		// TODO Auto-generated method stub
-		//return new ArrayList<Flight> ((Arrays.asList(new Flight("tetetéeqf"),new Flight("az"))));
+		//return new ArrayList<Flight> ((Arrays.asList(new Flight("tetetï¿½eqf"),new Flight("az"))));
 		return null;
 	}
 
