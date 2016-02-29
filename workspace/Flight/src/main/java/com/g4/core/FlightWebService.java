@@ -1,6 +1,7 @@
 package com.g4.core;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -14,8 +15,9 @@ import javax.ws.rs.core.Response;
 
 
 import com.g4.beans.Flight;
+import com.g4.dao.DAO;
 import com.g4.dao.FlightDao;
-import com.g4.dao.plug.FlightPlug;
+import com.g4.utils.Criteria;
 import com.g4.utils.JSonMaker;
 
 @Path("/{a:aircrew|cco}/flight")
@@ -25,35 +27,35 @@ public class FlightWebService {
 	
 	public FlightWebService() {
 		// TODO Auto-generated constructor stub
-		fd = new FlightPlug();
+		fd = DAO.getFlightDao();
 	}
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/list-flight")
 	public Response getAllFlight(){
-		ArrayList<Flight> f;
+		List<Flight> f;
 		f = fd.getAllFlight();
 		return Response.status(200).entity(JSonMaker.getJson(f)).build();
 	}
 	
 	@PUT
-	 @Produces(MediaType.APPLICATION_JSON)
-	 @Path("/create-flight")
-	 public Response createFlight(@QueryParam("userId") String id,Flight flight){
-	  if (id != null && id.length() > 0){
-	   String message = fd.putFlight(flight,id);
-	   if (message.contains("succes")){
-	    return Response.status(200).entity(JSonMaker.getJson(message)).build();
-	   }
-	   else{
-	    return Response.status(400).entity(message).build();
-	   }
-	   
-	  }else{
-	   return Response.status(400).entity("USER_MANDATORY").build();
-	  } 
-	 }
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/create-flight")
+	public Response createFlight(@QueryParam("userId") String id,Flight flight){
+		if (id != null && id.length() > 0){
+			String message = fd.putFlight(flight,id);
+			if (message.contains("succes")){
+				return Response.status(200).entity(JSonMaker.getJson(message)).build();
+			}
+			else{
+				return Response.status(400).entity(message).build();
+			}
+			
+		}else{
+			return Response.status(400).entity("USER_MANDATORY").build();
+		}	
+	}
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
@@ -71,7 +73,6 @@ public class FlightWebService {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/modify-flight")
 	public Response getFlight1(@QueryParam("id") String id){
-		
 		return getFlight(id);
 	}
 	
@@ -106,4 +107,36 @@ public class FlightWebService {
 			return Response.status(400).entity("USER_MANDATORY").build();
 		}	
 	}
+	
+
+	@GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/getFlightBy")
+    public Response sortFlight(@QueryParam("criteria") String criteria, @QueryParam("value") String value){
+        if (criteria != null && criteria.length() > 0 && value != null && value.length() > 0){
+            List<Flight> f;
+            Criteria c;
+            	if(criteria.equals("ATC"))
+            		c = Criteria.ATC;
+            	else if(criteria.equals("com_number"))
+            		c = Criteria.COM_NUMBER;
+            	else if(criteria == "dep_airport")
+            		c = Criteria.DEP_AIRPORT;
+            	else if(criteria == "arr_airport")
+            		c = Criteria.ARR_AIRPORT;
+            	else if(criteria == "dep_date")
+            		c = Criteria.DEP_DATE;
+            	else if(criteria == "arr_date")
+            		c = Criteria.ARR_DATE;
+            	else
+            		return Response.status(400).entity(JSonMaker.getJson("CRITERIA_ERROR")).build();
+            
+             f = fd.getByCriteria(c,value);
+            return Response.status(200).entity(JSonMaker.getJson(f)).build();
+             
+        }else{
+            return Response.status(400).entity("USER_MANDATORY").build();
+        }   
+    }
 }
+	

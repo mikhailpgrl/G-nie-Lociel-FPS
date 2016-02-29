@@ -15,46 +15,46 @@ import org.glassfish.jersey.servlet.ServletContainer;
 
 public class JettyMain {
 
- public static void main(String[] args) throws Exception {
-  // Initialize the server
-  Server server = new Server();
+	public static void main(String[] args) throws Exception {
+		// Initialize the server
+		Server server = new Server();
 
-  // Add a connector
-  ServerConnector connector = new ServerConnector(server);
-  connector.setHost("0.0.0.0");
-  connector.setPort(8000);
-  connector.setIdleTimeout(30000);
-  server.addConnector(connector);
+		// Add a connector
+		ServerConnector connector = new ServerConnector(server);
+		connector.setHost("0.0.0.0");
+		connector.setPort(8080);
+		connector.setIdleTimeout(30000);
+		server.addConnector(connector);
 
-  // Configure Jersey
-  ResourceConfig rc = new ResourceConfig();
-  rc.packages(true, "com.g4.core");
-  rc.register(JacksonFeature.class);
-  rc.register(LoggingFilter.class);
+		// Configure Jersey
+		ResourceConfig rc = new ResourceConfig();
+		rc.packages(true, "com.g4.core");
+		rc.register(JacksonFeature.class);
+		rc.register(LoggingFilter.class);
 
-  // Add a servlet handler for web services (/ws/*)
-  ServletHolder servletHolder = new ServletHolder(new ServletContainer(rc));
-  ServletContextHandler handlerWebServices = new ServletContextHandler(ServletContextHandler.SESSIONS);
-  handlerWebServices.setContextPath("/ws");
-  handlerWebServices.addServlet(servletHolder, "/*");
+		// Add a servlet handler for web services (/ws/*)
+		ServletHolder servletHolder = new ServletHolder(new ServletContainer(rc));
+		ServletContextHandler handlerWebServices = new ServletContextHandler(ServletContextHandler.SESSIONS);
+		handlerWebServices.setContextPath("/ws");
+		handlerWebServices.addServlet(servletHolder, "/*");
 
-  // Add a handler for resources (/*)
-  ResourceHandler handlerPortal = new ResourceHandler();
-  handlerPortal.setResourceBase("src/main/webapp");
-  handlerPortal.setDirectoriesListed(false);
-  handlerPortal.setWelcomeFiles(new String[] { "index.html" });
-  ContextHandler handlerPortalCtx = new ContextHandler();
-  handlerPortalCtx.setContextPath("/");
-  handlerPortalCtx.setHandler(handlerPortal);
+		// Add a handler for resources (/*)
+		ResourceHandler handlerPortal = new ResourceHandler();
+		handlerPortal.setResourceBase("src/main/webapp");
+		handlerPortal.setDirectoriesListed(false);
+		handlerPortal.setWelcomeFiles(new String[] { "index.html" });
+		ContextHandler handlerPortalCtx = new ContextHandler();
+		handlerPortalCtx.setContextPath("/");
+		handlerPortalCtx.setHandler(handlerPortal);
 
-  // Activate handlers
-  ContextHandlerCollection contexts = new ContextHandlerCollection();
-  contexts.setHandlers(new Handler[] { handlerWebServices, handlerPortalCtx });
-  server.setHandler(contexts);
+		// Activate handlers
+		ContextHandlerCollection contexts = new ContextHandlerCollection();
+		contexts.setHandlers(new Handler[] { handlerWebServices, handlerPortalCtx });
+		server.setHandler(contexts);
 
-  // Start server
-  server.start();
+		// Start server
+		server.start();
 
- }
+	}
 
 }

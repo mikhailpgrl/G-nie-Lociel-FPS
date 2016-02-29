@@ -1,24 +1,40 @@
 package com.g4.beans;
 
 
+import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.Persistent;
+import javax.jdo.annotations.PrimaryKey;
 
 @PersistenceCapable
 public class Flight {
 
+	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
+	private int id;
+	@PrimaryKey
 	private String commercial_number;
 	private String atc_number;
+	@PrimaryKey
 	private String departure_date;
-	private String dep_time;
-	private String arr_time;
 	private String arrival_date;
+	private String departure_time;
+	private String arrival_time;
+	@PrimaryKey
 	private String departure_airport;
 	private String arrival_airport;
 	private String notam;
 	private String ofp;
 	
-	
-	
+	public void print(){
+		System.out.println(commercial_number);
+		System.out.println(atc_number);
+		System.out.println(departure_date);
+		System.out.println(arrival_date);
+		System.out.println(departure_airport);
+		System.out.println(arrival_airport);
+		System.out.println(notam);
+		System.out.println(ofp);
+	}
 	
 	public Flight(String string) {
 		// TODO Auto-generated constructor stub
@@ -28,9 +44,6 @@ public class Flight {
 	public Flight(){
 		
 	}
-	
-	
-	
 
 	public String getCommercial_number() {
 		return commercial_number;
@@ -96,20 +109,28 @@ public class Flight {
 		this.ofp = ofp;
 	}
 
-	public String getArr_time() {
-		return arr_time;
+	public int getId() {
+		return id;
 	}
 
-	public void setArr_time(String arr_time) {
-		this.arr_time = arr_time;
+	public void setId(int id) {
+		this.id = id;
 	}
 
-	public String getDep_time() {
-		return dep_time;
+	public String getDeparture_time() {
+		return departure_time;
 	}
 
-	public void setDep_time(String dep_time) {
-		this.dep_time = dep_time;
+	public void setDeparture_time(String departure_time) {
+		this.departure_time = departure_time;
+	}
+
+	public String getArrival_time() {
+		return arrival_time;
+	}
+
+	public void setArrival_time(String arrival_time) {
+		this.arrival_time = arrival_time;
 	}
 	
 	
