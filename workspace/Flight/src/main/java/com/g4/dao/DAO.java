@@ -1,11 +1,12 @@
 package com.g4.dao;
 
+import com.g4.dao.datanucleus.FlightDaoImp;
 import com.g4.dao.plug.*;
 
 public class DAO {
 
 	public static FlightDao getFlightDao(){
-		return new FlightPlug();
+		return new FlightDaoImp();
 	}
 
 	public static LeafletDao getLeafletDao(){

@@ -17,7 +17,6 @@ public class FlightPlug  implements FlightDao{
 	public String putFlight(Flight flight, String id) {
 		// TODO Auto-generated method stub
 		//return "success";
-		flight.print();
 		return "success";
 		//return "failbro";
 	}
@@ -40,10 +39,9 @@ public class FlightPlug  implements FlightDao{
 		
 	}
 
-	public ArrayList<Flight> sortFlight(String sort,String value) {
+	public ArrayList<Flight> getByCriteria(String criteria, String value) {
 		// TODO Auto-generated method stub
 		return null;
-		
 	}
 
 }

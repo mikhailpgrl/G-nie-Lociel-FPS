@@ -2,10 +2,13 @@ package com.g4.beans;
 
 
 import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.PrimaryKey;
 
 @PersistenceCapable
 public class Flight {
 
+	@PrimaryKey
+	private String id;
 	private String commercial_number;
 	private String atc_number;
 	private String departure_date;
@@ -97,6 +100,14 @@ public class Flight {
 
 	public void setOfp(String ofp) {
 		this.ofp = ofp;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 	
 	

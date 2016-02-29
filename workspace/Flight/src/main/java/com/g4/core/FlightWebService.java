@@ -2,7 +2,6 @@ package com.g4.core;
 
 import java.util.ArrayList;
 
-import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -17,7 +16,6 @@ import javax.ws.rs.core.Response;
 import com.g4.beans.Flight;
 import com.g4.dao.DAO;
 import com.g4.dao.FlightDao;
-import com.g4.dao.plug.FlightPlug;
 import com.g4.utils.JSonMaker;
 
 @Path("/{a:aircrew|cco}/flight")
@@ -107,18 +105,20 @@ public class FlightWebService {
 			return Response.status(400).entity("USER_MANDATORY").build();
 		}	
 	}
+	
+
 	@GET
-	@Produces(MediaType.APPLICATION_JSON)
-	@Path("/sort")
-	public Response sortFlight(@QueryParam("sort") String sort, @QueryParam("value") String value){
-		if (sort != null && sort.length() > 0 && value != null && value.length() > 0){
-			ArrayList<Flight> f;
-			 f = fd.sortFlight(sort,value);
-			return Response.status(200).entity(JSonMaker.getJson(f)).build();
-			
-		}else{
-			return Response.status(400).entity("USER_MANDATORY").build();
-		}	
-	}
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/getFlightBy")
+    public Response sortFlight(@QueryParam("criteria") String criteria, @QueryParam("value") String value){
+        if (criteria != null && criteria.length() > 0 && value != null && value.length() > 0){
+            ArrayList<Flight> f;
+             f = fd.getByCriteria(criteria,value);
+            return Response.status(200).entity(JSonMaker.getJson(f)).build();
+             
+        }else{
+            return Response.status(400).entity("USER_MANDATORY").build();
+        }   
+    }
 }
 	

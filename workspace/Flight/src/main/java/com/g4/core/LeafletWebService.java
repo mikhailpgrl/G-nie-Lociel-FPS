@@ -12,6 +12,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import com.g4.beans.Leaflet;
+import com.g4.dao.DAO;
 import com.g4.dao.LeafletDao;
 import com.g4.dao.plug.LeafletPlug;
 import com.g4.utils.JSonMaker;
@@ -23,7 +24,7 @@ public class LeafletWebService {
 	
 	public LeafletWebService() {
 		// TODO Auto-generated constructor stub
-		ld = new LeafletPlug();
+		ld = DAO.getLeafletDao();
 	}
 	
 	@GET

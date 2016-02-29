@@ -17,6 +17,6 @@ public interface FlightDao {
 
 	void modifyFlight(String id, Flight flight);
 
-	ArrayList<Flight> sortFlight(String sort, String value);
+	ArrayList<Flight> getByCriteria(String criteria, String value);
 	
 }

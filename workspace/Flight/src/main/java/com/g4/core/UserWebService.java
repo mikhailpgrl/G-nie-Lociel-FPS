@@ -9,9 +9,9 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 
-import com.g4.beans.User;
+import com.g4.beans.Users;
+import com.g4.dao.DAO;
 import com.g4.dao.UserDao;
-import com.g4.dao.plug.UserPlug;
 import com.g4.utils.JSonMaker;
 
 @Path("/{a:aircrew|cco}/user")
@@ -21,15 +21,15 @@ public class UserWebService {
 	
 	public UserWebService() {
 		// TODO Auto-generated constructor stub
-		ud = new UserPlug();
+		ud = DAO.getUserDao();
 	}
 	
 	@POST
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/login")
-	public Response getUser(@QueryParam("userId") String id, @QueryParam("token") String token,User user){
+	public Response getUser(@QueryParam("userId") String id, @QueryParam("token") String token,Users user){
 		if (id != null && id.length() > 0 && id != null && id.length() > 0){
-			User u = null;
+			Users u = null;
 			//try {
 				u = ud.getUser(id,token);
 				user.print();
