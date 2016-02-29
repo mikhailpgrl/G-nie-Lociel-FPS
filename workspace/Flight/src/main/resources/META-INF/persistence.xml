@@ -22,6 +22,8 @@
             <property name="datanucleus.schema.validateAll" value="false"/>
             <property name="datanucleus.metadata.defaultInheritanceStrategy" value="TABLE_PER_CLASS"/> 
             <property name="datanucleus.maxFetchDepth" value="4"/>
+            <property name="javax.jdo.PersistenceManagerFactoryClass"
+            value="org.datanucleus.api.jdo.JDOPersistenceManagerFactory" />
         </properties>
         
     </persistence-unit>

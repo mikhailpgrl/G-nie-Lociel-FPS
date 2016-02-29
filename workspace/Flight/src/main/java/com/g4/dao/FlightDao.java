@@ -1,6 +1,7 @@
 package com.g4.dao;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.g4.beans.Flight;
 
@@ -9,7 +10,7 @@ public interface FlightDao {
 	
 	Flight getFlight(String id);
 
-	ArrayList<Flight> getAllFlight();
+	List<Flight> getAllFlight();
 	
 	String putFlight(Flight flight, String id);
 
@@ -17,6 +18,6 @@ public interface FlightDao {
 
 	void modifyFlight(String id, Flight flight);
 
-	ArrayList<Flight> getByCriteria(String criteria, String value);
+	List<Flight> getByCriteria(String criteria, String value);
 	
 }

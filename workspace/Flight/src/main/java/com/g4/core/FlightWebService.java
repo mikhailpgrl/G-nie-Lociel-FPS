@@ -1,6 +1,7 @@
 package com.g4.core;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -32,7 +33,7 @@ public class FlightWebService {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/list-flight")
 	public Response getAllFlight(){
-		ArrayList<Flight> f;
+		List<Flight> f;
 		f = fd.getAllFlight();
 		return Response.status(200).entity(JSonMaker.getJson(f)).build();
 	}
@@ -112,7 +113,7 @@ public class FlightWebService {
     @Path("/getFlightBy")
     public Response sortFlight(@QueryParam("criteria") String criteria, @QueryParam("value") String value){
         if (criteria != null && criteria.length() > 0 && value != null && value.length() > 0){
-            ArrayList<Flight> f;
+            List<Flight> f;
              f = fd.getByCriteria(criteria,value);
             return Response.status(200).entity(JSonMaker.getJson(f)).build();
              

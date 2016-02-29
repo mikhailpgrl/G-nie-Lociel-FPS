@@ -1,18 +1,23 @@
 package com.g4.beans;
 
 
+import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
 
 @PersistenceCapable
 public class Flight {
 
+	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
+	private int id;
 	@PrimaryKey
-	private String id;
 	private String commercial_number;
 	private String atc_number;
+	@PrimaryKey
 	private String departure_date;
 	private String arrival_date;
+	@PrimaryKey
 	private String departure_airport;
 	private String arrival_airport;
 	private String notam;
@@ -102,11 +107,11 @@ public class Flight {
 		this.ofp = ofp;
 	}
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	

@@ -26,8 +26,8 @@ public class FlightDaoImp implements FlightDao{
 			tx.begin();
 			Query q = pm.newQuery(Flight.class);
 			q.setFilter("id == flightId ");
-			q.declareParameters("String flightId");
-			flights =  (List<Flight>) q.execute(id);
+			q.declareParameters("int flightId");
+			flights =  (List<Flight>) q.execute(Integer.parseInt(id));
 			tx.commit();
 
 		}finally{
@@ -46,7 +46,7 @@ public class FlightDaoImp implements FlightDao{
 		
 	}
 
-	public ArrayList<Flight> getAllFlight() {
+	public List<Flight> getAllFlight() {
 		// TODO Auto-generated method stub
 		List<Flight> flights = null;
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("Flight");
@@ -72,7 +72,7 @@ public class FlightDaoImp implements FlightDao{
 		if(flights.isEmpty())
 			return null;
 		else
-			return (ArrayList<Flight>)flights;
+			return (List<Flight>)flights;
 		
 	}
 
@@ -110,7 +110,7 @@ public class FlightDaoImp implements FlightDao{
 		
 	}
 
-	public ArrayList<Flight> getByCriteria(String criteria, String value) {
+	public List<Flight> getByCriteria(String criteria, String value) {
 		// TODO Auto-generated method stub
 		return null;
 	}

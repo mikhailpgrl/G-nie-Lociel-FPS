@@ -2,6 +2,7 @@ package com.g4.dao.plug;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import com.g4.beans.Flight;
 import com.g4.dao.FlightDao;
@@ -22,7 +23,7 @@ public class FlightPlug  implements FlightDao{
 	}
 
 
-	public ArrayList<Flight> getAllFlight() {
+	public List<Flight> getAllFlight() {
 		// TODO Auto-generated method stub
 		return new ArrayList<Flight> ((Arrays.asList(new Flight("tetetéeqf"),new Flight("az"))));
 		//return null;
@@ -39,7 +40,7 @@ public class FlightPlug  implements FlightDao{
 		
 	}
 
-	public ArrayList<Flight> getByCriteria(String criteria, String value) {
+	public List<Flight> getByCriteria(String criteria, String value) {
 		// TODO Auto-generated method stub
 		return null;
 	}
