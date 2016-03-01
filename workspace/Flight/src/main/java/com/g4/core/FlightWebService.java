@@ -17,6 +17,7 @@ import javax.ws.rs.core.Response;
 import com.g4.beans.Flight;
 import com.g4.dao.DAO;
 import com.g4.dao.FlightDao;
+import com.g4.utils.Criteria;
 import com.g4.utils.JSonMaker;
 
 @Path("/{a:aircrew|cco}/flight")
@@ -114,7 +115,23 @@ public class FlightWebService {
     public Response sortFlight(@QueryParam("criteria") String criteria, @QueryParam("value") String value){
         if (criteria != null && criteria.length() > 0 && value != null && value.length() > 0){
             List<Flight> f;
-             f = fd.getByCriteria(criteria,value);
+            Criteria c;
+            	if(criteria.equals("ATC"))
+            		c = Criteria.ATC;
+            	else if(criteria.equals("com_number"))
+            		c = Criteria.COM_NUMBER;
+            	else if(criteria.equals("dep_airport"))
+            		c = Criteria.DEP_AIRPORT;
+            	else if(criteria.equals("arr_airport"))
+            		c = Criteria.ARR_AIRPORT;
+            	else if(criteria.equals("dep_date"))
+            		c = Criteria.DEP_DATE;
+            	else if(criteria.equals("arr_date"))
+            		c = Criteria.ARR_DATE;
+            	else
+            		return Response.status(400).entity(JSonMaker.getJson("CRITERIA_ERROR")).build();
+            
+             f = fd.getByCriteria(c,value);
             return Response.status(200).entity(JSonMaker.getJson(f)).build();
              
         }else{

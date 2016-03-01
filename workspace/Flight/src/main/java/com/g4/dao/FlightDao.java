@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.g4.beans.Flight;
+import com.g4.utils.Criteria;
 
 public interface FlightDao {
 
@@ -18,6 +19,6 @@ public interface FlightDao {
 
 	void modifyFlight(String id, Flight flight);
 
-	List<Flight> getByCriteria(String criteria, String value);
+	List<Flight> getByCriteria(Criteria criteria, String value);
 	
 }

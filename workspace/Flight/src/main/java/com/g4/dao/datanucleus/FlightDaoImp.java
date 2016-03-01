@@ -11,6 +11,7 @@ import javax.jdo.Transaction;
 
 import com.g4.beans.Flight;
 import com.g4.dao.FlightDao;
+import com.g4.utils.Criteria;
 
 public class FlightDaoImp implements FlightDao{
 
@@ -110,9 +111,35 @@ public class FlightDaoImp implements FlightDao{
 		
 	}
 
-	public List<Flight> getByCriteria(String criteria, String value) {
+	public List<Flight> getByCriteria(Criteria criteria, String value) {
 		// TODO Auto-generated method stub
-		return null;
+		List<Flight> flights = null;
+		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("Flight");
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+
+		try{
+			tx.begin();
+			Query q = pm.newQuery(Flight.class);
+			q.setFilter(criteria.getCriteria() + " == value ");
+			q.declareParameters("String value");
+			flights =  (List<Flight>) q.execute(value);
+			tx.commit();
+
+		}finally{
+
+			if(tx.isActive()){
+
+				tx.rollback();
+			}
+			pm.close();
+		}
+
+		if(flights.isEmpty())
+			return null;
+		else
+			return flights;
+		
 	}
 
 }

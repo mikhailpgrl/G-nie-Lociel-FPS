@@ -5,11 +5,13 @@ import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
+import javax.jdo.annotations.Unique;
 
 @PersistenceCapable
 public class Flight {
 
 	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
+	@Unique
 	private int id;
 	@PrimaryKey
 	private String commercial_number;
@@ -17,6 +19,8 @@ public class Flight {
 	@PrimaryKey
 	private String departure_date;
 	private String arrival_date;
+	private String departure_time;
+	private String arrival_time;
 	@PrimaryKey
 	private String departure_airport;
 	private String arrival_airport;
@@ -113,6 +117,22 @@ public class Flight {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public String getDeparture_time() {
+		return departure_time;
+	}
+
+	public void setDeparture_time(String departure_time) {
+		this.departure_time = departure_time;
+	}
+
+	public String getArrival_time() {
+		return arrival_time;
+	}
+
+	public void setArrival_time(String arrival_time) {
+		this.arrival_time = arrival_time;
 	}
 	
 	

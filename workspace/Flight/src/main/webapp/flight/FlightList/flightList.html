@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>CCO : Flight List</title>
+
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  
+    <!-- First try loading jQuery from Google's CDN -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <!-- Fall back to a local copy of jQuery if the CDN fails -->
+    <script>
+    window.jQuery || document.write('<script src="http://mysite.com/jquery.min.js"><\/script>')
+    </script>      
+    
+    <!--tablesorter plugin -->
+    <script src="js/jquery.tablesorter.js"></script>
+    <!-- optionnal
+    <script src="js/jquery.tablesorter.widget.js"></script>
+      -->
+ 
+    <!-- pager plugin -->  
+    <link rel="stylesheet" href="css/jquery.tablesorter.pager.css"/>
+    <script src="js/jquery.tablesorter.pager.js"></script>
+      
+  </head>
+  <body>
+
+    <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="row">
+				<div class="col-md-12">
+					<nav class="navbar navbar-default" role="navigation">
+						<div class="navbar-header">
+							 
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+								 <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+						</div>
+						
+						<div class="collapse navbar-collapse text-center" id="@">
+							<ul class="nav navbar-nav">
+								<li>
+								<a class="navbar-brand" href="#">Flight List</a>
+								</li>
+								<li>
+								<a class="navbar-brand" href="#">Flight Creation Page</a>
+								</li>
+								<li>
+								<a class="navbar-brand" href="#">Commercial Leaflet</a>
+								</li>
+								</ul>
+								<ul class="nav navbar-nav navbar-right">
+									<li>
+										<a class="navbar-brand" href="#">Logout</a>
+									</li>
+								</ul>
+							</ul>
+						</div>
+						
+					</nav>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+				<div class="col-md-8">
+					<h3 class="text-center">
+						Flight List
+					</h3>
+				</div>
+				<div class="col-md-2">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-1">
+				</div>
+				<div class="col-md-1">
+					<a href="../CreateFlight/createFlight.html" class="btn btn-default" role="button">
+						Create Flight
+					</a>
+				</div>
+				<div class="col-md-1">
+					<button type="button" class="btn btn-default">
+						Import Excel
+					</button>
+				</div>
+				<div class="col-md-2">
+					<a href="#" class="btn btn-default" role="button">
+						Leaflets
+					</a>
+				</div>
+				
+				<div class="col-md-3">
+				    <text>Date : <input type="text" id="datepicker" name="selectedDate" /></text>
+				 </div>
+				<div class="col-md-2">
+				</div>
+				<div class="col-md-1">
+				</div>
+				<div class="col-md-2">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-1">
+				</div>
+				<div class="col-md-11">
+					<h2></h2>
+					<div id ="criteria">
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-8">
+						<input type="text" class="form-control" id="criteria-word" placeholder="Search...">
+						<select id="select-creterias">
+						  <option value="ATC">ATC</option>
+						  <option value="com_number">Commercial number</option>
+						  <option value="dep_airport">Departure airport</option>
+						  <option value="arr_airport">Arrival airport</option>
+						  <option value="dep_date">Departure date</option>
+						  <option value="arr_date">Arrival date</option>
+						</select>
+						<button type="submit" class="btn btn-primary" id="btnSearch">
+							Search
+						</button>
+			</div>
+			<div class="row">
+				<div class="col-md-1">
+				</div>
+				<div class="col-md-10">
+                    <div class="the_table">
+                    </div>
+					<table id="the_table" class="tablesorter">
+						<thead>
+							<tr>
+								<th>
+									<Button class='btn-info'>Number</Button>
+								</th>
+								<th>
+									<Button class='btn-info'>ATC</Button>
+								</th>
+								<th>
+                                    <Button class='btn-info'>Departure time</Button>
+								</th>
+								<th>
+                                    <Button class='btn-info'>Arrival Time</Button>
+								</th>
+								<th>
+                                    <Button class='btn-info'>Departure Date</Button>
+								</th>
+								<th>
+                                    <Button class='btn-info'>Arrival Date</Button>
+								</th>
+								<th>
+                                    <Button class='btn-info'>Departure Airport</Button>
+								</th>
+								<th>
+                                    <Button class='btn-info'>Arrival Airport</Button>
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							
+						</tbody>
+					</table>
+				</div>
+				<div class="col-md-1">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+      
+   <script src="js/jquery.min.js"></script>
+    
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scriptNew.js"></script>
+    <script src="js/jquery.tablesorter.js"></script>
+
+      <!-- // <script src="http://code.jquery.com/jquery-1.10.2.js"></script> -->
+<!-- we need to declare only one jquery version -->
+
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+      
+</body>
+
+
+</html>

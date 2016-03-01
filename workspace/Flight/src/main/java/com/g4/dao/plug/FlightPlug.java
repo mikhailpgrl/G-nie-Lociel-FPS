@@ -6,6 +6,7 @@ import java.util.List;
 
 import com.g4.beans.Flight;
 import com.g4.dao.FlightDao;
+import com.g4.utils.Criteria;
 
 public class FlightPlug  implements FlightDao{
 
@@ -40,7 +41,7 @@ public class FlightPlug  implements FlightDao{
 		
 	}
 
-	public List<Flight> getByCriteria(String criteria, String value) {
+	public List<Flight> getByCriteria(Criteria criteria, String value) {
 		// TODO Auto-generated method stub
 		return null;
 	}
