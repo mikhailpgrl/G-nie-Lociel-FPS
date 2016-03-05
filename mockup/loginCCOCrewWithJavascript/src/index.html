@@ -40,6 +40,7 @@
 		<li></li>
 	</ul>
 </div>
+<<<<<<< HEAD
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <script src="js/index.js"></script>
   <script type="text/javascript">
@@ -84,5 +85,39 @@
 	    }  
   	});
   </script>       
+=======
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="js/index.js"></script>
+    <script type="text/javascript">
+    	$( document ).ready(function() {
+  	    console.log( "ready!" );
+
+  	    var text_id = document.getElementById("userName");
+  	    var password = document.getElementById("pass");
+
+       	var buttonLogin = document.getElementById("login-button");
+
+       	 
+
+  	    function getFlightInfo(){
+  	    	if(text_id.value == '') un = false;
+  	    	if(password.value == '') p = false;
+  	    	if(un == false || p == false){
+  	    		alert("Un des champ n'est corecctement rempli.");
+  	    	}
+  	    	else{
+  	    		return true
+  	    	}
+  	    }
+
+  	   
+    	});
+    </script>
+
+
+    
+    
+    
+>>>>>>> 0c7e532e922db842aea87198a23bc965ac2e2be6
   </body>
 </html>

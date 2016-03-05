@@ -4,7 +4,7 @@ package com.g4.beans;
 import javax.jdo.annotations.PersistenceCapable;
 
 @PersistenceCapable
-public class User {
+public class Users {
 	
 	private String id;
 	private String login;
@@ -18,10 +18,10 @@ public class User {
 		System.out.println(type);
 	}
 
-	public User(String id){
+	public Users(String id){
 		this.id = id;
 	}
-	public User(){
+	public Users(){
 	}
 	
 	public String getLogin() {

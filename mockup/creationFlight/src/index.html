@@ -78,70 +78,70 @@
 			<form class="form-horizontal" role="form">
 				<div class="form-group">
 					 
-					<label for="inputNumber" class="col-sm-2 control-label">
+					<label for="num" class="col-sm-2 control-label">
 						Commercial number:
 					</label>
 					<div class="col-sm-8">
-						<input type="text" class="form-control" id="inputNumber" placeholder="number">
+						<input type="text" class="form-control" id="num" placeholder="number">
 					</div>
 				</div>
 				<div class="form-group">
 					 
-					<label for="inputAtc" class="col-sm-2 control-label">
+					<label for="atc" class="col-sm-2 control-label">
 						ATC:
 					</label>
 					<div class="col-sm-8">
-						<input type="text" class="form-control" id="inputAtc" placeholder="ATC">
+						<input type="text" class="form-control" id="atc" placeholder="ATC">
 					</div>
 				</div>
 				<div class="form-group">
 					 
-					<label for="inputDepartureAirportCode" class="col-sm-2 control-label">
+					<label for="dep_aprt_code" class="col-sm-2 control-label">
 						Departure airport code:
 					</label>
 					<div class="col-sm-8">
-						<input type="text" class="form-control" id="inputDepartureAirportCode" placeholder="Departure airport code">
+						<input type="text" class="form-control" id="dep_aprt_code" placeholder="Departure airport code">
 					</div>
 				</div>
 				<div class="form-group">
 					 
-					<label for="inputArrivalAirportCode" class="col-sm-2 control-label">
+					<label for="arr_arpt_code" class="col-sm-2 control-label">
 						Arrival airport code:
 					</label>
 					<div class="col-sm-8">
-						<input type="text" class="form-control" id="inputArrivalAirportCode" placeholder="Departure airport code">
+						<input type="text" class="form-control" id="arr_arpt_code" placeholder="Departure airport code">
 					</div>
 				</div>
 				<div class="form-group">
 					 
-					<label for="inputDepartureDate" class="col-sm-2 control-label">
+					<label for="dep_date" class="col-sm-2 control-label">
 						Departure date:
 					</label>
 					<div class="col-sm-8">
-						<input type="text" class="form-control" id="inputDepartureDate" placeholder="Departure date">
+						<input type="text" class="form-control" id="dep_date" placeholder="Departure date">
 					</div>
 				</div>
 				<div class="form-group">
 					 
-					<label for="inputDepartureTime" class="col-sm-2 control-label">
+					<label for="dep_time" class="col-sm-2 control-label">
 						Departure time:
 					</label>
 					<div class="col-sm-8">
-						<input type="text" class="form-control" id="inputDepartureTime" placeholder="Departure time">
+						<input type="text" class="form-control" id="dep_time" placeholder="Departure time">
 					</div>
 				</div>
 				<div class="form-group">
 					 
-					<label for="inputArrivalDate" class="col-sm-2 control-label">
+					<label for="arr_date" class="col-sm-2 control-label">
 						Arrival date:
 					</label>
 					<div class="col-sm-8">
-						<input type="text" class="form-control" id="inputArrivalDate" placeholder="Arrival date">
+						<input type="text" class="form-control" id="arr_date" placeholder="Arrival date">
 					</div>
 				</div>
 				<div class="form-group">
 					 
-					<label for="inputArrivalTime" class="col-sm-2 control-label">
+					<label for="arr_time" class="col-sm-2 control-label">
 						Arrival time:
 					</label>
 					<div class="col-sm-8">
@@ -220,50 +220,93 @@
 	    console.log( "ready!" );
 
 	    // Getting information of the flight
-	    var text_commercialNumber = document.getElementById("inputNumber");
-	    var text_atc = document.getElementById("inputAtc");
-	    var text_departureAirportCode = document.getElementById("inputDepartureAirportCode");
-	    var text_arrivalAirportCode = document.getElementById("inputArrivalAirportCode");
-	    var text_departureDate = document.getElementById("inputDepartureDate");
-	    var text_departureTime = document.getElementById("inputDepartureTime");
-	 	var text_arrivalDate = document.getElementById("inputArrivalDate");
-	 	var text_arrivalTime = document.getElementById("inputArrivalTime");
+	    var elt_com_num = document.getElementById("ip_num");
+	    var elt_atc = document.getElementById("atc");
+	    var elt_dep_aprt_code = document.getElementById("dep_aprt_code");
+	    var elt_arr_aprt_code = document.getElementById("arr_arpt_code");
+	    var elt_dep_date = document.getElementById("dep_date");
+	    var elt_dep_time = document.getElementById("dep_time");
+	 	var elt_arr_date = document.getElementById("arr_date");
+	 	var elt_arr_time = document.getElementById("arr_time");
 
 
-	 	// Button "Add flight"
+	 	// Button "Add flight"   
 	 	var btn_addFlight = document.getElementById("buttonAddFlight");
 
+
+	 	var myJsonFlight;
 	 	 
 
-
-
-
-
-
-	 	
-	 	 
-
-
-
+	 	btn_add_flight.addEventListener("click", function(){
+	 		checkFields();
+		});
 
 
 
 	 	// Verifies wether we have all necessary info of the flight
-	    function checkFlightInfo(){
-	    	if(commercialNumber.value == '') cn = false;
-	    	if(atc.value == '') at = false;
-	    	if(departureAirportCode.value == '') dac = false;
-	    	if(arrivalAirportCode.value == '') aac = false;
-	    	if(departureDate.value == '') dd = false;
-	    	if(departureTime.value == '') dt = false;
-	    	if(arrivalDate.value == '') ad = false;
-	    	if(arrivalTime.value == '') at = false;
-	    	if(cn == false || at == false || dac == false || aac == false || dd == false || dt == false || ad == false || at == false ){
-	    		alert("Un des champ n'est corecctement rempli!");
+	    function checkFields(){
+	    	if(elt_com_num.value == '' || elt_atc.value == '' || elt_dep_aprt_code.value == ''|| elt_arr_aprt_code.value == '' || elt_dep_date.value == '' || elt_dep_time.value == '' || elt_arr_date.value == '' || elt_arr_time.value == ''){
+	    		console.log("verifier les champs");
+	    	}else{
+	    		console.log("je suis la");
+	    		createJsonObject();
+	    		createFlight()
+
 	    	}
 	    }
 
+
+	    function createFlight(success,data){
+	    	
+			$.ajax({
+			  method: "PUT",
+			  url: "ws/cco/flight/create-flight",
+			  data: data
+			})
+			  .done(function( msg ) {
+			  	console.log("ok");
+			  });
+		}
+
+
+	    function createJsonObject(){
+	    	myJsonFlight = 
+				{"commercial_number" : elt_com_num,
+				"atc_number": elt_atc,
+				"departure_airport": elt_dep_aprt_code ,
+				"arrival_airport": elt_arr_aprt_code,
+				"departure_date": elt_dep_date, 
+				"arrival_date": elt_arr_date,
+				"dep_time": elt_dep_time,
+				"arr_time": elt_arr_time}
+			}
+	    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		});
+
+
 	</script>
   </body>
 </html>

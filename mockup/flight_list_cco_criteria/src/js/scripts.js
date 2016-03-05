@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 $(document).ready(function(){
 	console.log("ready");
 	//alert("hello world");
@@ -11,3 +12,6 @@ $(document).ready(function(){
 
 });
 
+=======
+// Empty JS for your own code to be here
+>>>>>>> server

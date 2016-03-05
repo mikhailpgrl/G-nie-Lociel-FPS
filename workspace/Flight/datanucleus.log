@@ -1,0 +1,425 @@
+06:05:45,436 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+06:05:45,563 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+06:05:45,805 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+06:05:45,834 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+06:05:45,867 (main) INFO  [DataNucleus.Enhancer] - Writing class file "D:\Dropbox\Bitbucket\Projet Genie Logiciel\workspace\Flight\target\classes\com\g4\beans\Flight.class" with enhanced definition
+06:05:45,868 (main) INFO  [DataNucleus.Enhancer] - Writing primary-key class file "D:\Dropbox\Bitbucket\Projet Genie Logiciel\workspace\Flight\target\classes\com\g4\beans\Flight_PK.class"
+06:05:45,870 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+06:05:45,871 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+06:05:45,871 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+06:05:46,487 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+06:05:46,609 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+06:05:46,854 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+06:05:46,884 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+06:05:46,886 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+06:05:46,888 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+06:05:46,890 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+06:05:46,890 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+06:08:47,134 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+06:08:47,271 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+06:08:47,516 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+06:08:47,552 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+06:08:47,555 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+06:08:47,556 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+06:08:47,559 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+06:08:47,559 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+06:08:48,050 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+06:08:48,174 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+06:08:48,397 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+06:08:48,425 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+06:08:48,427 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+06:08:48,428 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+06:08:48,430 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+06:08:48,430 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+06:08:53,000 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+06:08:53,131 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+06:18:03,669 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+06:18:03,789 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+06:18:04,005 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+06:18:04,033 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+06:18:04,035 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+06:18:04,036 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+06:18:04,038 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+06:18:04,038 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+15:05:43,661 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+15:05:43,713 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+15:05:43,796 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+15:05:43,829 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+15:05:44,329 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+15:05:44,336 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+15:05:44,383 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+15:05:44,383 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+15:05:44,385 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+15:05:44,385 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+15:05:44,387 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+15:05:44,387 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+15:05:44,388 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+15:05:44,388 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+15:05:44,388 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+15:05:44,388 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+15:10:54,016 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+15:10:54,126 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+15:10:54,324 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+15:10:54,351 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+15:10:54,352 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+15:10:54,376 (main) INFO  [DataNucleus.Enhancer] - Writing class file "D:\Dropbox\Bitbucket\Projet Genie Logiciel\workspace\Flight\target\classes\com\g4\beans\Leaflet.class" with enhanced definition
+15:10:54,378 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+15:10:54,378 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+15:20:43,335 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+15:20:43,444 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+15:20:43,642 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+15:20:43,668 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+15:20:43,670 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+15:20:43,671 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+15:20:43,673 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+15:20:43,673 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+15:33:37,652 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+15:33:37,764 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+15:33:37,964 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+15:33:37,991 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+15:33:37,993 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+15:33:37,995 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+15:33:37,996 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+15:33:37,996 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+15:51:19,500 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+15:51:19,618 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+15:51:19,820 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+15:51:19,847 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+15:51:19,848 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+15:51:19,850 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+15:51:19,851 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+15:51:19,852 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+20:39:47,532 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+20:39:47,806 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+20:39:48,020 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+20:39:48,048 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+20:39:48,049 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+20:39:48,051 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+20:39:48,052 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+20:39:48,052 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+20:40:37,561 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+20:40:37,673 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+20:40:37,891 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+20:40:37,918 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+20:40:37,920 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+20:40:37,922 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+20:40:37,923 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+20:40:37,923 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+20:42:20,419 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+20:42:20,550 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+20:42:20,813 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+20:42:20,842 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+20:42:20,845 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+20:42:20,847 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+20:42:20,849 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+20:42:20,849 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+20:53:44,214 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+20:53:44,385 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+20:53:44,653 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+20:53:44,683 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+20:53:44,685 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+20:53:44,687 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+20:53:44,689 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+20:53:44,689 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+21:05:05,513 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+21:05:05,667 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+21:05:06,074 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+21:05:06,426 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+21:05:06,428 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+21:05:06,430 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+21:05:06,431 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+21:05:06,431 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+21:12:30,646 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+21:12:30,792 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+21:12:31,038 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+21:12:31,070 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+21:12:31,073 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+21:12:31,074 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+21:12:31,076 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+21:12:31,076 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+21:12:41,631 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+21:12:41,775 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+21:12:42,012 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+21:12:42,044 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+21:12:42,047 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+21:12:42,048 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+21:12:42,050 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+21:12:42,050 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+21:16:59,207 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+21:16:59,357 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+21:16:59,660 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+21:16:59,707 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+21:16:59,891 (main) INFO  [DataNucleus.Enhancer] - Writing class file "D:\Dropbox\Bitbucket\Projet Genie Logiciel\workspace\Flight\target\classes\com\g4\beans\Flight.class" with enhanced definition
+21:16:59,891 (main) INFO  [DataNucleus.Enhancer] - Writing primary-key class file "D:\Dropbox\Bitbucket\Projet Genie Logiciel\workspace\Flight\target\classes\com\g4\beans\Flight_PK.class"
+21:16:59,893 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+21:16:59,896 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+21:16:59,896 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+21:17:00,251 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+21:17:00,387 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+21:17:00,653 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+21:17:00,685 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+21:17:00,687 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+21:17:00,689 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+21:17:00,690 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+21:17:00,691 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+21:17:20,749 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+21:17:20,884 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+21:17:21,176 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+21:17:21,212 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+21:17:21,252 (main) INFO  [DataNucleus.Enhancer] - Writing class file "D:\Dropbox\Bitbucket\Projet Genie Logiciel\workspace\Flight\target\classes\com\g4\beans\Flight.class" with enhanced definition
+21:17:21,253 (main) INFO  [DataNucleus.Enhancer] - Writing primary-key class file "D:\Dropbox\Bitbucket\Projet Genie Logiciel\workspace\Flight\target\classes\com\g4\beans\Flight_PK.class"
+21:17:21,256 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+21:17:21,258 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+21:17:21,259 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+21:17:21,807 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+21:17:21,934 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+21:17:22,189 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+21:17:22,374 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+21:17:22,376 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+21:17:22,378 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+21:17:22,380 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+21:17:22,380 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+21:17:25,699 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+21:17:25,840 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+21:17:26,113 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+21:17:26,157 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+21:17:26,195 (main) INFO  [DataNucleus.Enhancer] - Writing class file "D:\Dropbox\Bitbucket\Projet Genie Logiciel\workspace\Flight\target\classes\com\g4\beans\Flight.class" with enhanced definition
+21:17:26,195 (main) INFO  [DataNucleus.Enhancer] - Writing primary-key class file "D:\Dropbox\Bitbucket\Projet Genie Logiciel\workspace\Flight\target\classes\com\g4\beans\Flight_PK.class"
+21:17:26,197 (main) ERROR [DataNucleus.Enhancer] - An error was encountered whilst enhancing class "com.g4.beans.Flight" : D:\Dropbox\Bitbucket\Projet Genie Logiciel\workspace\Flight\target\classes\com\g4\beans\Flight_PK.class (Le processus ne peut pas accéder au fichier car ce fichier est utilisé par un autre processus)
+java.io.FileNotFoundException: D:\Dropbox\Bitbucket\Projet Genie Logiciel\workspace\Flight\target\classes\com\g4\beans\Flight_PK.class (Le processus ne peut pas accéder au fichier car ce fichier est utilisé par un autre processus)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at org.datanucleus.enhancer.ClassEnhancerImpl.save(ClassEnhancerImpl.java:411)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.enhanceClass(DataNucleusEnhancer.java:939)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.enhance(DataNucleusEnhancer.java:515)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.main(DataNucleusEnhancer.java:1139)
+21:17:26,200 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+21:17:26,202 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+21:17:26,202 (main) ERROR [DataNucleus.Enhancer] - DataNucleus Enhancer completed with an error. Please review the enhancer log (at DEBUG level) for full details. Some classes may have been enhanced but some caused errors
+Failure during enhancement of classes - see the log for details
+org.datanucleus.exceptions.NucleusException: Failure during enhancement of classes - see the log for details
+	at org.datanucleus.enhancer.DataNucleusEnhancer.enhance(DataNucleusEnhancer.java:526)
+	at org.datanucleus.enhancer.DataNucleusEnhancer.main(DataNucleusEnhancer.java:1139)
+21:17:26,849 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+21:17:26,989 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+21:17:27,346 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+21:17:27,378 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+21:17:27,381 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+21:17:27,383 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+21:17:27,384 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+21:17:27,385 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+21:18:44,628 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+21:18:44,769 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+21:18:45,071 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+21:18:45,101 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+21:18:45,104 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+21:18:45,106 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+21:18:45,108 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+21:18:45,109 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+21:18:45,406 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+21:18:45,541 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+21:18:45,827 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+21:18:45,866 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+21:18:45,868 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+21:18:45,870 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+21:18:45,872 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+21:18:45,873 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+21:18:47,767 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+21:18:47,930 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+21:19:55,541 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+21:19:55,681 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+21:19:56,025 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+21:19:56,074 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+21:19:56,077 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+21:19:56,080 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+21:19:56,082 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+21:19:56,083 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+21:19:56,585 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+21:19:56,721 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+21:19:56,991 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+21:19:57,019 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+21:19:57,021 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+21:19:57,023 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+21:19:57,024 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+21:19:57,024 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+21:19:58,177 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+21:19:58,308 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+21:20:06,515 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+21:20:06,657 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+21:20:06,946 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+21:20:06,995 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+21:20:06,997 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+21:20:06,999 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+21:20:07,002 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+21:20:07,002 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+21:20:08,607 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+21:20:08,752 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+21:20:38,975 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+21:20:39,119 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+21:20:39,392 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+21:20:39,439 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+21:20:39,442 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+21:20:39,444 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+21:20:39,445 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+21:20:39,445 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+21:20:41,098 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+21:20:41,249 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+21:20:46,143 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+21:20:46,274 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+21:25:10,042 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+21:25:10,170 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+21:25:10,592 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+21:25:10,623 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+21:25:10,625 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+21:25:10,627 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+21:25:10,629 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+21:25:10,629 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+21:25:11,113 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+21:25:11,248 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+21:25:11,541 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+21:25:11,574 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+21:25:11,576 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+21:25:11,578 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+21:25:11,580 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+21:25:11,580 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+21:25:13,969 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+21:25:14,103 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+21:27:23,118 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+21:27:23,274 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+21:27:23,559 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+21:27:23,600 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+21:27:23,602 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+21:27:23,605 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+21:27:23,606 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+21:27:23,607 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+21:27:24,140 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+21:27:24,289 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+21:27:24,629 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+21:27:24,665 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+21:27:24,667 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+21:27:24,669 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+21:27:24,671 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+21:27:24,671 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+21:27:51,666 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+21:27:51,817 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+21:27:52,092 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+21:27:52,127 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+21:27:52,129 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+21:27:52,130 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+21:27:52,132 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+21:27:52,132 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+21:29:46,187 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+21:29:46,318 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+21:29:46,943 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+21:29:47,068 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+21:29:47,319 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+21:29:47,352 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+21:29:47,354 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+21:29:47,356 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+21:29:47,357 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+21:29:47,357 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+21:29:47,999 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+21:29:48,123 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+21:29:48,380 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+21:29:48,413 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+21:29:48,415 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+21:29:48,416 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+21:29:48,418 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+21:29:48,418 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+21:31:58,046 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+21:31:58,197 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+21:31:58,556 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+21:31:58,602 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+21:31:58,606 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+21:31:58,609 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+21:31:58,612 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+21:31:58,612 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+21:31:59,049 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+21:31:59,205 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+21:31:59,531 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+21:31:59,568 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+21:31:59,570 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+21:31:59,571 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+21:31:59,573 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+21:31:59,574 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+21:32:08,021 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+21:32:08,173 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+21:32:08,478 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+21:32:08,520 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+21:32:08,522 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+21:32:08,527 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+21:32:08,529 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+21:32:08,529 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+21:32:09,094 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+21:32:09,257 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+21:32:09,567 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+21:32:09,605 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+21:32:09,607 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+21:32:09,609 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+21:32:09,611 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+21:32:09,611 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+21:39:11,485 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+21:39:11,619 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+21:39:11,886 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+21:39:11,928 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+21:39:11,930 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+21:39:11,932 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+21:39:11,934 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+21:39:11,934 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+21:39:12,491 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+21:39:12,627 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+21:39:12,882 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+21:39:12,915 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+21:39:12,917 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+21:39:12,919 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+21:39:12,920 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+21:39:12,920 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+21:50:30,521 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+21:50:30,669 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+21:50:30,772 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+21:50:30,922 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+21:50:30,944 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+21:50:30,975 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+21:50:30,977 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+21:50:30,979 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+21:50:30,980 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+21:50:30,980 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+21:50:31,183 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+21:50:31,213 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+21:50:31,215 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+21:50:31,217 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+21:50:31,219 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+21:50:31,219 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+22:05:01,245 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+22:05:01,384 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+22:05:01,671 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+22:05:01,707 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+22:05:01,709 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+22:05:01,711 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+22:05:01,712 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+22:05:01,712 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+22:05:03,102 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+22:05:03,244 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+22:05:03,518 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+22:05:03,558 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+22:05:03,560 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+22:05:03,562 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+22:05:03,563 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+22:05:03,563 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+22:14:19,212 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+22:14:19,351 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+22:14:19,652 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+22:14:19,685 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+22:14:19,688 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+22:14:19,690 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+22:14:19,692 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+22:14:19,692 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+22:14:19,981 (main) WARN  [DataNucleus.General] - Extension Point "org.datanucleus.implementation_creator" not registered, but plugin "org.datanucleus.enhancer" defined in file:/D:/.m2/repository/org/datanucleus/datanucleus-enhancer/3.1.1/datanucleus-enhancer-3.1.1.jar refers to it.
+22:14:20,122 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+22:14:20,377 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+22:14:20,430 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+22:14:20,432 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+22:14:20,433 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+22:14:20,435 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+22:14:20,435 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.

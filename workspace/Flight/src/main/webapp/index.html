@@ -5,356 +5,316 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Creation flight</title>
+    <title>CCO : Flight List</title>
 
     <meta name="description" content="Source code generated using layoutit.com">
     <meta name="author" content="LayoutIt!">
-
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  
+    <!-- First try loading jQuery from Google's CDN -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
+    <!-- Fall back to a local copy of jQuery if the CDN fails -->
+    <script>
+    window.jQuery || document.write('<script src="http://mysite.com/jquery.min.js"><\/script>')
+    </script>      
+    
+    <!--tablesorter plugin -->
+    <script src="js/jquery.tablesorter.js"></script>
+    <!-- optionnal
+    <script src="js/jquery.tablesorter.widget.js"></script>
+      -->
+ 
+    <!-- pager plugin -->  
+    <link rel="stylesheet" href="css/jquery.tablesorter.pager.css"/>
+    <script src="js/jquery.tablesorter.pager.js"></script>
+      
   </head>
   <body>
 
     <div class="container-fluid">
 	<div class="row">
-		<div class="col-md-3">
-			<img alt="Bootstrap Image Preview" src="./images/logo-P7.png">
-		</div>
-		<div class="col-md-9">
-			<nav class="navbar navbar-default" role="navigation">
-				<div class="navbar-header">
-					 
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-						 <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-					</button> <a class="navbar-brand" href="#">Home</a>
-				</div>
-				
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav">
-						<li class="active">
-							<a href="#">List Flights</a>
-						</li>
-					</ul>
-					<ul class="nav navbar-nav navbar-right">
-						<li>
-							<a class="navbar-brand" href="#">Logout</a>
-						</li>
-					</ul>
-				</div>
-				
-			</nav>
-		</div>
-	</div>
-	<div class="row">
 		<div class="col-md-12">
 			<div class="row">
-				<div class="col-md-3">
-				</div>
-				<div class="col-md-6">
-					<h3 class="text-center">
-						Creation flight
-					</h3>
-				</div>
-				<div class="col-md-3">
-					<!-- <div class="form-horizontal">
-						<div class="form-group">
-							<img alt="Image Profil" src="./images/profil.jpg" class="img-circle">
+				<div class="col-md-12">
+					<nav class="navbar navbar-default" role="navigation">
+						<div class="navbar-header">
+							 
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+								 <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
 						</div>
-						<div class="form-horizontal"> 
-							<button type="button" class="btn btn-warning" id="logout">
-							Logout
-							</button>
+						
+						<div class="collapse navbar-collapse text-center" id="@">
+							<ul class="nav navbar-nav">
+								<li>
+								<a class="navbar-brand" href="#">Flight List</a>
+								</li>
+								<li>
+								<a class="navbar-brand" href="#">Flight Creation Page</a>
+								</li>
+								<li>
+								<a class="navbar-brand" href="#">Commercial Leaflet</a>
+								</li>
+								</ul>
+								<ul class="nav navbar-nav navbar-right">
+									<li>
+										<a class="navbar-brand" href="#">Logout</a>
+									</li>
+								</ul>
+							</ul>
 						</div>
-					</div> -->
+						
+					</nav>
 				</div>
 			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-2">
-		</div>
-		<div class="col-md-8">
-			<form class="form-horizontal" role="form">
-				<div class="form-group">
-					 
-					<label for="num" class="col-sm-2 control-label">
-						Commercial number:
-					</label>
-					<div class="col-sm-8">
-						<input type="text" class="form-control" id="num" placeholder="number">
-					</div>
-				</div>
-				<div class="form-group">
-					 
-					<label for="atc" class="col-sm-2 control-label">
-						ATC:
-					</label>
-					<div class="col-sm-8">
-						<input type="text" class="form-control" id="atc" placeholder="ATC">
-					</div>
-				</div>
-				<div class="form-group">
-					 
-					<label for="dep_aprt_code" class="col-sm-2 control-label">
-						Departure airport code:
-					</label>
-					<div class="col-sm-8">
-						<input type="text" class="form-control" id="dep_aprt_code" placeholder="Departure airport code">
-					</div>
-				</div>
-				<div class="form-group">
-					 
-					<label for="arr_arpt_code" class="col-sm-2 control-label">
-						Arrival airport code:
-					</label>
-					<div class="col-sm-8">
-						<input type="text" class="form-control" id="arr_arpt_code" placeholder="Departure airport code">
-					</div>
-				</div>
-				<div class="form-group">
-					 
-					<label for="dep_date" class="col-sm-2 control-label">
-						Departure date:
-					</label>
-					<div class="col-sm-8">
-						<input type="text" class="form-control" id="dep_date" placeholder="Departure date">
-					</div>
-				</div>
-				<div class="form-group">
-					 
-					<label for="dep_time" class="col-sm-2 control-label">
-						Departure time:
-					</label>
-					<div class="col-sm-8">
-						<input type="text" class="form-control" id="dep_time" placeholder="Departure time">
-					</div>
-				</div>
-				<div class="form-group">
-					 
-					<label for="arr_date" class="col-sm-2 control-label">
-						Arrival date:
-					</label>
-					<div class="col-sm-8">
-						<input type="text" class="form-control" id="arr_date" placeholder="Arrival date">
-					</div>
-				</div>
-				<div class="form-group">
-					 
-					<label for="arr_time" class="col-sm-2 control-label">
-						Arrival time:
-					</label>
-					<div class="col-sm-8">
-						<input type="text" class="form-control" id="arr_time" placeholder="Arrival time">
-					</div>
-				</div>
-				
-				<div class="form-group"></div>
-			</form> 
-		</div>
-		<div class="col-md-2">
-		</div>
-
-		<div class="col-sm-offset-2 col-sm-10">		 
-		<button type="submit" class="btn btn-primary" id="buttonAddFlight">
-			Add flight
-		</button></div>
-
-
-
-		<div class="col-sm-offset-2 col-sm-10">		 
-		<button type="submit" class="btn btn-primary" id="buttonGetFlight">
-			GetFlight
-		</button></div>
-
-
-
-		
-	</div>
-	<div class="row">
-		<div class="col-md-12">
 			<div class="row">
-				<div class="col-md-3">
-					 
-					<!-- <address>
-						 <strong>Twitter, Inc.</strong><br> 795 Folsom Ave, Suite 600<br> San Francisco, CA 94107<br> <abbr title="Phone">P:</abbr> (123) 456-7890
-					</address> -->
+				<div class="col-md-2">
+				</div>
+				<div class="col-md-8">
+					<h3 class="text-center">
+						Flight List
+					</h3>
+				</div>
+				<div class="col-md-2">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-1">
+				</div>
+				<div class="col-md-1">
+					<a href="#" class="btn btn-default" role="button">
+						Create Flight
+					</a>
+				</div>
+				<div class="col-md-1">
+					<button type="button" class="btn btn-default">
+						Import Excel
+					</button>
+				</div>
+				<div class="col-md-2">
+					<a href="#" class="btn btn-default" role="button">
+						Leaflets
+					</a>
 				</div>
 				
 				<div class="col-md-3">
-					<!-- <ul>
-						<li>
-							Lorem ipsum dolor sit amet
-						</li>
-						<li>
-							Consectetur adipiscing elit
-						</li>
-						<li>
-							Integer molestie lorem at massa
-						</li>
-						<li>
-							Facilisis in pretium nisl aliquet
-						</li>
-						<li>
-							Nulla volutpat aliquam velit
-						</li>
-						<li>
-							Faucibus porta lacus fringilla vel
-						</li>
-						<li>
-							Aenean sit amet erat nunc
-						</li>
-						<li>
-							Eget porttitor lorem
-						</li>
-					</ul> -->
+				    <text>Date : <input type="text" id="datepicker" name="selectedDate" /></text>
+				 </div>
+				<div class="col-md-2">
 				</div>
-				<div class="col-md-3">
-					<!-- <blockquote>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-						</p> <small>Someone famous <cite>Source Title</cite></small>
-					</blockquote> -->
+				<div class="col-md-1">
+				</div>
+				<div class="col-md-2">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-1">
+				</div>
+				<div class="col-md-11">
+					<h2></h2>
+					<div id ="criteria">
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-8">
+						<input type="text" class="form-control" id="criteria-word" placeholder="Search...">
+						<select id="select-creterias">
+						  <option value="ATC">ATC</option>
+						  <option value="com_number">Commercial number</option>
+						  <option value="dep_airport">Departure airport</option>
+						  <option value="arr_airport">Arrival airport</option>
+						  <option value="dep_date">Departure date</option>
+						  <option value="arr_date">Arrival date</option>
+						</select>
+						<button type="submit" class="btn btn-primary" id="btnSearch">
+							Search
+						</button>
+			</div>
+			<div class="row">
+				<div class="col-md-1">
+				</div>
+				<div class="col-md-10">
+                    <div class="the_table">
+                    </div>
+					<table id="the_table" class="tablesorter">
+						<thead>
+							<tr>
+								<th>
+									<Button class='btn-info'>Number</Button>
+								</th>
+								<th>
+									<Button class='btn-info'>ATC</Button>
+								</th>
+								<th>
+                                    <Button class='btn-info'>Departure time</Button>
+								</th>
+								<th>
+                                    <Button class='btn-info'>Arrival Time</Button>
+								</th>
+								<th>
+                                    <Button class='btn-info'>Departure Date</Button>
+								</th>
+								<th>
+                                    <Button class='btn-info'>Arrival Date</Button>
+								</th>
+								<th>
+                                    <Button class='btn-info'>Departure Airport</Button>
+								</th>
+								<th>
+                                    <Button class='btn-info'>Arrival Airport</Button>
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="success">
+								<td>
+									FR4231
+								</td>
+								<td>
+									TO12C
+								</td>
+								<td>
+									GMT 18h30
+								</td>
+								<td>
+									GMT 19h00
+								</td>
+								<td>
+									05/02/2016
+								</td>
+								<td>
+									05/02/2016
+								</td>
+								<td>
+									LFPO
+								</td>
+								<td>
+									AITA
+								</td>
+								<td>
+									<button type="button" class="btn btn-default">
+										EDIT
+									</button> 
+								</td>
+							</tr>
+							<tr class="active">
+								<td>
+									FR4232
+								</td>
+								<td>
+									TO12C
+								</td>
+								<td>
+									GMT 18h30
+								</td>
+								<td>
+									GMT 19h00
+								</td>
+								<td>
+									05/02/2016
+								</td>
+								<td>
+									05/02/2016
+								</td>
+								<td>
+									LFPO
+								</td>
+								<td>
+									AITA
+								</td>
+								<td>
+									<button type="button" class="btn btn-default">
+										EDIT
+									</button> 
+								</td>
+							</tr>
+								<tr class="warning">
+								<td>
+									FR4232
+								</td>
+								<td>
+									TO12C
+								</td>
+								<td>
+									GMT 18h30
+								</td>
+								<td>
+									GMT 19h00
+								</td>
+								<td>
+									05/02/2016
+								</td>
+								<td>
+									05/02/2016
+								</td>
+								<td>
+									LFPO
+								</td>
+								<td>
+									AITA
+								</td>
+								<td>
+									<button type="button" class="btn btn-default">
+										EDIT
+									</button> 
+								</td>
+							</tr>
+								<tr class="danger">
+								<td>
+									FR4232
+								</td>
+								<td>
+									TO12C
+								</td>
+								<td>
+									GMT 18h30
+								</td>
+								<td>
+									GMT 19h00
+								</td>
+								<td>
+									05/02/2016
+								</td>
+								<td>
+									05/02/2016
+								</td>
+								<td>
+									LFPO
+								</td>
+								<td>
+									AITA
+								</td>
+								<td>
+									<button type="button" class="btn btn-default">
+										EDIT
+									</button> 
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="col-md-1">
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+      
+		<a href="test2/createFlight.html"> eqfcqsfqsfqs </a>
+   <script src="js/jquery.min.js"></script>
+    
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scriptNew.js"></script>
+    <script src="js/jquery.tablesorter.js"></script>
 
-	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/scripts.js"></script>
-	<script type="text/javascript">
-		$( document ).ready(function() {
-	    console.log( "ready!" );
+      <!-- // <script src="http://code.jquery.com/jquery-1.10.2.js"></script> -->
+<!-- we need to declare only one jquery version -->
 
-	    // Getting information of the flight
-	    var elt_com_num = document.getElementById("num");
-	    var elt_atc = document.getElementById("atc");
-	    var elt_dep_aprt_code = document.getElementById("dep_aprt_code");
-	    var elt_arr_aprt_code = document.getElementById("arr_arpt_code");
-	    var elt_dep_date = document.getElementById("dep_date");
-	    var elt_dep_time = document.getElementById("dep_time");
-	 	var elt_arr_date = document.getElementById("arr_date");
-	 	var elt_arr_time = document.getElementById("arr_time");
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+      
+</body>
 
 
-	 	// Button "Add flight"   
-	 	var btn_addFlight = document.getElementById("buttonAddFlight");
-	 	var btn_getFlight = document.getElementById("buttonGetFlight");		
-	 	 
-	 	
-
-	 	// GET --------------------------------------------------------
-		btn_getFlight.addEventListener("click", function(){
-			getFlight();
-		});
-
-
-
-		function getFlight(){
-			 $.ajax({ 
-		        type: 'GET', 
-		        url: "ws/cco/flight/modify-flight" + "?id=1", 
-		        data: { get_param: 'value' }, 
-		        success: function (data) { 
-		            console.log(data);
-		        }
-		    });
-		}
-		// GET --------------------------------------------------------
-
-
-		// PUT --------------------------------------------------------
-		btn_addFlight.addEventListener("click", function(){
-	 		checkFields();
-		});
-
-
-
-	 	// Verifies wether we have all necessary info of the flight
-	    function checkFields(){
-
-	    	if(elt_com_num.value == '' || elt_atc.value == '' || elt_dep_aprt_code.value == ''|| elt_arr_aprt_code.value == '' || elt_dep_date.value == '' || elt_dep_time.value == '' || elt_arr_date.value == '' || elt_arr_time.value == ''){
-
-	    		console.log("verifier les champs");
-	    	}else{
-	    		console.log("je suis la");
-	    		createFlight()
-	    	}
-
-	    }
-
-
-	    function createFlight(){
-
-
-			var Flight = new Object();
-        	Flight.commercial_number = elt_com_num.value;
-        	Flight.atc_number = elt_atc.value;
-        	Flight.departure_airport = elt_dep_aprt_code.value;
-        	Flight.arrival_airport = elt_arr_aprt_code.value;
-        	Flight.departure_date = elt_dep_date.value;
-        	Flight.arrival_date = elt_arr_date.value;
-        	Flight.dep_time = elt_dep_time.value;
-        	Flight.arr_time = elt_arr_time.value;
-
-
-	    		
-			$.ajax({
-			 	url: "ws/cco/flight/create-flight"+ "?userId=1",
-			 	type: 'PUT',
-			 	contentType: "application/json",
-			 	dataType: "json",
-            	data: JSON.stringify(Flight)
-			}).done(function( msg ) {
-			  	console.log("ok");
-			  });
-		}
-		// GET --------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		});
-
-
-	</script>
-  </body>
 </html>
