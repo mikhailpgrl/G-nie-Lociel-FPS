@@ -5,11 +5,13 @@ import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
+import javax.jdo.annotations.Unique;
 
 @PersistenceCapable
 public class Flight {
 
 	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
+	@Unique
 	private int id;
 	@PrimaryKey
 	private String commercial_number;
