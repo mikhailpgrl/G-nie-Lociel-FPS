@@ -10,6 +10,8 @@ import javax.jdo.annotations.Unique;
 @PersistenceCapable
 public class Flight {
 
+	// Test comments
+
 	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
 	@Unique
 	private int id;
