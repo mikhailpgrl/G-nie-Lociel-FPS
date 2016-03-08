@@ -8,6 +8,7 @@ $(document).ready(function() {
     var select_creterias = document.getElementById("select-creterias");
     var criteria_type;
     var criteria_value;
+    var dateAsString;
     var criteria_text = document.getElementById("criteria-word");
 
     // Very First call
@@ -20,16 +21,24 @@ $(document).ready(function() {
     // Adding listener to the search button
     btnSearch.addEventListener("click", function(){
         criteria_type = select_creterias.options[select_creterias.selectedIndex].value; 
-        criteria_value = criteria_text.value;
-        searchByCriteria();
+
+        if(criteria_type == "dep_date" || criteria_type == "arr_date"){
+            if(dateAsString != null){
+                criteria_value = dateAsString;
+                searchByCriteria();
+            }
+        }else{
+            criteria_value = criteria_text.value;
+            searchByCriteria();
+        }
+
+
     }); 
 
     $("#datepicker").datepicker({
             onSelect: function(dateText, inst) { 
-            var dateAsString = dateText; //the first parameter of this function
+            dateAsString = dateText; //the first parameter of this function
             var dateAsObject = $(this).datepicker( 'getDate' ); //the getDate method
-
-            searchByCriteria();
         }
     });
 
@@ -46,14 +55,18 @@ $(document).ready(function() {
         console.log(criteria_value);
         if (criteria_type!= "" && criteria_value != "") {
             getFlightsByCriterias();
+        }else
+        {
+            console.log("criteria_type n'est pas précisé");
         };
     }
 
     // Ajax call
     function getFlightsByCriterias(){
+    	$("#the_table tr:not(:first)").remove(); 
          $.ajax({ 
                 type: 'GET', 
-                url: "ws/cco/flight/getFlightBy" + "?criteria=" + criteria_type  + "&value="+ criteria_value, 
+                url: "../../ws/cco/flight/getFlightBy" + "?criteria=" + criteria_type  + "&value="+ criteria_value, 
                 success: function (data) { 
                     console.log(data);
                     if(data != null){
@@ -72,7 +85,7 @@ $(document).ready(function() {
     function getFlightList(){
         $.ajax({ 
 	        type: 'GET', 
-	        url: "/ws/cco/flight/list-flight", 
+	        url: "../../ws/cco/flight/list-flight", 
 	        success: function (data) { 
                 var arr = Object.keys(data).map(function(k) { return data[k] });
                 console.log(data);
@@ -95,6 +108,7 @@ $(document).ready(function() {
         var num_rows = document.getElementById("the_table").rows.length;
         var table = document.getElementById("the_table");
         var row = table.insertRow(num_rows);
+        
 
         var number = row.insertCell(0);
         var atc = row.insertCell(1);
@@ -105,20 +119,42 @@ $(document).ready(function() {
         var dep_airport= row.insertCell(6);
         var arr_airport= row.insertCell(7);
 
+        console.log("fill");
+        console.log(data.departure_airport);
         number.innerHTML = data.commercial_number;
         atc.innerHTML = data.atc_number;
-        dep_time.innerHTML = data.departure_airport;
-        arr_time.innerHTML = data.arrival_airport;
+        dep_time.innerHTML = data.departure_time;
+        arr_time.innerHTML = data.arrival_time;
         dep_date.innerHTML = data.departure_date;
         arr_date.innerHTML = data.arrival_date;
-        dep_airport.innerHTML = data.dep_time;
-        arr_airport.innerHTML = data.arr_time;
+        dep_airport.innerHTML = data.departure_airport;
+        arr_airport.innerHTML = data.arrival_airport;
 
+        // Getting id of flight
+        var id_flight = data.id;
+
+        var link = document.createElement("button");
+
+        // Mettre le lien au dessous
+        link.setAttribute("id", "btnFlight-" +id_flight);
+        link.className = "someCSSclass";
+
+        link.onclick = function () { 
+            console.log(id_flight);
+            // Mettre le lien
+            window.location="../ShowFlight/showFlight.html";
+            // Sauver l'id
+            window.localStorage.setItem("id_flight",id_flight);
+            // Recuperer l'id
+            //var name = window.localStorage.getItem("name");
+         };
+
+
+        
+        var linkText = document.createTextNode("view");
+        link.appendChild(linkText);
+        row.appendChild(link);
     }
-
-
-
-
 
         
 });

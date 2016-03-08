@@ -120,13 +120,13 @@ public class FlightWebService {
             		c = Criteria.ATC;
             	else if(criteria.equals("com_number"))
             		c = Criteria.COM_NUMBER;
-            	else if(criteria == "dep_airport")
+            	else if(criteria.equals("dep_airport"))
             		c = Criteria.DEP_AIRPORT;
-            	else if(criteria == "arr_airport")
+            	else if(criteria.equals("arr_airport"))
             		c = Criteria.ARR_AIRPORT;
-            	else if(criteria == "dep_date")
+            	else if(criteria.equals("dep_date"))
             		c = Criteria.DEP_DATE;
-            	else if(criteria == "arr_date")
+            	else if(criteria.equals("arr_date"))
             		c = Criteria.ARR_DATE;
             	else
             		return Response.status(400).entity(JSonMaker.getJson("CRITERIA_ERROR")).build();
