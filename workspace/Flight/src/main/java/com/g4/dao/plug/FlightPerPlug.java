@@ -10,7 +10,7 @@ import javax.jdo.Transaction;
 
 import com.g4.beans.Flight;
 import com.g4.beans.FlightPer;
-import com.g4.beans.User;
+import com.g4.beans.Users;
 import com.g4.dao.FlightPerDao;
 
 public class FlightPerPlug implements FlightPerDao {
@@ -19,7 +19,7 @@ public class FlightPerPlug implements FlightPerDao {
 
 	}
 
-	public String add(Flight flight, User user){
+	public String add(Flight flight, Users user){
 
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("FlightGL");
 		PersistenceManager pm = pmf.getPersistenceManager();

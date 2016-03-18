@@ -6,6 +6,8 @@ import java.util.StringTokenizer;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.PrimaryKey;
 
+import com.g4.beans.Users;
+
 
 @PersistenceCapable
 public class FlightPer {
@@ -14,13 +16,13 @@ public class FlightPer {
 	Flight flight;
 
 	@PrimaryKey
-	User user;
+	Users user;
 
 	protected FlightPer() {
 
 	}
 
-	public FlightPer(Flight f, User u){
+	public FlightPer(Flight f, Users u){
 
 		flight = f;
 		user = u;
@@ -32,7 +34,7 @@ public class FlightPer {
 		return flight;
 	}
 
-	public User getUser(){
+	public Users getUser(){
 
 		return user;
 	}
@@ -42,7 +44,7 @@ public class FlightPer {
 
 		private static final long serialVersionUID = 1L;
 		Flight.FlightPK flight;
-		User.UserPK user;
+		Users.UserPK user;
 
 		protected PK() {
 
@@ -53,7 +55,7 @@ public class FlightPer {
 			StringTokenizer token = new StringTokenizer(string,"--");
 			token.nextToken();
 			this.flight = new Flight.FlightPK(token.nextToken());
-			this.user = new User.UserPK(token.nextToken());
+			this.user = new Users.UserPK(token.nextToken());
 
 		}
 

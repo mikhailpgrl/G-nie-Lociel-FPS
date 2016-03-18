@@ -3,12 +3,10 @@ package com.g4.beans;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.PrimaryKey;
 
-
-@PersistenceCapable(table="Airport")
+@PersistenceCapable
 public class Airport {
 
-	@PrimaryKey
-	private int id;
+	private String id;
 	private String icao_code;
 	private String name;
 	private String city;
@@ -59,3 +57,4 @@ public class Airport {
 	}
 
 }
+

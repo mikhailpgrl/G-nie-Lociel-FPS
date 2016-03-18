@@ -3,45 +3,53 @@ package com.g4.beans;
 import java.io.Serializable;
 import java.util.StringTokenizer;
 
-import javax.jdo.annotations.ForeignKey;
+import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
+import javax.jdo.annotations.Unique;
+
 
 @PersistenceCapable(objectIdClass=Flight.FlightPK.class)
 public class Flight {
 
+	// Test comments
+
+	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
+	@Unique
+	private int id;
 	@PrimaryKey
 	private String commercial_number;
 	private String atc_number;
-
-	@PrimaryKey
-	@ForeignKey(table="Airport")
-	private Airport departure_airport;
-
-	@ForeignKey(table="Airport")
-	private Airport arrival_airport;
-
 	@PrimaryKey
 	private String departure_date;
 	private String arrival_date;
-	private String departure_hour;
-	private String arrival_hour;
-
-	protected Flight(){}
-
-	public Flight(String cm, String atc,
-					Airport depart_airport, Airport arriv_airport,
-					String depart_date, String arriv_date,
-					String depart_hour, String arriv_hour){
-
-		this.commercial_number = cm;
-		this.atc_number = atc;
-		this.departure_airport = depart_airport;
-		this.arrival_airport = arriv_airport;
-		this.departure_date = depart_date;
-		this.arrival_date = arriv_date;
-		this.departure_hour = depart_hour;
-		this.arrival_hour = arriv_hour;
+	private String departure_time;
+	private String arrival_time;
+	@PrimaryKey
+	private String departure_airport;
+	private String arrival_airport;
+	private String notam;
+	private String ofp;
+	
+	public void print(){
+		System.out.println(commercial_number);
+		System.out.println(atc_number);
+		System.out.println(departure_date);
+		System.out.println(arrival_date);
+		System.out.println(departure_airport);
+		System.out.println(arrival_airport);
+		System.out.println(notam);
+		System.out.println(ofp);
+	}
+	
+	public Flight(String string) {
+		// TODO Auto-generated constructor stub
+		this.atc_number = string;
+	}
+	
+	public Flight(){
+		
 	}
 
 	public String getCommercialNumber(){
@@ -54,12 +62,12 @@ public class Flight {
 		return atc_number;
 	}
 
-	public Airport getDepartureAirport(){
+	public String getDepartureAirport(){
 
 		return departure_airport;
 	}
 
-	public Airport getDArrivalAirport(){
+	public String getDArrivalAirport(){
 
 		return arrival_airport;
 	}
@@ -75,15 +83,6 @@ public class Flight {
 		return arrival_date;
 	}
 
-	public String getDepartureHour(){
-
-		return departure_hour;
-	}
-
-	public String getArrivalHour(){
-
-		return arrival_hour;
-	}
 
 	// Internal class for composite primary key
 	public static class FlightPK implements Serializable{
@@ -148,4 +147,29 @@ public class Flight {
 	    }
 
 	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getDeparture_time() {
+		return departure_time;
+	}
+
+	public void setDeparture_time(String departure_time) {
+		this.departure_time = departure_time;
+	}
+
+	public String getArrival_time() {
+		return arrival_time;
+	}
+
+	public void setArrival_time(String arrival_time) {
+		this.arrival_time = arrival_time;
+	}
+	
 }

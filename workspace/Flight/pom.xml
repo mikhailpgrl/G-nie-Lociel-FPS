@@ -36,12 +36,20 @@
 		</dependency>
 
 		<!-- HSQLDB -->
+		<!-- 
 		<dependency>
 			<groupId>hsqldb</groupId>
 			<artifactId>hsqldb</artifactId>
-			<version>1.8.0.4</version>
+			<version>1.8.0.10</version>
 		</dependency>
-
+		 -->
+		
+		<dependency>
+			<groupId>org.hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
+			<version>2.3.3</version>
+		</dependency>
+		
 
 
 		<!-- Jetty -->

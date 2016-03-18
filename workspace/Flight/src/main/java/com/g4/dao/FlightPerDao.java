@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 import com.g4.beans.Flight;
 import com.g4.beans.FlightPer;
-import com.g4.beans.User;
+import com.g4.beans.Users;
 
 public interface FlightPerDao {
 
-	public String add(Flight flight, User user);
+	public String add(Flight flight, Users user);
 
 	public ArrayList<FlightPer> selectAll();
 }

@@ -9,10 +9,28 @@
 
     <meta name="description" content="Source code generated using layoutit.com">
     <meta name="author" content="LayoutIt!">
-
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  
+    <!-- First try loading jQuery from Google's CDN -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
+    <!-- Fall back to a local copy of jQuery if the CDN fails -->
+    <script>
+    window.jQuery || document.write('<script src="http://mysite.com/jquery.min.js"><\/script>')
+    </script>      
+    
+    <!--tablesorter plugin -->
+    <script src="js/jquery.tablesorter.js"></script>
+    <!-- optionnal
+    <script src="js/jquery.tablesorter.widget.js"></script>
+      -->
+ 
+    <!-- pager plugin -->  
+    <link rel="stylesheet" href="css/jquery.tablesorter.pager.css"/>
+    <script src="js/jquery.tablesorter.pager.js"></script>
+      
   </head>
   <body>
 
@@ -66,9 +84,15 @@
 				<div class="col-md-1">
 				</div>
 				<div class="col-md-1">
+<<<<<<< HEAD
 					<a href="#" class="btn btn-default" role="button">
 						Create Flight
 					</a>
+=======
+					<button type="button" class="btn btn-default">
+						Create Flight
+					</button>
+>>>>>>> server
 				</div>
 				<div class="col-md-1">
 					<button type="button" class="btn btn-default">
@@ -81,70 +105,76 @@
 					</a>
 				</div>
 				
+				<div class="col-md-3">
+				    <text>Date : <input type="text" id="datepicker" name="selectedDate" /></text>
+				 </div>
 				<div class="col-md-2">
-					<select id="option_selection" class="form-control">
-							<option selected="selected"></option>
-							<option id="number">Number</option>
-						  	<option id="atc">ATC</option>
-						  	<option id="departure_time" >Departure Time </option>
-						  	<option id="arrival_time ">Arrival Time </option>
-						  	<option id="departure_date" >Departure Date</option>
-							<option id="arrival_date" >Arrival Date</option>
-							<option id="arrival_airtport">Arrival Airport</option>
-							<option id="departure_airport">Departure Airport</option>
+					<select class="form-control">
+						  <option>Date de depart</option>
+						  <option>Date d'arrivée</option>
+						  <option>Aeroport d'arrivé</option>
 					</select>
-				</div>
-				<div class="col-md-2">
 				</div>
 				<div class="col-md-1">
 				</div>
+				<div class="col-md-2">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-1">
+				</div>
+<<<<<<< HEAD
+				<div class="col-md-11">
+					<h2></h2>
+					<div id ="criteria">
+					</div>
+=======
 				<div class="col-md-2">
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-2">
 					<h2></h2>
-					<div id ="criteria">
-					</div>
+>>>>>>> server
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-1">
 				</div>
 				<div class="col-md-10">
-					<table class="table">
+					<table id="the_table" class="tablesorter">
 						<thead>
 							<tr>
 								<th>
-									Number
+									<Button class='btn-info'>Number</Button>
 								</th>
 								<th>
-									ATC
+									<Button class='btn-info'>ATC</Button>
 								</th>
 								<th>
-									Departure time
+                                    <Button class='btn-info'>Departure time</Button>
 								</th>
 								<th>
-									Arrival Time
+                                    <Button class='btn-info'>Arrival Time</Button>
 								</th>
 								<th>
-									Departure Date
+                                    <Button class='btn-info'>Departure Date</Button>
 								</th>
 								<th>
-									Arrival Date
+                                    <Button class='btn-info'>Arrival Date</Button>
 								</th>
 								<th>
-									Departure Airport
+                                    <Button class='btn-info'>Departure Airport</Button>
 								</th>
 								<th>
-									Arrival Airport
+                                    <Button class='btn-info'>Arrival Airport</Button>
 								</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr class="success">
 								<td>
-									FR4232
+									FR4231
 								</td>
 								<td>
 									TO12C
@@ -276,8 +306,18 @@
 	</div>
 </div>
 
-    <script src="js/jquery.min.js"></script>
+      
+<!--    <script src="js/jquery.min.js"></script> -->
+    
     <script src="js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>
-  </body>
+<!--
+      <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+we need to declare only one jquery version
+-->
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+      
+</body>
+
+
 </html>

@@ -11,7 +11,7 @@ public class Leaflet {
 	private String content;
 
 	public Leaflet(){
-
+		
 	}
 	public Leaflet(String s){
 		this.content = s;
