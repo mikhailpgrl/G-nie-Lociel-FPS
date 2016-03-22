@@ -1,9 +1,7 @@
 package com.g4.dao.datanucleus;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
@@ -13,12 +11,20 @@ import com.g4.beans.Flight;
 import com.g4.dao.FlightDao;
 import com.g4.utils.Criteria;
 
+@SuppressWarnings("unchecked")
 public class FlightDaoImp implements FlightDao{
 
+	private PersistenceManagerFactory pmf;
+	
+	public FlightDaoImp(){
+		
+		pmf = PersistenceFactory.getFactory();
+	}
+	
 	public Flight getFlight(String id) {
-		// TODO Auto-generated method stub
+
 		List<Flight> flights = null;
-		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("Flight");
+		
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 
@@ -48,9 +54,8 @@ public class FlightDaoImp implements FlightDao{
 	}
 
 	public List<Flight> getAllFlight() {
-		// TODO Auto-generated method stub
+
 		List<Flight> flights = null;
-		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("Flight");
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 
@@ -78,10 +83,8 @@ public class FlightDaoImp implements FlightDao{
 	}
 
 	public String putFlight(Flight flight, String id) {
-		// TODO Auto-generated method stub
 		
 		List<Flight> flights = null;
-		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("Flight");
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 
@@ -112,9 +115,8 @@ public class FlightDaoImp implements FlightDao{
 	}
 
 	public List<Flight> getByCriteria(Criteria criteria, String value) {
-		// TODO Auto-generated method stub
+
 		List<Flight> flights = null;
-		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("Flight");
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 
@@ -140,11 +142,6 @@ public class FlightDaoImp implements FlightDao{
 		else
 			return flights;
 		
-	}
-
-	public ArrayList<Flight> getByCriteria(String sort, String value) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }

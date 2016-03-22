@@ -11,5 +11,7 @@ public interface UserDao {
 	 */
 	Users getUser(String login, String token);
 	
+	// Check if a user exists
+	boolean isUserExist(String login);
+	
 }
-
