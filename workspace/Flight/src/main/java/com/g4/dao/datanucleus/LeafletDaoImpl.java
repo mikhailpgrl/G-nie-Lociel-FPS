@@ -71,14 +71,44 @@ public class LeafletDaoImpl implements LeafletDao{
 		
 	}
 
+	@SuppressWarnings("unchecked")
 	public String deleteLeaflet(String id) {
-		// TODO Auto-generated method stub
-		return null;
+
+		List<Leaflet> leaflets;
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+		boolean ok = false;
+		
+		try{
+
+			tx.begin();
+			Query q = pm.newQuery(Leaflet.class);
+			q.setFilter("id == identifier ");
+			q.declareParameters("String identifier");
+			leaflets = (List<Leaflet>) q.execute(id);
+			
+			if(leaflets != null && !leaflets.isEmpty() && leaflets.get(0) != null){
+				
+				pm.deletePersistent(leaflets.get(0));
+				ok = true;
+			}
+
+			tx.commit();
+
+		}finally{
+
+			if(tx.isActive()){
+
+				tx.rollback();
+			}
+			pm.close();
+		}
+		
+		return ( ok ? "success" : null);
 	}
 
 	@SuppressWarnings("unchecked")
 	public Leaflet getLeaflet(String id) {
-		// TODO Auto-generated method stub
 		
 		List<Leaflet> leaflets;
 		PersistenceManager pm = pmf.getPersistenceManager();
