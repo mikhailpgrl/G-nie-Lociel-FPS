@@ -105,8 +105,38 @@ public class FlightDaoImp implements FlightDao{
 	}
 
 	public String deleteFlight(String id) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		List<Flight> flights = null;
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+		boolean ok = false;
+
+		try{
+
+			tx.begin();
+			Query q = pm.newQuery(Flight.class);
+			q.setFilter("id == flightId ");
+			q.declareParameters("int flightId");
+			flights = (List<Flight>) q.execute(Integer.parseInt(id));
+			
+			if(flights != null && !flights.isEmpty() && flights.get(0) != null){
+				
+				pm.deletePersistent(flights.get(0));
+				ok = true;
+			}
+				
+			tx.commit();
+
+		}finally{
+
+			if(tx.isActive()){
+
+				tx.rollback();
+			}
+			pm.close();
+		}
+		
+		return ( ok ? "success" : null);
 	}
 
 	public void modifyFlight(String id, Flight flight) {
