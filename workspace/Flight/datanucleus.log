@@ -1598,3 +1598,18 @@ org.datanucleus.exceptions.NucleusException: Failure during enhancement of class
 05:50:54,206 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
 05:50:54,207 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
 05:50:54,207 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+11:52:00,760 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+11:52:01,269 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+11:52:01,410 (main) INFO  [DataNucleus.Enhancer] - Writing class file "C:\Users\cedric\Documents\GénieLogiciel\workspace\Flight\target\classes\com\g4\beans\Airport.class" with enhanced definition
+11:52:01,455 (main) INFO  [DataNucleus.Enhancer] - Writing class file "C:\Users\cedric\Documents\GénieLogiciel\workspace\Flight\target\classes\com\g4\beans\Flight.class" with enhanced definition
+11:52:01,471 (main) INFO  [DataNucleus.Enhancer] - Writing primary-key class file "C:\Users\cedric\Documents\GénieLogiciel\workspace\Flight\target\classes\com\g4\beans\Flight_PK.class"
+11:52:01,486 (main) INFO  [DataNucleus.Enhancer] - Writing class file "C:\Users\cedric\Documents\GénieLogiciel\workspace\Flight\target\classes\com\g4\beans\Leaflet.class" with enhanced definition
+11:52:01,502 (main) INFO  [DataNucleus.Enhancer] - Writing class file "C:\Users\cedric\Documents\GénieLogiciel\workspace\Flight\target\classes\com\g4\beans\Users.class" with enhanced definition
+11:52:01,518 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
+11:52:12,571 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer (version 4.0.3) for API "JDO"
+11:52:13,250 (main) WARN  [DataNucleus.MetaData] - Class com.g4.beans.Flight has application-identity and no objectid-class specified yet has 3 primary key fields. Unable to use SingleFieldIdentity.
+11:52:13,344 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Airport" is already enhanced.
+11:52:13,344 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Flight" is already enhanced.
+11:52:13,375 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Leaflet" is already enhanced.
+11:52:13,390 (main) INFO  [DataNucleus.Enhancer] - Class "com.g4.beans.Users" is already enhanced.
+11:52:13,390 (main) INFO  [DataNucleus.Enhancer] - DataNucleus Enhancer completed with success for 4 classes.
