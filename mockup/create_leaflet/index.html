@@ -57,14 +57,18 @@
         </div>
     </div>
     <div>
-        <h1 class = "text-center">Create Leaflet </h1>
+        <section>
+            <header>
+                <h1 class = "text-center">Create Leaflet </h1>
+            </header>
+            </section>
     </div>
     <div class = "container-fluid">
-        <div class="col-md-1">
+        <div class="col-md-2">
         </div>
-        <div class="col-md-10 text-center">
-            <form role="form_leaflet">
-                <div class="form-group">
+        <div class="col-md-8 text-center">
+            <form id="form_leaflet" role="form_leaflet">
+                <div class="form-group" id="form_border">
                     <!-- for the accept attribut it's just a suggestion not a restriction -->
                     <label for="leaflet_file">Please drag or select the leaflet file <br/> <input type="file" class="leaflet_file" id="leaflet_file" accept=".jpg,.png,.jpeg"></label>
                     <br/>
@@ -73,12 +77,12 @@
                     <label for="tmp">Don't have a leaflet file ? <button id="create_leaflet_textarea" type="button">click here</button> </label>
                     <div id="text_area_zone">
                     </div>
-                    <button class="submit" type="button" id="submit_button">submit</button>
+                    <button class="btn btn-block" type="submit" id="submit_button">Create</button>
                 </div>
             </form>
             
         </div>
-        <div class="col-md-1">
+        <div class="col-md-2">
         </div>
     </div>
 

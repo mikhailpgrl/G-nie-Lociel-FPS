@@ -87,12 +87,13 @@ function file_chooser_thing(e){
 */
 
 function text_area_create_zone_thing(){
-    console.log("la2");
-    var div_text_area_zone = document.getElementById("text_area_zone");
-    var text_area = document.createElement("textarea");
-    text_area.setAttribute("id","text_area_zone");
-    div_text_area_zone.appendChild(text_area);
-    zone_created = true;
+    if(!zone_created){
+        var div_text_area_zone = document.getElementById("text_area_zone");
+        var text_area = document.createElement("textarea");
+        text_area.setAttribute("id","text_area_zone");
+        div_text_area_zone.appendChild(text_area);
+        zone_created = true;
+    }
 }
 
 /*
