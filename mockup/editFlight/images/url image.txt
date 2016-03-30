@@ -1,0 +1,8 @@
+url(https://d1giwhxp2f2c55.cloudfront.net/fr/~/media/Images/Public/Backgrounds/FR_20160307_homepage_mainpromo_NTE.jpg?h=832&amp;sc=0.5&amp;w=554&amp;useCustomFunctions=1&amp;cropX=66&amp;cropY=0&amp;vs=1&amp;d=20160304T145259);
+url('https://a0.muscache.com/ic/discover/180?interpolation=lanczos-none&output-format=jpg&output-quality=70&v=33b4f2&downsize=655px:326px');
+url('https://a2.muscache.com/ic/discover/9?interpolation=lanczos-none&output-format=jpg&output-quality=70&v=33b4f2&downsize=326px:326px');"
+url('https://a1.muscache.com/ic/discover/84?interpolation=lanczos-none&output-format=jpg&output-quality=70&v=33b4f2&downsize=326px:326px');"
+url('https://a0.muscache.com/ic/discover/291?interpolation=lanczos-none&output-format=jpg&output-quality=70&v=33b4f2&downsize=655px:326px');
+url('https://a1.muscache.com/ic/discover/94?interpolation=lanczos-none&output-format=jpg&output-quality=70&v=33b4f2&downsize=326px:326px');
+url('https://a0.muscache.com/ic/discover/840?interpolation=lanczos-none&output-format=jpg&output-quality=70&v=33b4f2&downsize=326px:326px');
+a0.muscache.com/ic/discover/95?interpolation=lanczos-none&output-format=jpg&output-quality=70&v=33b4f2&downsize=655px:326px
