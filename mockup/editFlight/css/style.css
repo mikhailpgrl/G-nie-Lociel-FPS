@@ -54,6 +54,8 @@ section {
 }
 form#contact {
   margin: 0 auto;
+  /*margin-left: 10px;
+  margin-right: 10px;*/
   text-align: center;
   border-bottom: 2px solid #c3c3c3;
   width: 300px;
@@ -213,3 +215,22 @@ input[type=submit] {
 label{
   font-family: 'Oswald', sans-serif;
 }
+
+/* Cycle JS*/
+
+.pics {  
+    height:  100%;  
+    width:   100%;  
+    padding: 0;  
+    margin:  0;  
+    overflow: hidden
+
+} 
+ 
+.pics img {  
+    padding: 0px;   
+    width:  100%; 
+    height: 100%; 
+    top:  0; 
+    left: 0 
+} 

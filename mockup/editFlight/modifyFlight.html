@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+
+    <title>Edit flight</title>
+    <script src="http://s.codepen.io/assets/libs/modernizr.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Slab:400,700">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+  </head>
+  <body background="images/MainImage.png" >
+
+    <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-3">
+
+		</div>
+		<div class="col-md-12">
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="navbar-header">
+					 
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						 <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+					</button> <a class="navbar-brand" href="#">Home</a>
+				</div>
+				
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav"> 
+						<li class="active">
+							<a href="#">View Flight</a>
+						</li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<a class="navbar-brand" href="#">Logout</a>
+						</li>
+					</ul>
+				</div>
+				
+			</nav>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="row">
+				<div class="col-md-3">
+				</div>
+				<div class="col-md-6">
+					
+				</div>
+				<div class="col-md-3">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-2">
+		</div>
+		<div class="col-md-8">
+			<div class="row">
+				<div class="col-md-6">
+					<header>
+				  <h1>EDIT FLIGHT</h1>
+				</header>
+		    <div class="arrow-up"></div>
+				<form id="contact" class="form-horizontal" role="form">
+					<div class="form-group">
+						<div class="col-sm-12">
+							<!-- <div class="form-row">
+							<input type="text" class="form-control form-textbox" id="num" required>
+							<label for="num" class="col-sm- control-label form-label">
+								Commercial Number
+							</label>
+							</div> -->
+
+							<input type="text" class="form-control" id="num" placeholder="COMMERCIAL NUMBER">
+							
+						</div>
+					</div>
+					<div class="form-group">	
+						<div class="col-sm-12">
+							<!-- <div class="form-row">
+							<input type="text" class="form-control form-textbox" id="atc" required>
+							<label for="atc" class="col-sm- control-label form-label">
+								ATC
+							</label>
+							</div> -->
+
+							<input type="text" class="form-control" id="atc" placeholder="ATC">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-12">
+							<input type="text" class="form-control" id="dep_aprt_code" placeholder="DEPARTURE AIRPORT CODE">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-12">
+							<input type="text" class="form-control" id="arr_arpt_code" placeholder="ARRIVAL AIRPORT CODE">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-12">
+							<input type="text" class="form-control" id="dep_date" placeholder="DEPARTURE DATE">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-12">
+							<input type="text" class="form-control" id="dep_time" placeholder="DEPARTURE TIME">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-12">
+							<input type="text" class="form-control" id="arr_date" placeholder="ARRIVAL DATE">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-12">
+							<input type="text" class="form-control" id="arr_time" placeholder="ARRIVAL TIME">
+						</div>
+					</div>
+
+
+
+
+
+
+					<button type="submit" class="btn btn-block" id="buttonAddFlight">Edit Information</button>
+				</form> 
+		</div>
+					
+				<div class="col-md-5">
+					<form id="contact" class="form-horizontal" role="form">
+							<div class="form-group">
+								<label for="inputPilot" class="col-sm-2 control-label">
+								Select:
+								</label>
+								<div class="col-sm-5">
+									<select class="form-control">
+									  <option>Pilot1</option>
+									  <option>Pilot2</option>
+									  <option>Pilot3</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputPilot" class="col-sm-2 control-label">
+								Select:
+								</label>
+								<div class="col-sm-5">
+									<select class="form-control">
+									  <option>co-Pilot1</option>
+									  <option>co-Pilot2</option>
+									  <option>co-Pilot3</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputPilot" class="col-sm-2 control-label">
+								Select:
+								</label>
+								<div class="col-sm-5">
+									<select class="form-control">
+									  <option>Crew1</option>
+									  <option>Crew2</option>
+									  <option>Crew3</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-offset-1 col-sm-8">							 
+									<button type="submit" class="btn btn-block">
+										Add
+									</button>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-9">
+									<select multiple class="form-control">
+									  <option>Jack Maven</option>
+									  <option>Jason Bourne</option>
+									  <option>Hanz Zimmer</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-offset-1 col-sm-8">							 
+									<button type="submit" class="btn btn-block">
+										Remove
+									</button>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-9">
+									<select class="form-control">
+									  <option>RayanAir plane</option>
+									  <option>Paper plane</option>
+									</select>
+								</div>
+							</div>
+						</div>
+					<div>
+				</div> 
+		</div>
+		<div class="col-md-2">
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="row">
+				<div class="col-md-3">
+					 
+					<!-- <address>
+						 <strong>Twitter, Inc.</strong><br> 795 Folsom Ave, Suite 600<br> San Francisco, CA 94107<br> <abbr title="Phone">P:</abbr> (123) 456-7890
+					</address> -->
+				</div>
+				
+				<div class="col-md-3">
+					<!-- <ul>
+						<li>
+							Lorem ipsum dolor sit amet
+						</li>
+						<li>
+							Consectetur adipiscing elit
+						</li>
+						<li>
+							Integer molestie lorem at massa
+						</li>
+						<li>
+							Facilisis in pretium nisl aliquet
+						</li>
+						<li>
+							Nulla volutpat aliquam velit
+						</li>
+						<li>
+							Faucibus porta lacus fringilla vel
+						</li>
+						<li>
+							Aenean sit amet erat nunc
+						</li>
+						<li>
+							Eget porttitor lorem
+						</li>
+					</ul> -->
+				</div>
+				<div class="col-md-3">
+					<!-- <blockquote>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+						</p> <small>Someone famous <cite>Source Title</cite></small>
+					</blockquote> -->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
