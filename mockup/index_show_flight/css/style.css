@@ -1,0 +1,56 @@
+.body_picture{
+    background-image: url("airport-8.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-size: cover;
+    letter-spacing: 2px;
+}
+
+h1{
+    font-size : 6vw;
+    color: dimgray;
+    background-color: white;
+    text-align: center;
+    border-radius: 8px;
+}
+
+#column_title{
+    background-color: white;
+    text-align: center;
+    font-size : 3vw;
+    border-radius: 8px;
+}
+
+.arrow-up {
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  top: 1px;
+  width: 0;
+  height: 0;
+  margin-top: 10px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #f7f7f7;
+}
+
+button{
+    background-color: white;
+     border-radius: 8px;
+    font-size: 2vw
+}
+
+/* > : allow to select only the direct child of the parent element */
+#tmp{
+        background-color: white;
+        text-align: center;
+}
+
+img{
+    width: 100%;
+}
+
+#pdf_link_zone{
+    background-color: white;
+    font-size: 4vw;
+}
