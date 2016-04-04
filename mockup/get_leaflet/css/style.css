@@ -1,0 +1,23 @@
+#body_t{
+    background-image: url("random-pic-14.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-size: cover; 
+}
+
+textarea{
+    width: 1000px;
+    height: 150px;
+    resize:none;
+}
+
+
+h1{
+    font-size: 70px;
+    color:white
+}
+
+
+#input_zone{
+    text-align: center
+}
