@@ -13,12 +13,18 @@ import org.glassfish.jersey.jackson.JacksonFeature;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.servlet.ServletContainer;
 
+import com.g4.utils.excel.UseFile;
+
 public class JettyMain {
 
 	public static void main(String[] args) throws Exception {
 		// Initialize the server
 		Server server = new Server();
 
+		UseFile uf = new UseFile(1000,System.getProperty("user.dir") + "/src/main/resources/files/");
+		uf.start();
+		
+		
 		// Add a connector
 		ServerConnector connector = new ServerConnector(server);
 		connector.setHost("0.0.0.0");

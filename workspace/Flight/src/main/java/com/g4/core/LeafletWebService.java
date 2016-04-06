@@ -1,6 +1,7 @@
 package com.g4.core;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -14,7 +15,6 @@ import javax.ws.rs.core.Response;
 import com.g4.beans.Leaflet;
 import com.g4.dao.DAO;
 import com.g4.dao.LeafletDao;
-import com.g4.dao.plug.LeafletPlug;
 import com.g4.utils.JSonMaker;
 
 @Path("/cco/leaflet")
@@ -31,7 +31,7 @@ public class LeafletWebService {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/list-leaflet")
 	public Response getAllLeaflet(){
-		ArrayList<Leaflet> l;
+		List<Leaflet> l;
 		l = ld.getAllLeaflet();
 		return Response.status(200).entity(JSonMaker.getJson(l)).build();
 	}

@@ -1,12 +1,17 @@
 package com.g4.beans;
 
 
+import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.Persistent;
+import javax.jdo.annotations.Unique;
 
 @PersistenceCapable
 public class Users {
-	
-	private String id;
+
+	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
+	@Unique
+	private int id;
 	private String login;
 	private String password;
 	private String type;
@@ -19,11 +24,19 @@ public class Users {
 	}
 
 	public Users(String id){
-		this.id = id;
+		this.login = id;
 	}
 	public Users(){
 	}
 	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public String getLogin() {
 		return login;
 	}
@@ -35,14 +48,7 @@ public class Users {
 	}
 	public void setPassword(String password) {
 		this.password = password;
-	}	
-	public String getId() {
-		return id;
 	}
-	public void setId(String id) {
-		this.id = id;
-	}
-
 	public String getType() {
 		return type;
 	}

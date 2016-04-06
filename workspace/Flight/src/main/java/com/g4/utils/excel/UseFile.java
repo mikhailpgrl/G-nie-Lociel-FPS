@@ -33,7 +33,7 @@ public class UseFile {
 	                            + file.getCanonicalPath());
 	                    if (file.getCanonicalPath().substring(file.getCanonicalPath().lastIndexOf(".")).equals(".xslt") ||
 	                    	file.getCanonicalPath().substring(file.getCanonicalPath().lastIndexOf(".")).equals(".xsl")){
-	                    		
+	                    		ReadFile af = new ReadFile(folderInput);
 	                    	
 	                    	
 	        			}

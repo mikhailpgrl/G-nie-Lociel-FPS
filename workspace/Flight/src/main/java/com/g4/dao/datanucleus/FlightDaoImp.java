@@ -1,6 +1,5 @@
 package com.g4.dao.datanucleus;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.jdo.JDOHelper;
@@ -15,31 +14,33 @@ import com.g4.utils.Criteria;
 
 public class FlightDaoImp implements FlightDao{
 
+	private PersistenceManagerFactory pmf;
+	
+	public FlightDaoImp(PersistenceManagerFactory pmf){
+		
+		this.pmf = pmf;
+		
+	}
+	
 	public Flight getFlight(String id) {
 		// TODO Auto-generated method stub
 		List<Flight> flights = null;
-		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("Flight");
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 
 		try{
-
 			tx.begin();
 			Query q = pm.newQuery(Flight.class);
 			q.setFilter("id == flightId ");
 			q.declareParameters("int flightId");
 			flights =  (List<Flight>) q.execute(Integer.parseInt(id));
 			tx.commit();
-
 		}finally{
-
 			if(tx.isActive()){
-
 				tx.rollback();
 			}
 			pm.close();
 		}
-
 		if(flights.isEmpty())
 			return null;
 		else
@@ -50,7 +51,6 @@ public class FlightDaoImp implements FlightDao{
 	public List<Flight> getAllFlight() {
 		// TODO Auto-generated method stub
 		List<Flight> flights = null;
-		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("Flight");
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 
@@ -81,7 +81,6 @@ public class FlightDaoImp implements FlightDao{
 		// TODO Auto-generated method stub
 		
 		List<Flight> flights = null;
-		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("Flight");
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 
@@ -114,7 +113,6 @@ public class FlightDaoImp implements FlightDao{
 	public List<Flight> getByCriteria(Criteria criteria, String value) {
 		// TODO Auto-generated method stub
 		List<Flight> flights = null;
-		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("Flight");
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 

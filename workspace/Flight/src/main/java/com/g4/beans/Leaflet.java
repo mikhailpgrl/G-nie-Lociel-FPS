@@ -1,31 +1,32 @@
 package com.g4.beans;
 
 
+import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
-import javax.jdo.annotations.PrimaryKey;
+import javax.jdo.annotations.Persistent;
+import javax.jdo.annotations.Unique;
 
 @PersistenceCapable
 public class Leaflet {
 
-	@PrimaryKey
-	private String id;
+	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
+	@Unique
+	private int id;
 	private String content;
 
 	public Leaflet(){
 		
 	}
 	public Leaflet(String s){
-		this.id = s;
+		this.content = s;
 	}
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
-
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
-
 	public String getContent() {
 		return content;
 	}
