@@ -3,6 +3,7 @@ package com.g4.dao.datanucleus;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
@@ -10,21 +11,21 @@ import javax.jdo.Transaction;
 
 import org.datanucleus.store.rdbms.query.ForwardQueryResult;
 
+import com.g4.beans.Flight;
 import com.g4.beans.Leaflet;
 import com.g4.dao.LeafletDao;
 
 public class LeafletDaoImpl implements LeafletDao{
 
-	private PersistenceManagerFactory pmf;
 	
-	public LeafletDaoImpl(PersistenceManagerFactory pmf){
+	public LeafletDaoImpl(){
 		
-		this.pmf = pmf;
 		
 	}
 	
 	@SuppressWarnings("unchecked")
 	public List<Leaflet> getAllLeaflet() {
+		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("Flight");
 		
 		List<Leaflet> leaflets = new ArrayList<Leaflet>();
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -49,7 +50,8 @@ public class LeafletDaoImpl implements LeafletDao{
 	}
 
 	public String putLeaflet(Leaflet leaflet) {
-		
+
+		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("Flight");
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 
@@ -71,11 +73,34 @@ public class LeafletDaoImpl implements LeafletDao{
 
 	public String deleteLeaflet(String id) {
 		// TODO Auto-generated method stub
-		return null;
+		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("Flight");
+		List<Leaflet> lf = null;
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+		try
+		{
+		    
+		    tx.begin();
+		    Query q = pm.newQuery(Leaflet.class);
+			q.setFilter("id == leafletId ");
+			q.declareParameters("int leafletId");
+			q.deletePersistentAll(Integer.parseInt(id));
+		    tx.commit();
+		}
+		catch (Exception e)
+		{
+		    if (tx.isActive())
+		    {
+		        tx.rollback();
+		    }
+		}
+		
+			return "succes ";
 	}
 
 	public Leaflet getLeaflet(String id) {
 		// TODO Auto-generated method stub
+		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("Flight");
 		List<Leaflet> leaflets = new ArrayList<Leaflet>();
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();

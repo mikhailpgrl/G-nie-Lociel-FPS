@@ -31,10 +31,10 @@ public class UseFile {
 	                    // "file" is the reference to the newly created file
 	                    System.out.println("New Files: "
 	                            + file.getCanonicalPath());
-	                    if (file.getCanonicalPath().substring(file.getCanonicalPath().lastIndexOf(".")).equals(".xslt") ||
-	                    	file.getCanonicalPath().substring(file.getCanonicalPath().lastIndexOf(".")).equals(".xsl")){
-	                    		ReadFile af = new ReadFile(folderInput);
-	                    	
+	                    if (file.getCanonicalPath().substring(file.getCanonicalPath().lastIndexOf(".")).equals(".xls") ||
+	                    	file.getCanonicalPath().substring(file.getCanonicalPath().lastIndexOf(".")).equals(".xlsx")){
+	                    		ReadFile af = new ReadFile(folderInput + file.getName());
+	                    		af.readFile();
 	                    	
 	        			}
 	                } catch (IOException e) {

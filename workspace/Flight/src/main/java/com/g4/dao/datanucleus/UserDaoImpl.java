@@ -2,6 +2,7 @@ package com.g4.dao.datanucleus;
 
 import java.util.List;
 
+import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
@@ -13,11 +14,8 @@ import com.g4.dao.UserDao;
 @SuppressWarnings("unchecked")
 public class UserDaoImpl implements UserDao{
 
-	private PersistenceManagerFactory pmf;
 	
-	public UserDaoImpl(PersistenceManagerFactory pmf){
-		
-		this.pmf = pmf;
+	public UserDaoImpl(){
 		
 	}
 	
@@ -27,7 +25,8 @@ public class UserDaoImpl implements UserDao{
 	 * 
 	 * */ 
 	public Users getUser(String login, String token){
-		
+
+		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("Flight");
 		List<Users> users = null;
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();

@@ -1,5 +1,7 @@
 package com.g4.core;
 
+import java.io.IOException;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -18,7 +20,7 @@ public class UploadFileWebService {
 	@POST
 	@Path("/file")
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response uploadFile(Files file) {
+	public Response uploadFile(Files file) throws IOException {
 
 		//String uploadedFileLocation = System.getProperty("user.dir") +"/Excel/" + fileDetail.getFileName();
 

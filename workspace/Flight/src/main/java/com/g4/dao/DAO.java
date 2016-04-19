@@ -10,18 +10,17 @@ import com.g4.dao.plug.*;
 
 public class DAO {
 
-	public final static PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("Flight");
 	
 	public static FlightDao getFlightDao(){
-		return new FlightDaoImp(pmf);
+		return new FlightDaoImp();
 	}
 
 	public static LeafletDao getLeafletDao(){
-		return new LeafletDaoImpl(pmf);
+		return new LeafletDaoImpl();
 	}
 
 	public static UserDao getUserDao(){
-		return new UserDaoImpl(pmf);
+		return new UserDaoImpl();
 	}
 
 	public static AirportDao getAirportDao(){

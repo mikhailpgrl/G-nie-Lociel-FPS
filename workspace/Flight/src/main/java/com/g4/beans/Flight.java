@@ -26,8 +26,10 @@ public class Flight {
 	private String arrival_airport;
 	private String notam;
 	private String ofp;
+
 	
 	public void print(){
+		System.out.println(id);
 		System.out.println(commercial_number);
 		System.out.println(atc_number);
 		System.out.println(departure_date);
@@ -134,6 +136,7 @@ public class Flight {
 	public void setArrival_time(String arrival_time) {
 		this.arrival_time = arrival_time;
 	}
+
 	
 	
 	

@@ -9,6 +9,11 @@ public class Files {
 		
 	}
 
+	public void print(){
+		System.out.println(name);
+		System.out.println(file);
+	}
+	
 	public String getName() {
 		return name;
 	}
