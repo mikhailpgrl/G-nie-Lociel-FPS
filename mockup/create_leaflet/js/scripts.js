@@ -30,7 +30,7 @@ var text_area_create_zone;
 var submit_button;
 var zone_created = false;
 var last_call_result ;
-
+var canvas;
 
 /*
     this function must:
@@ -52,16 +52,16 @@ function file_chooser_thing(e){
     console.log(file_chooser.files[0].type);
     if(file_chooser.files[0].type.match("image")){
         console.log("test passé \n");
-        var canvas = document.getElementById("imageCanvas");
+        canvas = document.getElementById("imageCanvas");
         var ctx = canvas.getContext('2d');
         var reader = new FileReader();
          var reader = new FileReader();
         reader.onload = function(event){
             var img = new Image();
             img.onload = function(){
-                canvas.width = img.width/5;
-                canvas.height = img.height/5;
-                ctx.drawImage(img,10,10,img.width/5,img.height/5);
+                canvas.width = img.width/7;
+                canvas.height = img.height/7;
+                ctx.drawImage(img,10,10,img.width/7,img.height/7);
             }
             img.src = event.target.result;
         }
@@ -138,11 +138,14 @@ function ajax_text_send(name){
 
 
 function ajax_picture_send(name){
+    var dataImage = canvas.toDataURL();
+    
+    
      $.ajax({
        //I don't know the real URL
         url : 'http://localhost:8080/cco/leaflet/create-leaflet',
         type : 'POST',
-        data: $(name),
+        data: dataImage,
         cache:false,
         contentType: false,
         processData: false,
