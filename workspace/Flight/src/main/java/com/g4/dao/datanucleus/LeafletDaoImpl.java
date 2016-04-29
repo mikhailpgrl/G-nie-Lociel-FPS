@@ -1,8 +1,10 @@
 package com.g4.dao.datanucleus;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
+import javax.jdo.Extent;
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
@@ -11,6 +13,7 @@ import javax.jdo.Transaction;
 
 import org.datanucleus.store.rdbms.query.ForwardQueryResult;
 
+import com.g4.beans.Files;
 import com.g4.beans.Flight;
 import com.g4.beans.Leaflet;
 import com.g4.dao.LeafletDao;
@@ -31,9 +34,9 @@ public class LeafletDaoImpl implements LeafletDao{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 		try{
-			tx.begin();
+			tx.begin();			
 			Query q = pm.newQuery(Leaflet.class);
-			leaflets = (ForwardQueryResult) q.execute();
+			leaflets = (List<Leaflet>) q.execute();
 			tx.commit();
 		}finally{
 			if(tx.isActive()){
@@ -71,6 +74,10 @@ public class LeafletDaoImpl implements LeafletDao{
 		
 	}
 
+	
+	
+	
+	
 	public String deleteLeaflet(String id) {
 		// TODO Auto-generated method stub
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("Flight");
@@ -122,5 +129,43 @@ public class LeafletDaoImpl implements LeafletDao{
 		else
 			return leaflets.get(0);
 	}
+
+
+
+	public void modifyLeaflet(String id, Leaflet leaflet) {
+		// TODO Auto-generated method stub
+		
+		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("Flight");
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+		try
+		{
+		    
+			tx.begin();	
+
+			 Extent e = (Extent) pm.getExtent(Leaflet.class, true);
+		    Iterator iter=(Iterator) e.iterator();
+		    while (iter.hasNext())
+		    {
+		    	Leaflet my_obj=(Leaflet)iter.next();
+		    	 if (my_obj.getId() == Integer.parseInt(id) ){
+						my_obj.setContent(leaflet.getContent());
+						my_obj.setUrl(leaflet.getUrl());
+		    	 }
+		    }
+		    tx.commit();
+		}
+		catch (Exception e)
+		{
+			System.out.println(e);
+		    if (tx.isActive())
+		    {
+		        tx.rollback();
+		    }
+		}
+	}
+
+
+
 
 }

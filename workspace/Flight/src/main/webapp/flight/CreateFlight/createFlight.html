@@ -2,26 +2,27 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width">
 
     <title>Creation flight</title>
+    <script src="http://s.codepen.io/assets/libs/modernizr.js" type="text/javascript"></script>
 
-    <meta name="description" content="Source code generated using layoutit.com">
-    <meta name="author" content="LayoutIt!">
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Slab:400,700">
+    <link rel="stylesheet" href="css/normalize.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
   </head>
-  <body>
+  <body background="images/MainImage.png" >
 
     <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-3">
-			<img alt="Bootstrap Image Preview" src="./images/logo-P7.png">
+			<!-- <img alt="image background" src="https://a0.muscache.com/ic/discover/180?interpolation=lanczos-none&amp;output-format=jpg&amp;output-quality=70&amp;v=33b4f2&amp;downsize=655px:326px" /> -->
 		</div>
-		<div class="col-md-9">
+		<div class="col-md-12">
 			<nav class="navbar navbar-default" role="navigation">
 				<div class="navbar-header">
 					 
@@ -52,21 +53,9 @@
 				<div class="col-md-3">
 				</div>
 				<div class="col-md-6">
-					<h3 class="text-center">
-						Creation flight
-					</h3>
+					
 				</div>
 				<div class="col-md-3">
-					<!-- <div class="form-horizontal">
-						<div class="form-group">
-							<img alt="Image Profil" src="./images/profil.jpg" class="img-circle">
-						</div>
-						<div class="form-horizontal"> 
-							<button type="button" class="btn btn-warning" id="logout">
-							Logout
-							</button>
-						</div>
-					</div> -->
 				</div>
 			</div>
 		</div>
@@ -75,90 +64,79 @@
 		<div class="col-md-2">
 		</div>
 		<div class="col-md-8">
-			<form class="form-horizontal" role="form">
-				<div class="form-group">
-					 
-					<label for="num" class="col-sm-2 control-label">
-						Commercial number:
-					</label>
-					<div class="col-sm-8">
-						<input type="text" class="form-control" id="num" placeholder="number">
+			<section>
+				<header>
+				  <h1>CREATION FLIGHT</h1>
+				</header>
+		    <div class="arrow-up"></div>
+				<form id="contact" class="form-horizontal" role="form" style="opacity:0.9" action="../FlightList/flightList">
+					<div class="form-group">
+						<div class="col-sm-12">
+							<!-- <div class="form-row">
+							<input type="text" class="form-control form-textbox" id="num" required>
+							<label for="num" class="col-sm- control-label form-label">
+								Commercial Number
+							</label>
+							</div> -->
+
+							<input type="text" class="form-control" id="num" placeholder="COMMERCIAL NUMBER">
+							
+						</div>
 					</div>
-				</div>
-				<div class="form-group">
-					 
-					<label for="atc" class="col-sm-2 control-label">
-						ATC:
-					</label>
-					<div class="col-sm-8">
-						<input type="text" class="form-control" id="atc" placeholder="ATC">
+					<div class="form-group">	
+						<div class="col-sm-12">
+							<!-- <div class="form-row">
+							<input type="text" class="form-control form-textbox" id="atc" required>
+							<label for="atc" class="col-sm- control-label form-label">
+								ATC
+							</label>
+							</div> -->
+
+							<input type="text" class="form-control" id="atc" placeholder="ATC">
+						</div>
 					</div>
-				</div>
-				<div class="form-group">
-					 
-					<label for="dep_aprt_code" class="col-sm-2 control-label">
-						Departure airport code:
-					</label>
-					<div class="col-sm-8">
-						<input type="text" class="form-control" id="dep_aprt_code" placeholder="Departure airport code">
+					<div class="form-group">
+						<div class="col-sm-12">
+							<input type="text" class="form-control" id="dep_aprt_code" placeholder="DEPARTURE AIRPORT CODE">
+						</div>
 					</div>
-				</div>
-				<div class="form-group">
-					 
-					<label for="arr_arpt_code" class="col-sm-2 control-label">
-						Arrival airport code:
-					</label>
-					<div class="col-sm-8">
-						<input type="text" class="form-control" id="arr_arpt_code" placeholder="Departure airport code">
+					<div class="form-group">
+						<div class="col-sm-12">
+							<input type="text" class="form-control" id="arr_arpt_code" placeholder="ARRIVAL AIRPORT CODE">
+						</div>
 					</div>
-				</div>
-				<div class="form-group">
-					 
-					<label for="dep_date" class="col-sm-2 control-label">
-						Departure date:
-					</label>
-					<div class="col-sm-8">
-						<input type="text" class="form-control" id="dep_date" placeholder="Departure date">
+					<div class="form-group">
+						<div class="col-sm-12">
+							<input type="text" class="form-control" id="dep_date" placeholder="DEPARTURE DATE">
+						</div>
 					</div>
-				</div>
-				<div class="form-group">
-					 
-					<label for="dep_time" class="col-sm-2 control-label">
-						Departure time:
-					</label>
-					<div class="col-sm-8">
-						<input type="text" class="form-control" id="dep_time" placeholder="Departure time">
+					<div class="form-group">
+						<div class="col-sm-12">
+							<input type="text" class="form-control" id="dep_time" placeholder="DEPARTURE TIME">
+						</div>
 					</div>
-				</div>
-				<div class="form-group">
-					 
-					<label for="arr_date" class="col-sm-2 control-label">
-						Arrival date:
-					</label>
-					<div class="col-sm-8">
-						<input type="text" class="form-control" id="arr_date" placeholder="Arrival date">
+					<div class="form-group">
+						<div class="col-sm-12">
+							<input type="text" class="form-control" id="arr_date" placeholder="ARRIVAL DATE">
+						</div>
 					</div>
-				</div>
-				<div class="form-group">
-					 
-					<label for="arr_time" class="col-sm-2 control-label">
-						Arrival time:
-					</label>
-					<div class="col-sm-8">
-						<input type="text" class="form-control" id="arr_time" placeholder="Arrival time">
+					<div class="form-group">
+						<div class="col-sm-12">
+							<input type="text" class="form-control" id="arr_time" placeholder="ARRIVAL TIME">
+						</div>
 					</div>
-				</div>
-				
-				<div class="form-group"></div>
-			</form> 
+					<button type="submit" class="btn btn-block" id="buttonAddFlight">Add Flight</button>
+				</form> 
 		</div>
+	</section>
 		<div class="col-md-2">
 		</div>
 
-		<div class="col-sm-offset-2 col-sm-10">		 
+		<!-- <div class="col-sm-offset-5 col-sm-10">		 
 		<button type="submit" class="btn btn-primary" id="buttonAddFlight">
 			Add flight
-		</button></div>
+		</button>
+		</div> -->
 
 
 
@@ -177,54 +155,27 @@
 			<div class="row">
 				<div class="col-md-3">
 					 
-					<!-- <address>
-						 <strong>Twitter, Inc.</strong><br> 795 Folsom Ave, Suite 600<br> San Francisco, CA 94107<br> <abbr title="Phone">P:</abbr> (123) 456-7890
-					</address> -->
+				
 				</div>
 				
 				<div class="col-md-3">
-					<!-- <ul>
-						<li>
-							Lorem ipsum dolor sit amet
-						</li>
-						<li>
-							Consectetur adipiscing elit
-						</li>
-						<li>
-							Integer molestie lorem at massa
-						</li>
-						<li>
-							Facilisis in pretium nisl aliquet
-						</li>
-						<li>
-							Nulla volutpat aliquam velit
-						</li>
-						<li>
-							Faucibus porta lacus fringilla vel
-						</li>
-						<li>
-							Aenean sit amet erat nunc
-						</li>
-						<li>
-							Eget porttitor lorem
-						</li>
-					</ul> -->
+					
 				</div>
 				<div class="col-md-3">
-					<!-- <blockquote>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-						</p> <small>Someone famous <cite>Source Title</cite></small>
-					</blockquote> -->
+					
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-
-	<script src="js/jquery.min.js"></script>
+	<script   src="https://code.jquery.com/jquery-1.12.3.js"  
+	integrity="sha256-1XMpEtA4eKXNNpXcJ1pmMPs8JV+nwLdEqwiJeCQEkyc="  
+	crossorigin="anonymous"></script>
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/autosize.js/1.18.17/jquery.autosize.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js'></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/scripts.js"></script>
+	<script src="js/index.js"></script>
 	<script type="text/javascript">
 		$( document ).ready(function() {
 	    console.log( "ready!" );
@@ -246,10 +197,6 @@
 	 	 
 	 	
 
-	 	// GET --------------------------------------------------------
-		btn_getFlight.addEventListener("click", function(){
-			getFlight();
-		});
 
 
 

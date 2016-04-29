@@ -10,9 +10,7 @@ import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 import javax.jdo.Transaction;
 
-
 import com.g4.beans.Flight;
-import com.g4.beans.Leaflet;
 import com.g4.dao.FlightDao;
 import com.g4.utils.Criteria;
 
@@ -80,7 +78,7 @@ public class FlightDaoImp implements FlightDao{
 		
 	}
 
-	public String putFlight(Flight flight, String id) {
+	public String putFlight(Flight flight) {
 		// TODO Auto-generated method stub
 		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("Flight");
 		
@@ -160,6 +158,11 @@ public class FlightDaoImp implements FlightDao{
 					my_obj.setArrival_airport(flight.getArrival_airport());
 					my_obj.setNotam(flight.getNotam());
 					my_obj.setOfp(flight.getOfp());
+					my_obj.setId_pilote(flight.getId_pilote());
+					my_obj.setId_co_pilote(flight.getId_co_pilote());
+					my_obj.setId_stewart_un(flight.getId_stewart_un());
+					my_obj.setId_stewart_deux(flight.getId_stewart_deux());
+					my_obj.setId_stewart_trois(flight.getId_stewart_trois());
 		    	 }
 		    }
 		    tx.commit();

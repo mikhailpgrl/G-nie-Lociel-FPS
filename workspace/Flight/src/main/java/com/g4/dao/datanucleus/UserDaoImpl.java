@@ -8,6 +8,8 @@ import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 import javax.jdo.Transaction;
 
+import com.g4.beans.Flight;
+import com.g4.beans.Leaflet;
 import com.g4.beans.Users;
 import com.g4.dao.UserDao;
 
@@ -54,38 +56,86 @@ public class UserDaoImpl implements UserDao{
 		else
 			return users.get(0);
 	}
+
+	public List<Users> getAllUsers() {
+		// TODO Auto-generated method stub
+			List<Users> users = null;
+			PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("Flight");
+			PersistenceManager pm = pmf.getPersistenceManager();
+			Transaction tx = pm.currentTransaction();
+
+			try{
+
+				tx.begin();
+				Query q = pm.newQuery(Users.class);
+				users =  (List<Users>) q.execute();
+				tx.commit();
+
+			}finally{
+
+				if(tx.isActive()){
+
+					tx.rollback();
+				}
+				pm.close();
+			}
+
+			if(users.isEmpty())
+				return null;
+			else
+				return users;
+	}
 	
-	/*
-	public boolean isUserExist(String login){
-		
-		List<Users> users = null;
+	public String putUser(Users user) {
+
+		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("Flight");
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
-		
-		try{
-			// I am not sure if this piece of code works
+
+		try {
 			tx.begin();
-			Query q = pm.newQuery(Users.class);
-			q.setFilter("login == log ");
-			q.declareParameters("String log");
-			users = (List<Users>) q.execute(login);
+			pm.makePersistent(user);
 			tx.commit();
-
-		}finally{
-
-			if(tx.isActive()){
-
+			
+		} finally {
+			
+			if (tx.isActive()) {
 				tx.rollback();
 			}
 			pm.close();
 		}
+		return "success";
 		
-		if(users == null || users.size()== 0)
-			return false;
-		else
-			return users.get(0).getLogin().equalsIgnoreCase(login) ? true:false;
 	}
-	*/
+	
+	public String deleteUser(String id) {
+		// TODO Auto-generated method stub
+		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("Flight");
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+		try
+		{
+		    
+		    tx.begin();
+		    Query q = pm.newQuery(Users.class);
+			q.setFilter("id == userId ");
+			q.declareParameters("int userId");
+			q.deletePersistentAll(Integer.parseInt(id));
+		    tx.commit();
+		}
+		catch (Exception e)
+		{
+		    if (tx.isActive())
+		    {
+		        tx.rollback();
+		    }
+		}
+		
+			return "succes";
+	}	
+	
+	
+	
 }
 
 

@@ -13,17 +13,17 @@ import org.glassfish.jersey.jackson.JacksonFeature;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.servlet.ServletContainer;
 
-import com.g4.utils.excel.UseFile;
+import com.g4.utils.email.Email;
+import com.g4.utils.quartz.CronSchedule;
 
 public class JettyMain {
 
 	public static void main(String[] args) throws Exception {
 		// Initialize the server
 		Server server = new Server();
-
-		UseFile uf = new UseFile(1000,System.getProperty("user.dir") + "/src/main/resources/files/");
-		uf.start();
-		
+		Email em = new Email();
+		em.sendEmail();
+		new CronSchedule();
 		
 		// Add a connector
 		ServerConnector connector = new ServerConnector(server);

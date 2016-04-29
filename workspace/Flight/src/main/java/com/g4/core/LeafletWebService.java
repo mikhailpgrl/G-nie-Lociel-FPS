@@ -1,8 +1,8 @@
 package com.g4.core;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import javax.jdo.JDODataStoreException;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.PUT;
@@ -40,12 +40,16 @@ public class LeafletWebService {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/create-leaflet")
 	public Response createLeaflet(Leaflet leaflet){
-		String message = ld.putLeaflet(leaflet);
-		if (message.contains("success")){
-			return Response.status(200).entity(message).build();
-		}
-		else{
-			 return Response.status(400).entity(message).build();
+		try {
+			String message = ld.putLeaflet(leaflet);
+			if (message.contains("success")) {
+				return Response.status(200).entity(message).build();
+			} else {
+				return Response.status(400).entity(message).build();
+			}
+		} catch (JDODataStoreException e) {
+			// TODO: handle exception
+			return Response.status(500).entity("Error : Already in database").build();
 		}
 			
 	}

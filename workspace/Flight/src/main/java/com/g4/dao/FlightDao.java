@@ -13,7 +13,7 @@ public interface FlightDao {
 
 	List<Flight> getAllFlight();
 	
-	String putFlight(Flight flight, String id);
+	String putFlight(Flight flight);
 
 	String deleteFlight(String id);
 

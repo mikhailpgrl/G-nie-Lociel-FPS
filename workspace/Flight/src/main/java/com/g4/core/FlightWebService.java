@@ -1,9 +1,8 @@
 package com.g4.core;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import javax.jdo.JDOHelper;
+import javax.jdo.JDODataStoreException;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -13,7 +12,6 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-
 
 import com.g4.beans.Flight;
 import com.g4.dao.DAO;
@@ -44,18 +42,26 @@ public class FlightWebService {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/create-flight")
 	public Response createFlight(@QueryParam("userId") String id,Flight flight){
+		System.out.println("ici");
 		if (id != null && id.length() > 0){
-			String message = fd.putFlight(flight,id);
+			try {
+				String message = fd.putFlight(flight);
 			if (message.contains("succes")){
 				return Response.status(200).entity(JSonMaker.getJson(message)).build();
 			}
 			else{
 				return Response.status(400).entity(message).build();
 			}
+
+			} catch (JDODataStoreException e) {
+				// TODO: handle exception
+				return Response.status(500).entity("Error : Already in database").build();
+			}
 			
 		}else{
 			return Response.status(400).entity("USER_MANDATORY").build();
 		}	
+		
 	}
 	
 	@GET

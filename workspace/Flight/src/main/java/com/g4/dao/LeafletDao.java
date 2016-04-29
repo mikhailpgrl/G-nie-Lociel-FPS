@@ -1,6 +1,5 @@
 package com.g4.dao;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.g4.beans.Leaflet;

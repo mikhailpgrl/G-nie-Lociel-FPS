@@ -1,12 +1,9 @@
 package com.g4.dao;
 
-import javax.jdo.JDOHelper;
-import javax.jdo.PersistenceManagerFactory;
-
 import com.g4.dao.datanucleus.FlightDaoImp;
 import com.g4.dao.datanucleus.LeafletDaoImpl;
 import com.g4.dao.datanucleus.UserDaoImpl;
-import com.g4.dao.plug.*;
+import com.g4.dao.plug.AirportPlug;
 
 public class DAO {
 

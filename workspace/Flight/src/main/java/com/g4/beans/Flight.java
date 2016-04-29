@@ -26,6 +26,11 @@ public class Flight {
 	private String arrival_airport;
 	private String notam;
 	private String ofp;
+	private String id_pilote;
+	private String id_co_pilote;
+	private String id_stewart_un;
+	private String id_stewart_deux;
+	private String id_stewart_trois;
 
 	
 	public void print(){
@@ -135,6 +140,46 @@ public class Flight {
 
 	public void setArrival_time(String arrival_time) {
 		this.arrival_time = arrival_time;
+	}
+
+	public String getId_pilote() {
+		return id_pilote;
+	}
+
+	public void setId_pilote(String id_pilote) {
+		this.id_pilote = id_pilote;
+	}
+
+	public String getId_co_pilote() {
+		return id_co_pilote;
+	}
+
+	public void setId_co_pilote(String id_co_pilote) {
+		this.id_co_pilote = id_co_pilote;
+	}
+
+	public String getId_stewart_un() {
+		return id_stewart_un;
+	}
+
+	public void setId_stewart_un(String id_stewart_un) {
+		this.id_stewart_un = id_stewart_un;
+	}
+
+	public String getId_stewart_deux() {
+		return id_stewart_deux;
+	}
+
+	public void setId_stewart_deux(String id_stewart_deux) {
+		this.id_stewart_deux = id_stewart_deux;
+	}
+
+	public String getId_stewart_trois() {
+		return id_stewart_trois;
+	}
+
+	public void setId_stewart_trois(String id_stewart_trois) {
+		this.id_stewart_trois = id_stewart_trois;
 	}
 
 	

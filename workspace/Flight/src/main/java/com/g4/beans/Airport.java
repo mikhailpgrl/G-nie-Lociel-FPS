@@ -2,7 +2,6 @@ package com.g4.beans;
 
 
 import javax.jdo.annotations.PersistenceCapable;
-import javax.jdo.annotations.PrimaryKey;
 @PersistenceCapable
 public class Airport {
 
@@ -54,6 +53,14 @@ public class Airport {
 
 	public void setCountry(String country) {
 		this.country = country;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 }
