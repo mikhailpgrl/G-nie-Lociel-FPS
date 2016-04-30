@@ -1,5 +1,6 @@
 package com.g4.core;
 
+import java.io.File;
 import java.util.List;
 
 import javax.jdo.JDODataStoreException;
@@ -16,6 +17,7 @@ import com.g4.beans.Leaflet;
 import com.g4.dao.DAO;
 import com.g4.dao.LeafletDao;
 import com.g4.utils.JSonMaker;
+import com.g4.utils.pdf.FilePdf;
 
 @Path("/cco/leaflet")
 public class LeafletWebService {
@@ -59,6 +61,9 @@ public class LeafletWebService {
 	@Path("/show-leaflet")
 	public Response deleteLeaflet(@QueryParam("id") String id){
 		if (id != null && id.length() > 0){
+			Leaflet l = ld.getLeaflet(id);
+			if(l != null && l.getUrl() != null)
+				FilePdf.deletePDF(l);
 			String message = ld.deleteLeaflet(id);
 			if (message.contains("succes")){
 				return Response.status(200).entity(message).build();

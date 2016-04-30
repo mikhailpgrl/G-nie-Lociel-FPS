@@ -15,7 +15,7 @@ import com.g4.beans.Leaflet;
 import com.g4.dao.DAO;
 import com.g4.dao.LeafletDao;
 import com.g4.utils.excel.InitializationFile;
-import com.g4.utils.pdf.SaveFilePdf;
+import com.g4.utils.pdf.FilePdf;
 
 
 @Path("/cco/upload")
@@ -47,7 +47,7 @@ public class UploadFileWebService {
 
 
 		Leaflet leaflet = new Leaflet();
-		SaveFilePdf.savePDF(leaflet, file);
+		FilePdf.savePDF(leaflet, file);
 		String message = ld.putLeaflet(leaflet);
 		
 		
@@ -61,7 +61,7 @@ public class UploadFileWebService {
 
 		Leaflet leaflet = new Leaflet();
 		leaflet.setContent(content);
-		SaveFilePdf.savePDF(leaflet, file);
+		FilePdf.savePDF(leaflet, file);
 		
 		String message = ld.putLeaflet(leaflet);
 		return Response.status(200).entity("ok").build();

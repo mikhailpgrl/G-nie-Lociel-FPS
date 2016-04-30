@@ -9,43 +9,49 @@ import org.apache.xmlbeans.impl.util.Base64;
 import com.g4.beans.Files;
 import com.g4.beans.Leaflet;
 
-public class SaveFilePdf {
+public class FilePdf {
 
 	public static int idfile;
-	
-	public SaveFilePdf(){
+
+	public FilePdf() {
 		idfile = 0;
 	}
-	
-	public static void savePDF(Leaflet lf,Files f){
+
+	public static void deletePDF(Leaflet lf) {
+		File file = new File(lf.getUrl());
+		file.delete();
+
+	}
+
+	public static void savePDF(Leaflet lf, Files f) {
 
 		try {
 
 			byte[] data = Base64.decode(f.getFile().getBytes());
-			String path = System.getProperty("user.dir") +"/src/main/webapp/pdf/";
+			String path = System.getProperty("user.dir") + "/src/main/webapp/pdf/";
 			String pathtemp = path + idfile + ".pdf";
 			OutputStream stream;
 			int i = 0;
-			while (true){
+			while (true) {
 				File file = new File(pathtemp);
 				stream = new FileOutputStream(file);
-				if (!file.exists() && file.isDirectory()){
+				if (!file.exists() && file.isDirectory()) {
 					stream.write(data);
 					stream.flush();
 					stream.close();
 					break;
-				}else{
+				} else {
 					i++;
-					pathtemp  = path + idfile + "("+ i +")" + ".pdf";
-					
+					pathtemp = path + idfile + "(" + i + ")" + ".pdf";
+
 				}
 			}
 			lf.setUrl(pathtemp);
-			
+
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		
+
 	}
-	
+
 }
