@@ -6,6 +6,7 @@
     letter-spacing: 2px;
 }
 
+
 h1{
     font-size : 6vw;
     color: dimgray;
@@ -17,7 +18,7 @@ h1{
 #column_title{
     background-color: white;
     text-align: center;
-    font-size : 3vw;
+    font-size : 4vw ;
     border-radius: 8px;
 }
 
@@ -40,7 +41,6 @@ button{
     font-size: 2vw
 }
 
-/* > : allow to select only the direct child of the parent element */
 #tmp{
         background-color: white;
         text-align: center;
@@ -50,7 +50,7 @@ img{
     width: 100%;
 }
 
-#pdf_link_zone{
+.pdf_link_zone{
     background-color: white;
     font-size: 4vw;
 }

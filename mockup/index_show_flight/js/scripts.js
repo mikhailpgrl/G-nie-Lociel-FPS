@@ -29,6 +29,7 @@ $( document ).ready(function() {
             }
             else{
                 text_area.innerHTML="No Pdf file found";
+                text_area.setAttribute("class","pdf_link_zone");
             }
             pdf_link_zone.appendChild(text_area);
             zone_created = true;
@@ -56,7 +57,7 @@ $( document ).ready(function() {
 	        success: function (data) { 
 			  	console.log("ok");
 	        	var arr = Object.keys(data).map(function(k) { return data[k] });
-			  	fillInFields(data);
+			  	fillInFields(arr);
 	        }
 	    });
 	}
@@ -80,9 +81,10 @@ $( document ).ready(function() {
     }
     
 	initialize_elements();
-    getFlight();
-    fillInFields();
+    //getFlight();
+    //fillInFields();
     more_button_initialize();
+    
 	
 	
 
