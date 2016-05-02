@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>CCO : Flight List</title>
+
+    <meta name="author" content="LMACKVY">
+
+    <!-- bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!-- boostrap widget theme -->
+    <link href="css/theme.bootstrap.css" rel="stylesheet">
+          
+    <!-- pager -->
+    <link rel="stylesheet" href="css/jquery.tablesorter.pager.css">
+    
+    <!-- timepicker -->  
+    <link rel="stylesheet" href="css/jquery.timepicker.css" 
+      
+  </head>
+  <body id="body_t">
+
+    <div class="container-fluid">
+        <div class="col-md-12">
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-default" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"></button>
+                            <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar">
+                            </span>
+                            <span class="icon-bar">
+                            </span>
+                    </div>
+
+                    <div class="collapse navbar-collapse text-center" id="@">
+                        <ul class="nav navbar-nav">
+                            <li class="active">
+                            <a class="navbar-brand" href="#">Flight List</a>
+                            </li>
+                            <li>
+                            <a class="navbar-brand" href="#">Flight Creation Page</a>
+                            </li>
+                            <li class="active">
+                            <a class="navbar-brand" href="#">Commercial Leaflet</a>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a class="navbar-brand" href="#">Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+      </div>
+    <div class="row">
+        <div class="col-md-2">
+        </div>
+    </div>
+    <div>
+        <section>
+            <header>
+                <h1 class = "text-center">Flight List </h1>
+            </header>
+            </section>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <h2></h2>
+        </div>
+    </div>  
+    <div class="container-fluid">
+        <div class="row">
+            <button type="button" class="reset btn btn-primary">Reset Filter</button>
+            <h1></h1>
+        </div>
+    </div>
+    <div class = "container-fluid">
+        <div class="row">
+            <table id="the_table"> <!-- bootstrap classes added by the uitheme widget -->
+  <thead>
+    <tr>
+      <th>Commercial Number</th>
+      <th>ATC</th>
+      <th>Departure Airport</th>
+      <th>Departure Date</th>
+      <th>Departure Time</th>
+      <th>Arrival Airport</th>
+      <th>Arrival Date</th>
+      <th>Arrival Time</th>
+  </thead>
+  <tfoot>
+    <tr>
+      <th>Commercial Number</th>
+      <th>ATC</th>
+      <th>Departure Airport</th>
+      <th>Departure Date</th>
+      <th>Departure Time</th>
+      <th>Arrival Airport</th>
+      <th>Arrival Date</th>
+      <th>Arrival Time</th>
+    </tr>
+    <tr>
+      <th colspan="8" class="ts-pager form-horizontal">
+        <button type="button" class="btn first"><i class="icon-step-backward glyphicon glyphicon-step-backward"></i></button>
+        <button type="button" class="btn prev"><i class="icon-arrow-left glyphicon glyphicon-backward"></i></button>
+        <span class="pagedisplay"></span> <!-- this can be any element, including an input -->
+        <button type="button" class="btn next"><i class="icon-arrow-right glyphicon glyphicon-forward"></i></button>
+        <button type="button" class="btn last"><i class="icon-step-forward glyphicon glyphicon-step-forward"></i></button>
+        <select class="pagesize input-mini" title="Select page size">
+          <option selected="selected" value="10">10</option>
+          <option value="20">20</option>
+          <option value="30">30</option>
+          <option value="40">40</option>
+        </select>
+        <select class="pagenum input-mini" title="Select page number"></select>
+      </th>
+    </tr>
+  </tfoot>
+  <tbody>
+  </tbody>
+</table>
+        </div>
+    </div>
+    <!-- bootstrap -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+  
+    <!-- tablesorter -->
+    <script src="js/jquery.tablesorter.js"></script>
+    <!-- tablesorter widget file - loaded after the plugin -->
+    <script src="js/jquery.tablesorter.widgets.js"></script>
+    <!-- pager -->
+    <script src="js/jquery.tablesorter.pager.js"></script>
+    <!-- timepicker -->
+    <script src="js/jquery.timepicker.min.js"></script>
+      
+  </body>
+</html>
