@@ -1,7 +1,9 @@
 package com.g4.core;
 
-import java.util.ArrayList;
+import java.io.File;
+import java.util.List;
 
+import javax.jdo.JDODataStoreException;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.PUT;
@@ -14,8 +16,8 @@ import javax.ws.rs.core.Response;
 import com.g4.beans.Leaflet;
 import com.g4.dao.DAO;
 import com.g4.dao.LeafletDao;
-import com.g4.dao.plug.LeafletPlug;
 import com.g4.utils.JSonMaker;
+import com.g4.utils.pdf.FilePdf;
 
 @Path("/cco/leaflet")
 public class LeafletWebService {
@@ -31,7 +33,7 @@ public class LeafletWebService {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/list-leaflet")
 	public Response getAllLeaflet(){
-		ArrayList<Leaflet> l;
+		List<Leaflet> l;
 		l = ld.getAllLeaflet();
 		return Response.status(200).entity(JSonMaker.getJson(l)).build();
 	}
@@ -40,12 +42,16 @@ public class LeafletWebService {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/create-leaflet")
 	public Response createLeaflet(Leaflet leaflet){
-		String message = ld.putLeaflet(leaflet);
-		if (message.contains("success")){
-			return Response.status(200).entity(message).build();
-		}
-		else{
-			 return Response.status(400).entity(message).build();
+		try {
+			String message = ld.putLeaflet(leaflet);
+			if (message.contains("success")) {
+				return Response.status(200).entity(message).build();
+			} else {
+				return Response.status(400).entity(message).build();
+			}
+		} catch (JDODataStoreException e) {
+			// TODO: handle exception
+			return Response.status(500).entity("Error : Already in database").build();
 		}
 			
 	}
@@ -55,6 +61,9 @@ public class LeafletWebService {
 	@Path("/show-leaflet")
 	public Response deleteLeaflet(@QueryParam("id") String id){
 		if (id != null && id.length() > 0){
+			Leaflet l = ld.getLeaflet(id);
+			if(l != null && l.getUrl() != null)
+				FilePdf.deletePDF(l);
 			String message = ld.deleteLeaflet(id);
 			if (message.contains("succes")){
 				return Response.status(200).entity(message).build();

@@ -1,59 +1,70 @@
 package com.g4.core;
 
+import java.io.IOException;
+
+import javax.jdo.JDODataStoreException;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import com.g4.beans.Files;
-import com.g4.utils.excel.CreateFile;
-import com.sun.jersey.core.header.FormDataContentDisposition;
-import com.sun.jersey.multipart.FormDataParam;
+import com.g4.beans.Leaflet;
+import com.g4.dao.DAO;
+import com.g4.dao.LeafletDao;
+import com.g4.utils.excel.InitializationFile;
+import com.g4.utils.pdf.FilePdf;
 
 
 @Path("/cco/upload")
 public class UploadFileWebService {
+	
+	
+	private static LeafletDao ld;
+	
 
+	public UploadFileWebService() {
+		// TODO Auto-generated constructor stub
+		ld = DAO.getLeafletDao();
+	}
+	
 	@POST
 	@Path("/file")
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response uploadFile(Files file) {
-
-		//String uploadedFileLocation = System.getProperty("user.dir") +"/Excel/" + fileDetail.getFileName();
-
-		// save it
-		//writeToFile(uploadedInputStream, uploadedFileLocation);
-
-		//String output = "File uploaded to : " + uploadedFileLocation;
+	public Response uploadFile(Files file) throws IOException {
 		
-		CreateFile.createFile(file);
+		InitializationFile.createFile(file);
 		
 		return Response.status(200).entity("ok").build();
 
 	}
+	@POST
+	@Path("/file-pdf")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response uploadFilePDF(Files file,@QueryParam("id") String id) throws IOException {
 
-	//	// save uploaded file to new location
-	//	private void writeToFile(InputStream uploadedInputStream,
-	//		String uploadedFileLocation) {
-	//
-	//		try {
-	//			OutputStream out = new FileOutputStream(new File(
-	//					uploadedFileLocation));
-	//			int read = 0;
-	//			byte[] bytes = new byte[1024];
-	//
-	//			out = new FileOutputStream(new File(uploadedFileLocation));
-	//			while ((read = uploadedInputStream.read(bytes)) != -1) {
-	//				out.write(bytes, 0, read);
-	//			}
-	//			out.flush();
-	//			out.close();
-	//		} catch (IOException e) {
-	//
-	//			e.printStackTrace();
-	//		}
-	//
-	//	}
-	//	
+
+		Leaflet leaflet = new Leaflet();
+		FilePdf.savePDF(leaflet, file);
+		String message = ld.putLeaflet(leaflet);
+		
+		
+		return Response.status(200).entity("ok").build();
+
+	}
+	@POST
+	@Path("/file-pdf-content")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response uploadFilePDFContent(Files file,@QueryParam("content")String content) throws IOException {
+
+		Leaflet leaflet = new Leaflet();
+		leaflet.setContent(content);
+		FilePdf.savePDF(leaflet, file);
+		
+		String message = ld.putLeaflet(leaflet);
+		return Response.status(200).entity("ok").build();
+
+	}
 }

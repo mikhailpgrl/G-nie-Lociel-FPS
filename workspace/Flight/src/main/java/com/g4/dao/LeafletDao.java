@@ -1,12 +1,12 @@
 package com.g4.dao;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import com.g4.beans.Leaflet;
 
 public interface LeafletDao {
 
-	ArrayList<Leaflet> getAllLeaflet();
+	List<Leaflet> getAllLeaflet();
 
 	String putLeaflet(Leaflet leaflet);
 
