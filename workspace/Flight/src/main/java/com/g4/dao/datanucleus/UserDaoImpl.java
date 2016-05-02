@@ -8,6 +8,8 @@ import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 import javax.jdo.Transaction;
 
+import com.g4.beans.Flight;
+import com.g4.beans.Leaflet;
 import com.g4.beans.Users;
 import com.g4.dao.UserDao;
 

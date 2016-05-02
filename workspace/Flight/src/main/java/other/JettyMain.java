@@ -16,7 +16,10 @@ import org.glassfish.jersey.jackson.JacksonFeature;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.servlet.ServletContainer;
 
+<<<<<<< HEAD
 import com.g4.beans.Flight;
+=======
+>>>>>>> 7dbf05ef84452a22ad3fc0f8dd905b599a1d4bc8
 import com.g4.utils.email.Email;
 import com.g4.utils.quartz.CronSchedule;
 
@@ -26,6 +29,7 @@ public class JettyMain {
 		// Initialize the server
 		Server server = new Server();
 		Email em = new Email();
+<<<<<<< HEAD
 //		em.sendEmail();
 		List<Flight> lflight = new ArrayList<Flight>();
 		Flight f = new Flight();
@@ -34,6 +38,9 @@ public class JettyMain {
 		lflight.add(f);
 		lflight.add(f);
 		em.sendEmailOfp(lflight);
+=======
+		em.sendEmail();
+>>>>>>> 7dbf05ef84452a22ad3fc0f8dd905b599a1d4bc8
 		new CronSchedule();
 		
 		// Add a connector

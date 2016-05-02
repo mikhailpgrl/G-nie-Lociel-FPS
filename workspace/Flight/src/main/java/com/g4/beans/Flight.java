@@ -26,7 +26,10 @@ public class Flight {
 	private String arrival_airport;
 	private String notam;
 	private String ofp;
+<<<<<<< HEAD
 	private String id_aircraft;
+=======
+>>>>>>> 7dbf05ef84452a22ad3fc0f8dd905b599a1d4bc8
 	private String id_pilote;
 	private String id_co_pilote;
 	private String id_stewart_un;

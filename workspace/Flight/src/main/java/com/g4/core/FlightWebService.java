@@ -50,7 +50,10 @@ public class FlightWebService {
 		if (id != null && id.length() > 0){
 			try {
 				String message = fd.putFlight(flight);
+<<<<<<< HEAD
 				
+=======
+>>>>>>> 7dbf05ef84452a22ad3fc0f8dd905b599a1d4bc8
 			if (message.contains("succes")){
 				return Response.status(200).entity(JSonMaker.getJson(message)).build();
 			}

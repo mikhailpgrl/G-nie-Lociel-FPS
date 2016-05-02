@@ -3,8 +3,11 @@ package com.g4.beans;
 
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
+<<<<<<< HEAD
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
+=======
+>>>>>>> 7dbf05ef84452a22ad3fc0f8dd905b599a1d4bc8
 @PersistenceCapable
 public class Airport {
 
@@ -60,11 +63,19 @@ public class Airport {
 		this.country = country;
 	}
 
+<<<<<<< HEAD
 	public int getId() {
 		return id;
 	}
 
 	public void setId(int id) {
+=======
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+>>>>>>> 7dbf05ef84452a22ad3fc0f8dd905b599a1d4bc8
 		this.id = id;
 	}
 
