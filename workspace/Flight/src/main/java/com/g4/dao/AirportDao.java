@@ -13,4 +13,6 @@ public interface AirportDao {
 
 	String putAirport(Airport user);
 	
+	Airport getAirport(String id);
+	
 }

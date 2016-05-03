@@ -27,11 +27,19 @@ public class PositionAircraftWebService {
 		pad = DAO.getPositionAircraftDao();
 	}
 
-	
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/position")
+	public Response getAllPosition(){
+		List<PositionAircraft> positionAircraft;
+		positionAircraft = pad.getAllPositionAircraft();
+		return Response.status(200).entity(JSonMaker.getJson(positionAircraft)).build();
+	}
+
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/position-id")
 	public Response getAllPositionById(@QueryParam("id")String id){
 		List<PositionAircraft> positionAircraft;
 		positionAircraft = pad.getAllPositionAircraftById(id);

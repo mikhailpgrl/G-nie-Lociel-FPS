@@ -50,6 +50,8 @@ public class PositionAircraftDaoImp implements PositionAircraftDao {
 			return positionAicraft;
 	}
 	
+	
+	
 	public List<PositionAircraft> getAllPositionAircraft() {
 		// TODO Auto-generated method stub
 		

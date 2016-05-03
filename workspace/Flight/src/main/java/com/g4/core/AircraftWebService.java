@@ -21,6 +21,7 @@ import com.g4.beans.Aircraft;
 import com.g4.beans.Flight;
 import com.g4.beans.PositionAircraft;
 import com.g4.dao.AircraftDao;
+import com.g4.dao.AirportDao;
 import com.g4.dao.DAO;
 import com.g4.dao.PositionAircraftDao;
 import com.g4.utils.JSonMaker;
@@ -31,11 +32,13 @@ public class AircraftWebService {
 	private static AircraftDao ad;
 
 	private static PositionAircraftDao pad;
+	private static AirportDao apd;
 
 	public AircraftWebService() {
 		// TODO Auto-generated constructor stub
 		ad = DAO.getAircraftDao();
 		pad = DAO.getPositionAircraftDao();
+		apd = DAO.getAirportDao();
 	}
 
 	
@@ -52,7 +55,7 @@ public class AircraftWebService {
 
 	@POST
 	@Produces(MediaType.APPLICATION_JSON)
-	@Path("/list-aircraft")
+	@Path("/list-aircraft-all")
 	public Response getAllAircraftForFlight(Flight flight){
 		List<Aircraft> aircraft;
 		aircraft = ad.getAllAircraft();
@@ -61,61 +64,66 @@ public class AircraftWebService {
 		List<PositionAircraft> position3 = new ArrayList<PositionAircraft>();
 		PositionAircraft pa = null;
 		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+		List<Aircraft> aircraft2 = new ArrayList<Aircraft>();
 		position = pad.getAllPositionAircraft();
-		for (Aircraft ac : aircraft) {
-			position2.clear();
-			for (PositionAircraft p : position){
-				if (p.getId_aircraft().equals(ac.getId())){
-					position2.add(p);
+		
+		if ((position != null) && !position.isEmpty()){
+			for (Aircraft ac : aircraft) {
+				position2.clear();
+				for (PositionAircraft p : position){
+					if (p.getId_aircraft().equals(Integer.toString(ac.getId()))){
+						position2.add(p);
+					}
+				}
+				try {
+					
+					if (!position2.isEmpty()){
+						int i = 0; 
+						for (PositionAircraft pos : position2 ){
+								Date d1 = formatter.parse(pos.getPosition_date() + " " + pos.getPosition_time());
+								if (i == 0 ){
+									pa = pos;
+								}else{
+									Date d2 = formatter.parse(pos.getPosition_date() + " " + pos.getPosition_time());
+									if (d1.getTime() < d2.getTime()){
+										pa = pos;
+										d1 = d2;
+									}
+								}
+								i++;
+						}
+						position3.add(pa);
+					}
+				} catch (ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
 				}
 			}
 			try {
+				position2.clear();
+				Date currentDate = formatter.parse(flight.getDeparture_date() + " " + flight.getDeparture_time());
 				
-				if (!position2.isEmpty()){
-					int i = 0; 
-					for (PositionAircraft pos : position2 ){
-							Date d1 = formatter.parse(pos.getPosition_date() + " " + pos.getPosition_time());
-							if (i == 0 ){
-								pa = pos;
-							}else{
-								Date d2 = formatter.parse(pos.getPosition_date() + " " + pos.getPosition_time());
-								if (d1.getTime() < d2.getTime()){
-									pa = pos;
-									d1 = d2;
-								}
-							}
-							i++;
+				for (PositionAircraft pos : position3) {
+					if (flight.getDeparture_airport().equals(apd.getAirport(pos.getId_airport()).getIcao_code())){
+						Date d2 = formatter.parse(pos.getPosition_date() + " " + pos.getPosition_time());
+						if (currentDate.getTime() > d2.getTime()){
+							position2.add(pos);
+						}
 					}
-					position3.add(pa);
+	
+					
 				}
 			} catch (ParseException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}
-		try {
-			position2.clear();
-			Date currentDate = formatter.parse(flight.getDeparture_date() + " " + flight.getDeparture_time());
 			
-			for (PositionAircraft pos : position3) {
-				Date d2 = formatter.parse(pos.getPosition_date() + " " + pos.getPosition_time());
-				if (currentDate.getTime() > d2.getTime()){
-					position2.add(pos);
-				}
-
-				
-			}
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		List<Aircraft> aircraft2 = new ArrayList<Aircraft>();
-		
-		for (Aircraft aircraft3 : aircraft) {
-			for (PositionAircraft positionAircraft : position2){
-				if (positionAircraft.getId_aircraft().equals(Integer.toString(aircraft3.getId()))){
-					aircraft2.add(aircraft3);
-					break;
+			for (Aircraft aircraft3 : aircraft) {
+				for (PositionAircraft positionAircraft : position2){
+					if (positionAircraft.getId_aircraft().equals(Integer.toString(aircraft3.getId()))){
+						aircraft2.add(aircraft3);
+						break;
+					}
 				}
 			}
 		}
