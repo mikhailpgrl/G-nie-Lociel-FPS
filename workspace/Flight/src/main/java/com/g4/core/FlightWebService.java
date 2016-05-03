@@ -1,5 +1,6 @@
 package com.g4.core;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.jdo.JDODataStoreException;
@@ -13,8 +14,10 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import com.g4.beans.Airport;
 import com.g4.beans.Flight;
 import com.g4.beans.PositionAircraft;
+import com.g4.dao.AirportDao;
 import com.g4.dao.DAO;
 import com.g4.dao.FlightDao;
 import com.g4.dao.PositionAircraftDao;
@@ -26,11 +29,13 @@ public class FlightWebService {
 
 	private static FlightDao fd;
 	private static PositionAircraftDao pad;
+	private static AirportDao aird;
 	
 	public FlightWebService() {
 		// TODO Auto-generated constructor stub
 		fd = DAO.getFlightDao();
 		pad = DAO.getPositionAircraftDao();
+		aird = DAO.getAirportDao();
 	}
 	
 	@GET
@@ -41,14 +46,33 @@ public class FlightWebService {
 		f = fd.getAllFlight();
 		return Response.status(200).entity(JSonMaker.getJson(f)).build();
 	}
+
+	
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/list-flight-aircrew")
+	public Response getAllFlightbyAIrCrew(@QueryParam("userId") String id){
+		List<Flight> f;
+		List<Flight> f1 = new ArrayList<Flight>();
+		f = fd.getAllFlight();
+		for (Flight flight : f) {
+			if (flight.getId_co_pilote().equals(id) || flight.getId_pilote().equals(id) ||
+					flight.getId_stewart_deux().equals(id) || flight.getId_stewart_trois().equals(id) ||
+					flight.getId_stewart_un().equals(id)){
+				f1.add(flight);
+			}
+		}
+		return Response.status(200).entity(JSonMaker.getJson(f1)).build();
+	}
 	
 	@PUT
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/create-flight")
 	public Response createFlight(@QueryParam("userId") String id,Flight flight){
-		System.out.println("ici");
 		if (id != null && id.length() > 0){
 			try {
+				
+				
 				String message = fd.putFlight(flight);
 				
 			if (message.contains("succes")){
@@ -96,8 +120,16 @@ public class FlightWebService {
 		if (id != null && id.length() > 0){
 			Flight f;
 			f = fd.getFlight(id);
-			if (f!= null && !f.getId_aircraft().equals(null))
-				pad.deletePositionAircraft(Integer.toString(f.getId()));
+			if (f!= null && !f.getId_aircraft().equals(null)){
+				List<PositionAircraft> lp = pad.getAllPositionAircraft();
+				for (PositionAircraft positionAircraft : lp) {
+					if (positionAircraft.getId_flight().equals(Integer.toString(f.getId()))){
+						pad.deletePositionAircraft(Integer.toString(positionAircraft.getId()));
+						break;
+					}
+				}
+			}
+				
 			String message = fd.deleteFlight(id);
 			if (message.contains("succes")){
 				return Response.status(200).entity(message).build();
@@ -118,14 +150,25 @@ public class FlightWebService {
 		Flight f;
 		if (id != null && id.length() > 0){
 			f = fd.getFlight(id);
-			if (!f.getId_aircraft().equals(flight.getId_aircraft())){
+			if (f.getId_aircraft() ==null || !f.getId_aircraft().equals(flight.getId_aircraft())){
+				List<PositionAircraft> lp = pad.getAllPositionAircraft();
+				for (PositionAircraft positionAircraft : lp) {
+					if (positionAircraft.getId_flight().equals(Integer.toString(f.getId()))){
+						pad.deletePositionAircraft(Integer.toString(positionAircraft.getId()));
+						break;
+					}
+				}
 				PositionAircraft pa = new PositionAircraft();
 				pa.setId_aircraft(flight.getId_aircraft());
 				pa.setId_airport(flight.getDeparture_airport());
 				pa.setPosition_date(flight.getArrival_date());
 				pa.setPosition_time(flight.getArrival_time());
+				pa.setId_flight(Integer.toString(flight.getId()));
 				pad.putPositionAircraft(pa);
 			}
+			f.print();
+			System.out.println("-----------");
+			flight.print();
 			fd.modifyFlight(id,flight);
 			return Response.status(200).entity("OK").build();
 			

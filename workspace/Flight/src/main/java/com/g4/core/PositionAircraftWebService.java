@@ -71,6 +71,7 @@ public class PositionAircraftWebService {
 	@Path("/delete-position")
 	public Response deleteLeaflet(@QueryParam("id") String id){
 		if (id != null && id.length() > 0){
+			System.out.println(id);
 			String message = pad.deletePositionAircraft(id);
 			if (message.contains("succes")){
 				return Response.status(200).entity(message).build();

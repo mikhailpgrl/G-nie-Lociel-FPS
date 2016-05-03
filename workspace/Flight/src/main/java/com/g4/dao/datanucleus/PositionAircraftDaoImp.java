@@ -96,7 +96,7 @@ public class PositionAircraftDaoImp implements PositionAircraftDao {
 		try {
 
 			tx.begin();
-			Query q = pm.newQuery(Aircraft.class);
+			Query q = pm.newQuery(PositionAircraft.class);
 			q.setFilter("id == positionAircraftId ");
 			q.declareParameters("int positionAircraftId");
 			q.deletePersistentAll(Integer.parseInt(id));
