@@ -163,6 +163,7 @@ public class FlightDaoImp implements FlightDao{
 					my_obj.setId_stewart_un(flight.getId_stewart_un());
 					my_obj.setId_stewart_deux(flight.getId_stewart_deux());
 					my_obj.setId_stewart_trois(flight.getId_stewart_trois());
+					my_obj.setId_aircraft(flight.getId_aircraft());
 		    	 }
 		    }
 		    tx.commit();

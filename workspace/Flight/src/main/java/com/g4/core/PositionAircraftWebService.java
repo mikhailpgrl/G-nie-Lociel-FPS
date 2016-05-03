@@ -5,7 +5,6 @@ import java.util.List;
 import javax.jdo.JDODataStoreException;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
-import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -13,63 +12,40 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import com.g4.beans.Flight;
-import com.g4.beans.Leaflet;
-import com.g4.beans.Users;
+import com.g4.beans.PositionAircraft;
 import com.g4.dao.DAO;
-import com.g4.dao.UserDao;
+import com.g4.dao.PositionAircraftDao;
 import com.g4.utils.JSonMaker;
 
-@Path("/{a:aircrew|cco}/user")
-public class UserWebService {
+@Path("/{a:aircrew|cco}/position")
+public class PositionAircraftWebService {
 
-	private static UserDao ud;
+	private static PositionAircraftDao pad;
 
-	public UserWebService() {
+	public PositionAircraftWebService() {
 		// TODO Auto-generated constructor stub
-		ud = DAO.getUserDao();
+		pad = DAO.getPositionAircraftDao();
 	}
 
 	
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	@Path("/list-user")
-	public Response getAllFlight(){
-		List<Users> user;
-		user = ud.getAllUsers();
-		if(user != null && !user.isEmpty())
-			for (Users users : user) {
-				users.deleteData();
-			}
-		return Response.status(200).entity(JSonMaker.getJson(user)).build();
+	@Path("/position")
+	public Response getAllPositionById(@QueryParam("id")String id){
+		List<PositionAircraft> positionAircraft;
+		positionAircraft = pad.getAllPositionAircraftById(id);
+		return Response.status(200).entity(JSonMaker.getJson(positionAircraft)).build();
 	}
-	
-	@POST
-	@Produces(MediaType.APPLICATION_JSON)
-	@Path("/login")
-	public Response getUser(@QueryParam("userId") String id, @QueryParam("token") String token, Users user) {
-		if (id != null && id.length() > 0 && id != null && id.length() > 0) {
-			Users u = null;
-			u = ud.getUser(id, token);
-			if (u == null)
-				return Response.status(401).entity("USER_NOT_FOUND").build();
-			else
-				return Response.status(200).entity(JSonMaker.getJson(u)).build();
-		} else {
-			return Response.status(400).entity("USER_GET_ERROR_MANDATORY").build();
-		}
-	}
-	
 	
 	
 	
 	@PUT
 	@Produces(MediaType.APPLICATION_JSON)
-	@Path("/create-user")
-	public Response createLeaflet(Users user){
+	@Path("/create-position")
+	public Response createLeaflet(PositionAircraft position){
 		try {
-			String message = ud.putUser(user);
+			String message = pad.putPositionAircraft(position);
 			if (message.contains("success")) {
 				return Response.status(200).entity(message).build();
 			} else {
@@ -84,10 +60,10 @@ public class UserWebService {
 	
 	@DELETE
 	@Produces(MediaType.APPLICATION_JSON)
-	@Path("/delete-user")
+	@Path("/delete-position")
 	public Response deleteLeaflet(@QueryParam("id") String id){
 		if (id != null && id.length() > 0){
-			String message = ud.deleteUser(id);
+			String message = pad.deletePositionAircraft(id);
 			if (message.contains("succes")){
 				return Response.status(200).entity(message).build();
 			}

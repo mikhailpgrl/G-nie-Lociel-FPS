@@ -13,63 +13,48 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import com.g4.beans.Aircraft;
+import com.g4.beans.Airport;
 import com.g4.beans.Flight;
 import com.g4.beans.Leaflet;
 import com.g4.beans.Users;
+import com.g4.dao.AircraftDao;
+import com.g4.dao.AirportDao;
 import com.g4.dao.DAO;
 import com.g4.dao.UserDao;
 import com.g4.utils.JSonMaker;
 
-@Path("/{a:aircrew|cco}/user")
-public class UserWebService {
+@Path("/{a:aircrew|cco}/airport")
+public class AirportWebService {
 
-	private static UserDao ud;
+	private static AirportDao ad;
 
-	public UserWebService() {
+	public AirportWebService() {
 		// TODO Auto-generated constructor stub
-		ud = DAO.getUserDao();
+		ad = DAO.getAirportDao();
 	}
 
 	
 
-	@GET
-	@Produces(MediaType.APPLICATION_JSON)
-	@Path("/list-user")
-	public Response getAllFlight(){
-		List<Users> user;
-		user = ud.getAllUsers();
-		if(user != null && !user.isEmpty())
-			for (Users users : user) {
-				users.deleteData();
-			}
-		return Response.status(200).entity(JSonMaker.getJson(user)).build();
-	}
-	
 	@POST
 	@Produces(MediaType.APPLICATION_JSON)
-	@Path("/login")
-	public Response getUser(@QueryParam("userId") String id, @QueryParam("token") String token, Users user) {
-		if (id != null && id.length() > 0 && id != null && id.length() > 0) {
-			Users u = null;
-			u = ud.getUser(id, token);
-			if (u == null)
-				return Response.status(401).entity("USER_NOT_FOUND").build();
-			else
-				return Response.status(200).entity(JSonMaker.getJson(u)).build();
-		} else {
-			return Response.status(400).entity("USER_GET_ERROR_MANDATORY").build();
+	@Path("/list-airport")
+	public Response getAllAirport(){
+		List<Airport> airport;
+		airport= ad.getAllAirport();
+		
+		if(airport != null && !airport.isEmpty()){
+			
 		}
+		
+		return Response.status(200).entity(JSonMaker.getJson(airport)).build();
 	}
-	
-	
-	
-	
 	@PUT
 	@Produces(MediaType.APPLICATION_JSON)
-	@Path("/create-user")
-	public Response createLeaflet(Users user){
+	@Path("/create-airport")
+	public Response createLeaflet(Airport airport){
 		try {
-			String message = ud.putUser(user);
+			String message = ad.putAirport(airport);
 			if (message.contains("success")) {
 				return Response.status(200).entity(message).build();
 			} else {
@@ -84,10 +69,10 @@ public class UserWebService {
 	
 	@DELETE
 	@Produces(MediaType.APPLICATION_JSON)
-	@Path("/delete-user")
+	@Path("/delete-airport")
 	public Response deleteLeaflet(@QueryParam("id") String id){
 		if (id != null && id.length() > 0){
-			String message = ud.deleteUser(id);
+			String message = ad.deleteAirport(id);
 			if (message.contains("succes")){
 				return Response.status(200).entity(message).build();
 			}
@@ -96,7 +81,7 @@ public class UserWebService {
 			}
 			
 		}else{
-			return Response.status(400).entity("LEAFLET_ID_MANDATORY").build();
+			return Response.status(400).entity("Airport_ID_MANDATORY").build();
 		}	
 	}
 	

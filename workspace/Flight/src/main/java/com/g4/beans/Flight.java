@@ -26,6 +26,7 @@ public class Flight {
 	private String arrival_airport;
 	private String notam;
 	private String ofp;
+	private String id_aircraft;
 	private String id_pilote;
 	private String id_co_pilote;
 	private String id_stewart_un;
@@ -68,6 +69,14 @@ public class Flight {
 
 	public void setAtc_number(String atc_number) {
 		this.atc_number = atc_number;
+	}
+
+	public String getId_aircraft() {
+		return id_aircraft;
+	}
+
+	public void setId_aircraft(String id_aircraft) {
+		this.id_aircraft = id_aircraft;
 	}
 
 	public String getDeparture_date() {

@@ -3,7 +3,9 @@ package com.g4.dao;
 import com.g4.dao.datanucleus.FlightDaoImp;
 import com.g4.dao.datanucleus.LeafletDaoImpl;
 import com.g4.dao.datanucleus.UserDaoImpl;
-import com.g4.dao.plug.AirportPlug;
+import com.g4.dao.datanucleus.AircraftDaoImp;
+import com.g4.dao.datanucleus.AirportDaoImp;
+import com.g4.dao.datanucleus.PositionAircraftDaoImp;
 
 public class DAO {
 
@@ -21,6 +23,14 @@ public class DAO {
 	}
 
 	public static AirportDao getAirportDao(){
-		return new AirportPlug();
+		return new AirportDaoImp();
+	}
+	
+	public static AircraftDao getAircraftDao(){
+		return new AircraftDaoImp();
+	}
+	
+	public static PositionAircraftDao getPositionAircraftDao(){
+		return new PositionAircraftDaoImp();
 	}
 }

@@ -43,27 +43,15 @@ public class UploadFileWebService {
 	@POST
 	@Path("/file-pdf")
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response uploadFilePDF(Files file,@QueryParam("id") String id) throws IOException {
+	public Response uploadFilePDF(Files file) throws IOException {
 
 
 		Leaflet leaflet = new Leaflet();
 		FilePdf.savePDF(leaflet, file);
+		leaflet.setContent(file.getContent());
 		String message = ld.putLeaflet(leaflet);
 		
 		
-		return Response.status(200).entity("ok").build();
-
-	}
-	@POST
-	@Path("/file-pdf-content")
-	@Consumes(MediaType.APPLICATION_JSON)
-	public Response uploadFilePDFContent(Files file,@QueryParam("content")String content) throws IOException {
-
-		Leaflet leaflet = new Leaflet();
-		leaflet.setContent(content);
-		FilePdf.savePDF(leaflet, file);
-		
-		String message = ld.putLeaflet(leaflet);
 		return Response.status(200).entity("ok").build();
 
 	}

@@ -4,6 +4,7 @@ public class Files {
 	
 	private String name;
 	private String file;
+	private String content;
 	
 	public Files(){
 		
@@ -16,6 +17,15 @@ public class Files {
 	
 	public String getName() {
 		return name;
+	}
+
+	
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
 	}
 
 	public void setName(String name) {

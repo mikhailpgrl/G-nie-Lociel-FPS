@@ -14,8 +14,10 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import com.g4.beans.Flight;
+import com.g4.beans.PositionAircraft;
 import com.g4.dao.DAO;
 import com.g4.dao.FlightDao;
+import com.g4.dao.PositionAircraftDao;
 import com.g4.utils.Criteria;
 import com.g4.utils.JSonMaker;
 
@@ -23,10 +25,12 @@ import com.g4.utils.JSonMaker;
 public class FlightWebService {
 
 	private static FlightDao fd;
+	private static PositionAircraftDao pad;
 	
 	public FlightWebService() {
 		// TODO Auto-generated constructor stub
 		fd = DAO.getFlightDao();
+		pad = DAO.getPositionAircraftDao();
 	}
 	
 	@GET
@@ -46,6 +50,7 @@ public class FlightWebService {
 		if (id != null && id.length() > 0){
 			try {
 				String message = fd.putFlight(flight);
+				
 			if (message.contains("succes")){
 				return Response.status(200).entity(JSonMaker.getJson(message)).build();
 			}
@@ -87,8 +92,12 @@ public class FlightWebService {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/show-flight")
 	public Response deleteFlight(@QueryParam("userId") String id){
-				
+
 		if (id != null && id.length() > 0){
+			Flight f;
+			f = fd.getFlight(id);
+			if (f!= null && !f.getId_aircraft().equals(null))
+				pad.deletePositionAircraft(Integer.toString(f.getId()));
 			String message = fd.deleteFlight(id);
 			if (message.contains("succes")){
 				return Response.status(200).entity(message).build();
@@ -106,7 +115,17 @@ public class FlightWebService {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/modify-flight")
 	public Response modifyFlight(Flight flight, @QueryParam("userId") String id ){
+		Flight f;
 		if (id != null && id.length() > 0){
+			f = fd.getFlight(id);
+			if (!f.getId_aircraft().equals(flight.getId_aircraft())){
+				PositionAircraft pa = new PositionAircraft();
+				pa.setId_aircraft(flight.getId_aircraft());
+				pa.setId_airport(flight.getDeparture_airport());
+				pa.setPosition_date(flight.getArrival_date());
+				pa.setPosition_time(flight.getArrival_time());
+				pad.putPositionAircraft(pa);
+			}
 			fd.modifyFlight(id,flight);
 			return Response.status(200).entity("OK").build();
 			

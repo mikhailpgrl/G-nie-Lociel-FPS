@@ -1,5 +1,8 @@
 package other;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.eclipse.jetty.server.Handler;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
@@ -13,6 +16,7 @@ import org.glassfish.jersey.jackson.JacksonFeature;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.servlet.ServletContainer;
 
+import com.g4.beans.Flight;
 import com.g4.utils.email.Email;
 import com.g4.utils.quartz.CronSchedule;
 
@@ -22,7 +26,14 @@ public class JettyMain {
 		// Initialize the server
 		Server server = new Server();
 		Email em = new Email();
-		em.sendEmail();
+//		em.sendEmail();
+//		List<Flight> lflight = new ArrayList<Flight>();
+//		Flight f = new Flight();
+//		f.setDeparture_airport("qsd");
+//		f.setDeparture_time("qsd");
+//		lflight.add(f);
+//		lflight.add(f);
+//		em.sendEmailOfp(lflight);
 		new CronSchedule();
 		
 		// Add a connector
