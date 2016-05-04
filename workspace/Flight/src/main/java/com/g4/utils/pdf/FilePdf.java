@@ -29,27 +29,30 @@ public class FilePdf {
 
 			byte[] data = Base64.decode(f.getFile().getBytes());
 			String path = System.getProperty("user.dir") + "/src/main/webapp/pdf/";
-			String pathtemp = path + idfile + ".pdf";
+			String pathurl = "localhost:8080/pdf/";
+			String pathtemp =  idfile + ".pdf";
 			OutputStream stream;
 			int i = 0;
 			while (true) {
-				File file = new File(pathtemp);
-				stream = new FileOutputStream(file);
-				if (!file.exists() && file.isDirectory()) {
+				File file = new File(path + pathtemp);
+				if (!file.exists() && !file.isDirectory()) {
+					stream = new FileOutputStream(file);
 					stream.write(data);
 					stream.flush();
 					stream.close();
 					break;
 				} else {
 					i++;
-					pathtemp = path + idfile + "(" + i + ")" + ".pdf";
+					pathtemp =  idfile + "(" + i + ")" + ".pdf";
 
 				}
 			}
-			lf.setUrl(pathtemp);
+			lf.setUrl(pathurl + pathtemp);
+			idfile++;
 
 		} catch (Exception e) {
 			// TODO: handle exception
+			System.out.println(e);
 		}
 
 	}

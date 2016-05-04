@@ -14,7 +14,6 @@ public class CronSchedule {
 		Scheduler sched = sf.getScheduler();
 		JobDetail jd = new JobDetail("Job1","groupe1",CronJob.class);
 		CronTrigger ct = new CronTrigger("cronTrigger","groupe2","0 0 * * * ?");
-		
 		sched.scheduleJob(jd, ct);
 		sched.start();
 		

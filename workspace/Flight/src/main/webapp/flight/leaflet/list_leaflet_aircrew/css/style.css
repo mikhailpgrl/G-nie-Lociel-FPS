@@ -1,0 +1,36 @@
+
+#body_t{
+    background-image: url("plane_luftanza.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-size: cover; 
+}
+
+body {
+  background-color: #e3e3e3;
+  color: #555;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  padding-top: 40px;
+}
+body * {
+  outline: none !important;
+}
+
+header h1{
+  border-radius: 8px;
+  background-color: white;
+}
+
+#the_table_leaflet{
+  background-color: white; 
+  border: 0.4px solid black;
+}
+
+td{
+    background-color: white;
+    border-bottom: 2px solid #c3c3c3;
+    border :2px solid #c3c3c3;
+
+}
+

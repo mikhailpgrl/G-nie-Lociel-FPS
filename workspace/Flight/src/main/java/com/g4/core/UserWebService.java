@@ -48,11 +48,10 @@ public class UserWebService {
 	@POST
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/login")
-	public Response getUser(@QueryParam("userId") String id, @QueryParam("token") String token, Users user) {
+	public Response getUser(@QueryParam("userId") String id, @QueryParam("token") String token) {
 		if (id != null && id.length() > 0 && id != null && id.length() > 0) {
 			Users u = null;
 			u = ud.getUser(id, token);
-			user.print();
 			if (u == null)
 				return Response.status(401).entity("USER_NOT_FOUND").build();
 			else

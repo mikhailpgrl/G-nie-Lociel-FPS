@@ -36,16 +36,13 @@ public class AirportWebService {
 
 	
 
-	@POST
+	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/list-airport")
 	public Response getAllAirport(){
 		List<Airport> airport;
 		airport= ad.getAllAirport();
 		
-		if(airport != null && !airport.isEmpty()){
-			
-		}
 		
 		return Response.status(200).entity(JSonMaker.getJson(airport)).build();
 	}

@@ -8,8 +8,6 @@ import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Query;
 import javax.jdo.Transaction;
 
-import com.g4.beans.Flight;
-import com.g4.beans.Leaflet;
 import com.g4.beans.Users;
 import com.g4.dao.UserDao;
 
@@ -33,13 +31,15 @@ public class UserDaoImpl implements UserDao{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 		
-		
+		System.out.println(login);
 		try{
 			tx.begin();
 			Query q = pm.newQuery(Users.class);
-			q.setFilter("login == ? ");
-			q.setFilter("token == ? ");
-			users = (List<Users>) q.execute(login,token);
+//			q.setFilter("login == ? ");
+//			q.setFilter("token == ? ");
+			q.setFilter("login == login ");
+			q.declareParameters("String login");
+			users = (List<Users>) q.execute(login);
 			tx.commit();
 
 		}finally{
@@ -53,8 +53,20 @@ public class UserDaoImpl implements UserDao{
 		
 		if(users == null || users.size() == 0)
 			return null;
-		else
-			return users.get(0);
+		else{
+			Users us =null;
+			for (Users u : users) {
+				if (u.getLogin().equals(login) && u.getPassword().equals(token)){
+					us=u;
+				}
+			}
+			
+			if (us !=null)
+				return us;
+			else
+				return null;
+			
+		}
 	}
 
 	public List<Users> getAllUsers() {

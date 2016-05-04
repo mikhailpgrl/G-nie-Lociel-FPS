@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
     <meta charset="utf-8">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width">
 
     <title>Creation flight</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="./css/bootstrap-material-datetimepicker.css" />
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css' />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
     <script src="http://s.codepen.io/assets/libs/modernizr.js" type="text/javascript"></script>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Slab:400,700">
@@ -28,18 +35,20 @@
 					 
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 						 <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-					</button> <a class="navbar-brand" id="goToFlightListPage" href="#">Home</a>
+					</button>
+					 
+						<a class="navbar-brand" href="../FlightList/flightList.html">Flight List</a>
+					
+						<a class="navbar-brand" href="../CreateFlight/createFlight.html">Flight Creation</a>
+					
+						<a class="navbar-brand" href="../leaflet/create_leaflet/index.html">Commercial Leaflet</a>
+						
 				</div>
 				
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav">
-						<li class="active">
-							<a href="#">List Flights</a>
-						</li>
-					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li>
-							<a class="navbar-brand" href="#">Logout</a>
+							<a class="navbar-brand" type="button" id="goToConnexion" href="../../index.html">Logout</a>
 						</li>
 					</ul>
 				</div>
@@ -69,17 +78,11 @@
 				  <h1>CREATION FLIGHT</h1>
 				</header>
 		    <div class="arrow-up"></div>
-				<form id="contact" class="form-horizontal" role="form" style="opacity:0.9" action="../FlightList/flightList">
+				<form id="contact" class="form-horizontal" role="form" style="opacity:0.9">
 					<div class="form-group">
 						<div class="col-sm-12">
-							<!-- <div class="form-row">
-							<input type="text" class="form-control form-textbox" id="num" required>
-							<label for="num" class="col-sm- control-label form-label">
-								Commercial Number
-							</label>
-							</div> -->
 
-							<input type="text" class="form-control" id="num" placeholder="COMMERCIAL NUMBER">
+							<input type="text" class="form-control" id="num" placeholder="COMMERCIAL NUMBER" maxlength="7">
 							
 						</div>
 					</div>
@@ -92,17 +95,27 @@
 							</label>
 							</div> -->
 
-							<input type="text" class="form-control" id="atc" placeholder="ATC">
+							<input type="text" class="form-control" id="atc" placeholder="ATC" maxlength="5">
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="col-sm-12">
-							<input type="text" class="form-control" id="dep_aprt_code" placeholder="DEPARTURE AIRPORT CODE">
+							<input type="text" class="form-control" id="dep_aprt_code" placeholder="DEPARTURE AIRPORT CODE"maxlength="4">
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="col-sm-12">
-							<input type="text" class="form-control" id="arr_arpt_code" placeholder="ARRIVAL AIRPORT CODE">
+							<input type="text" class="form-control" id="arr_arpt_code" placeholder="ARRIVAL AIRPORT CODE"maxlength="4">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-12">
+							<input type="text" class="form-control timepicker" id="dep_time" placeholder="DEPARTURE TIME">
+						</div>
+					</div>					
+					<div class="form-group">
+						<div class="col-sm-12">
+							<input type="text" class="form-control timepicker" id="arr_time" placeholder="ARRIVAL TIME">
 						</div>
 					</div>
 					<div class="form-group">
@@ -112,20 +125,10 @@
 					</div>
 					<div class="form-group">
 						<div class="col-sm-12">
-							<input type="text" class="form-control" id="dep_time" placeholder="DEPARTURE TIME">
+							<input type="text" class="form-control datepicker" id="arr_date" placeholder="ARRIVAL DATE">
 						</div>
 					</div>
-					<div class="form-group">
-						<div class="col-sm-12">
-							<input type="text" class="form-control" id="arr_date" placeholder="ARRIVAL DATE">
-						</div>
-					</div>
-					<div class="form-group">
-						<div class="col-sm-12">
-							<input type="text" class="form-control" id="arr_time" placeholder="ARRIVAL TIME">
-						</div>
-					</div>
-					<button type="submit" class="btn btn-block" id="buttonAddFlight">Add Flight</button>
+					<button class="btn btn-block" type="button" id="buttonAddFlight">Add Flight</button>
 				</form> 
 		</div>
 	</section>
@@ -168,150 +171,22 @@
 		</div>
 	</div>
 </div>
-	<script   src="https://code.jquery.com/jquery-1.12.3.js"  
-	integrity="sha256-1XMpEtA4eKXNNpXcJ1pmMPs8JV+nwLdEqwiJeCQEkyc="  
-	crossorigin="anonymous"></script>
-	<script src='http://cdnjs.cloudflare.com/ajax/libs/autosize.js/1.18.17/jquery.autosize.min.js'></script>
-	<script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js'></script>
+
+
+	<script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://rawgit.com/FezVrasta/bootstrap-material-design/master/dist/js/material.min.js"></script>
+	<script type="text/javascript" src="http://momentjs.com/downloads/moment-with-locales.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap-material-datetimepicker.js"></script>
+
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/scripts.js"></script>
+
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/autosize.js/1.18.17/jquery.autosize.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js'></script>
+	<script type="text/javascript" src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+	<script type="javascript" src="js/wickedpicker.js"></script>
 	<script src="js/index.js"></script>
-	<script type="text/javascript">
-		$( document ).ready(function() {
 
-		initializeBarLinks();
-
-	    console.log( "ready!" );
-
-	    // Getting information of the flight
-	    var elt_com_num = document.getElementById("num");
-	    var elt_atc = document.getElementById("atc");
-	    var elt_dep_aprt_code = document.getElementById("dep_aprt_code");
-	    var elt_arr_aprt_code = document.getElementById("arr_arpt_code");
-	    var elt_dep_date = document.getElementById("dep_date");
-	    var elt_dep_time = document.getElementById("dep_time");
-	 	var elt_arr_date = document.getElementById("arr_date");
-	 	var elt_arr_time = document.getElementById("arr_time");
-
-
-	 	// Button "Add flight"   
-	 	var btn_addFlight = document.getElementById("buttonAddFlight");
-	 	var btn_getFlight = document.getElementById("buttonGetFlight");		
-	 	 
-	 	
-
-
-
-
-		function getFlight(){
-			 $.ajax({ 
-		        type: 'GET', 
-		        url: "ws/cco/flight/modify-flight" + "?id=1", 
-		        data: { get_param: 'value' }, 
-		        success: function (data) { 
-		            console.log(data);
-		        }
-		    });
-		}
-		// GET --------------------------------------------------------
-
-
-		// PUT --------------------------------------------------------
-		btn_addFlight.addEventListener("click", function(){
-	 		checkFields();
-		});
-
-
-
-	 	// Verifies wether we have all necessary info of the flight
-	    function checkFields(){
-
-	    	if(elt_com_num.value == '' || elt_atc.value == '' || elt_dep_aprt_code.value == ''|| elt_arr_aprt_code.value == '' || elt_dep_date.value == '' || elt_dep_time.value == '' || elt_arr_date.value == '' || elt_arr_time.value == ''){
-
-	    		console.log("verifier les champs");
-	    	}else{
-	    		console.log("je suis la");
-	    		createFlight()
-	    	}
-
-	    }
-
-
-	    function createFlight(){
-
-
-			var Flight = new Object();
-        	Flight.commercial_number = elt_com_num.value;
-        	Flight.atc_number = elt_atc.value;
-        	Flight.departure_airport = elt_dep_aprt_code.value;
-        	Flight.arrival_airport = elt_arr_aprt_code.value;
-        	Flight.departure_date = elt_dep_date.value;
-        	Flight.arrival_date = elt_arr_date.value;
-        	Flight.departure_time = elt_dep_time.value + " GMT";
-        	Flight.arrival_time = elt_arr_time.value+ " GMT";
-
-
-	    		
-			$.ajax({
-			 	url: "../../ws/cco/flight/create-flight"+ "?userId=1",
-			 	type: 'PUT',
-			 	contentType: "application/json",
-			 	dataType: "json",
-            	data: JSON.stringify(Flight)
-			}).done(function( msg ) {
-			  	console.log("ok");
-			  	window.location.replace("../FlightList/flightList.html");
-			  });
-		}
-		// GET --------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-function initializeBarLinks(){
-
-    $('#goToFlightListPage').click(function(){    
-        location.assign("../FlightList/flightList.html");
-    });
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		});
-
-
-	</script>
   </body>
 </html>

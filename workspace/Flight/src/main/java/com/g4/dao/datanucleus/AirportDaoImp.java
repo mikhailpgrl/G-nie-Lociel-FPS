@@ -10,10 +10,41 @@ import javax.jdo.Transaction;
 
 import com.g4.beans.Aircraft;
 import com.g4.beans.Airport;
+import com.g4.beans.Flight;
 import com.g4.dao.AirportDao;
 
 public class AirportDaoImp implements AirportDao {
 
+	
+	public Airport getAirport(String id) {
+		// TODO Auto-generated method stub
+		List<Airport> flights = null;
+		PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("Flight");
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+
+		try{
+			tx.begin();
+			Query q = pm.newQuery(Airport.class);
+			q.setFilter("id == flightId ");
+			q.declareParameters("int flightId");
+			flights =  (List<Airport>) q.execute(Integer.parseInt(id));
+			tx.commit();
+		}finally{
+			if(tx.isActive()){
+				tx.rollback();
+			}
+			pm.close();
+		}
+		if(flights.isEmpty())
+			return null;
+		else
+			return flights.get(0);
+		
+	}
+
+	
+	
 	public List<Airport> getAllAirport() {
 		// TODO Auto-generated method stub
 		List<Airport> airport = null;

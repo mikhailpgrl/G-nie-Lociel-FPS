@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>CCO : Create Leaflet</title>
+
+    <meta name="author" content="LayoutIt!">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+  </head>
+  <body id="body_t">
+
+    <div class="container-fluid">
+        <div class="col-md-12 col-xs-12">
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-xs-12">
+                <!-- role="navigation" is it necessary ? -->
+                <nav class="navbar navbar-default" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"></button>
+                            <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar">
+                            </span>
+                            <span class="icon-bar">
+                            </span>
+                    </div>
+
+                    <div class="collapse navbar-collapse text-center" id="@">
+                        <ul class="nav navbar-nav">
+                            <li>
+                            <a class="navbar-brand" href="../../FlightList/flightList.html">Flight List</a>
+                            </li>
+                            <li>
+                            <a class="navbar-brand" href="../../CreateFlight/createFlight.html">Flight Creation Page</a>
+                            </li>
+                            <li class="active">
+                            <a class="navbar-brand" href="../create_leaflet/index.html">Commercial Leaflet</a>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a class="navbar-brand" href="../../../index.html">Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+      </div>
+    <div class="row">
+        <div class="col-md-2 col-xs-2">
+        </div>
+    </div>
+    <div>
+        <section>
+            <header>
+                <h1 class="text-center">Create Leaflet </h1>
+            </header>
+            </section>
+    </div>
+      <!-- It's awful but it works -->
+    <div class="container-fluid">
+        <div class="arrow-up"></div>
+    </div>
+    <div class = "container-fluid">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8 text-center col-xs-8" >
+            <form id="form_leaflet" role="form_leaflet">
+                <div class="form-group" id="form_border">
+                    <!-- for the accept attribut it's just a suggestion not a restriction -->
+                    <label for="leaflet_file">Please drag or select the leaflet file <br/> <input type="file" class="leaflet_file" id="leaflet_file" accept=".pdf"></label>
+                    <br/>
+                    <canvas id="imageCanvas"></canvas>
+                    <br/>
+                    <label for="tmp">Don't have a leaflet file ? <button id="create_leaflet_textarea" type="button">click here</button> </label>
+                    <div id="text_area_zone">
+                    </div>
+                    <button class="btn btn-block"  type="button" id="submit_button">Create</button>
+                </div>
+            </form>
+            
+        </div>
+        <div class="col-md-2">
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

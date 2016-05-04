@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+
+    <title>Edit flight</title>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="./css/bootstrap-material-datetimepicker.css" />
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+    <script src="http://s.codepen.io/assets/libs/modernizr.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Slab:400,700">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+  </head>
+  <body background="images/MainImage.PNG" >
+
+    <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-3">
+
+		</div>
+		<div class="col-md-12">
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="navbar-header">
+					 
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						 <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+					</button> <a class="navbar-brand" href="../FlightList/flightList.html">Home</a>
+				</div>
+				
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav"> 
+						<li class="active">
+							<a href="../FlightList/flightList.html">View Flight</a>
+						</li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<a class="navbar-brand" href="../../index.html">Logout</a>
+						</li>
+					</ul>
+				</div>
+				
+			</nav>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="row">
+				<div class="col-md-3">
+				</div>
+				<div class="col-md-6">
+					
+				</div>
+				<div class="col-md-3">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-2">
+		</div>
+		<div class="col-md-8">
+			<div class="row">
+				<header>
+				  <h1>EDIT FLIGHT</h1>
+				</header>
+				<div class="col-md-6">
+				
+		    <div class="arrow-up"></div>
+				<form id="contact" class="form-horizontal" role="form" style="opacity:0.9">
+					<div class="form-group">
+						<div class="col-sm-12">
+							<!-- <div class="form-row">
+							<input type="text" class="form-control form-textbox" id="num" required>
+							<label for="num" class="col-sm- control-label form-label">
+								Commercial Number
+							</label>
+							</div> -->
+
+							<input type="text" class="form-control" id="num" placeholder="COMMERCIAL NUMBER">
+							
+						</div>
+					</div>
+					<div class="form-group">	
+						<div class="col-sm-12">
+							<!-- <div class="form-row">
+							<input type="text" class="form-control form-textbox" id="atc" required>
+							<label for="atc" class="col-sm- control-label form-label">
+								ATC
+							</label>
+							</div> -->
+
+							<input type="text" class="form-control" id="atc" placeholder="ATC">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-12">
+							<input type="text" class="form-control" id="dep_aprtcode" placeholder="DEPARTURE AIRPORT CODE">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-12">
+							<input type="text" class="form-control" id="arr_arptcode" placeholder="ARRIVAL AIRPORT CODE">
+						</div>
+					</div>					
+					<div class="form-group">
+						<div class="col-sm-12">
+							<input type="text" class="form-control" id="dep_time" placeholder="DEPARTURE TIME">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-12">
+							<input type="text" class="form-control" id="arr_time" placeholder="ARRIVAL TIME">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-12">
+							<input type="text" class="form-control" id="dep_date" placeholder="DEPARTURE DATE">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-12">
+							<input type="text" class="form-control datepicker" id="arr_date" placeholder="ARRIVAL DATE">
+						</div>
+					</div>
+				
+					<button type="submit" class="btn btn-block" id="buttonAddFlight">Edit Information</button>
+				</form> 
+		</div>
+					
+				<div class="col-md-5" id="editCrew">
+					<div class="arrow-up"></div>
+					<form id="contact" class="form-horizontal" role="form" style="opacity:0.9">
+							<div class="form-group">
+								<label for="inputPilot" class="col-sm-2 control-label">
+								Select:
+								</label>
+								<div class="col-sm-5">
+									<select class="form-control" id="select_pilot">
+									  <option>Pilot</option>
+									  <option> tmp</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputPilot" class="col-sm-2 control-label">
+								Select:
+								</label>
+								<div class="col-sm-5">
+									<select id="select_copilot" class="form-control">
+									  <option>co-Pilot</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputPilot" class="col-sm-2 control-label">
+								Select:
+								</label>
+								<div class="col-sm-5">
+									<select id="select_stewart1" class="form-control">
+									  <option>Stewart 1</option>
+									</select>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="inputPilot" class="col-sm-2 control-label">
+								Select:
+								</label>
+								<div class="col-sm-5">
+									<select id="select_stewart2" class="form-control">
+									  <option>Stewart 2</option>
+									</select>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="inputPilot" class="col-sm-2 control-label">
+								Select:
+								</label>
+								<div class="col-sm-5">
+									<select id="select_stewart3" class="form-control">
+									  <option>Stewart 3</option>
+									</select>
+								</div>
+							</div>
+
+
+							<!-- <div class="form-group">
+								<div class="col-sm-offset-1 col-sm-8">							 
+									<button type="button" id="editButton" class="btn btn-block">
+										Add
+									</button>
+								</div>
+							</div> -->
+							<div class="form-group">
+								<div class="col-sm-9">
+									<select multiple class="form-control">
+									  <option id="option_crew" ></option>
+									 <!--  <option>Jason Bourne</option>
+									  <option>Hanz Zimmer</option> -->
+									</select>
+								</div>
+							</div>
+							<!-- <div class="form-group">
+								<div class="col-sm-offset-1 col-sm-8">							 
+									<button type="submit" class="btn btn-block">
+										Remove
+									</button>
+								</div>
+							</div> -->
+							<div class="form-group">
+								<div class="col-sm-9">
+									<select class="form-control">
+									  <option>RayanAir plane</option>
+									  <option>Paper plane</option>
+									</select>
+								</div>
+							</div>
+								<button type="button" id="editButton" class="btn btn-block">
+									Edit Flight Attendant
+								</button>
+						</div>
+					<div>
+				</div> 
+		</div>
+		<div class="col-md-2">
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="row">
+				<div class="col-md-3">
+					 
+				</div>
+				
+				<div class="col-md-3">
+					
+				</div>
+				<div class="col-md-3">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+	
+	<script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://rawgit.com/FezVrasta/bootstrap-material-design/master/dist/js/material.min.js"></script>
+	<script type="text/javascript" src="http://momentjs.com/downloads/moment-with-locales.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap-material-datetimepicker.js"></script>
+
+	<script src="codepen/js/prefixfree.min.js"></script>
+	
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/autosize.js/1.18.17/jquery.autosize.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js'></script>
+	<script type="text/javascript" src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+	<script type="text/javascript">
+
+		$( document ).ready(function() {
+
+			$('#dep_date').bootstrapMaterialDatePicker({ weekStart : 0, time: false,
+			format : 'DD/MM/YYYY'	
+			 });
+			
+			$('#arr_date').bootstrapMaterialDatePicker({ weekStart : 0, time: false,
+			format : 'DD/MM/YYYY'	 });
+
+
+			$('#dep_time').bootstrapMaterialDatePicker({ date: false,
+				format : 'HH:mm' });
+
+			$('#arr_time').bootstrapMaterialDatePicker({ date: false,
+				format : 'HH:mm'  });
+
+			$.material.init();
+
+		});
+	</script>
+  </body>
+</html>
